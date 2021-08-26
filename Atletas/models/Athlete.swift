@@ -6,7 +6,20 @@
 //
 
 import Foundation
+import UIKit
 
 class Athlete: User {
+    var name: String
+    var image: UIImage
+    var about: String
+    var type: Type
+    var contact: String
+    var pixKey: String
+    var projects: [Project]
+    var sport: Sport
     
+    init(name: String, username: String, password: String) {
+        super.init(username: username, password: password)
+        self.name = name
+    }
 }

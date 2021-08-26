@@ -10,6 +10,9 @@
 		610C7D7026D7DA6F00F2FDB6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D6F26D7DA6F00F2FDB6 /* User.swift */; };
 		610C7D7226D7DB3100F2FDB6 /* Supporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7126D7DB3100F2FDB6 /* Supporter.swift */; };
 		610C7D7426D7DBB100F2FDB6 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7326D7DBB100F2FDB6 /* Athlete.swift */; };
+		610C7D7626D80B1500F2FDB6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7526D80B1500F2FDB6 /* Badge.swift */; };
+		610C7D7826D80BCC00F2FDB6 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7726D80BCC00F2FDB6 /* Level.swift */; };
+		610C7D7A26D80C5F00F2FDB6 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7926D80C5F00F2FDB6 /* Type.swift */; };
 		B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82026D7BABB0090966F /* AppDelegate.swift */; };
 		B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82226D7BABB0090966F /* SceneDelegate.swift */; };
 		B7D5E82526D7BABB0090966F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82426D7BABB0090966F /* ViewController.swift */; };
@@ -23,6 +26,9 @@
 		610C7D6F26D7DA6F00F2FDB6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		610C7D7126D7DB3100F2FDB6 /* Supporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supporter.swift; sourceTree = "<group>"; };
 		610C7D7326D7DBB100F2FDB6 /* Athlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
+		610C7D7526D80B1500F2FDB6 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		610C7D7726D80BCC00F2FDB6 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		610C7D7926D80C5F00F2FDB6 /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		B7D5E81D26D7BABB0090966F /* Atletas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atletas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D5E82026D7BABB0090966F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7D5E82226D7BABB0090966F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +59,9 @@
 				610C7D6F26D7DA6F00F2FDB6 /* User.swift */,
 				610C7D7126D7DB3100F2FDB6 /* Supporter.swift */,
 				610C7D7326D7DBB100F2FDB6 /* Athlete.swift */,
+				610C7D7526D80B1500F2FDB6 /* Badge.swift */,
+				610C7D7726D80BCC00F2FDB6 /* Level.swift */,
+				610C7D7926D80C5F00F2FDB6 /* Type.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -168,12 +177,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				610C7D7626D80B1500F2FDB6 /* Badge.swift in Sources */,
 				610C7D7026D7DA6F00F2FDB6 /* User.swift in Sources */,
 				610C7D7426D7DBB100F2FDB6 /* Athlete.swift in Sources */,
 				B7D5E82526D7BABB0090966F /* ViewController.swift in Sources */,
 				B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */,
 				B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */,
+				610C7D7826D80BCC00F2FDB6 /* Level.swift in Sources */,
 				610C7D7226D7DB3100F2FDB6 /* Supporter.swift in Sources */,
+				610C7D7A26D80C5F00F2FDB6 /* Type.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

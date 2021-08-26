@@ -10,7 +10,7 @@ import Foundation
 class Supporter: User {
     var name: String
     var badges: [Badge]
-    var donations: [Donations]
+    var donations: [Donation]
     var level: Level
     
     init(name: String, username: String, password: String) {
