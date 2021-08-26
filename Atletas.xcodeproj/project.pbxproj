@@ -41,6 +41,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		610C7D6E26D7D99900F2FDB6 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		B7D5E81426D7BABB0090966F = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +76,7 @@
 				B7D5E82926D7BABD0090966F /* Assets.xcassets */,
 				B7D5E82B26D7BABD0090966F /* LaunchScreen.storyboard */,
 				B7D5E82E26D7BABD0090966F /* Info.plist */,
+				610C7D6E26D7D99900F2FDB6 /* models */,
 			);
 			path = Atletas;
 			sourceTree = "<group>";
