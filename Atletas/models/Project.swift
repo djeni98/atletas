@@ -9,13 +9,13 @@ import Foundation
 import UIKit
 
 class Project {
-    let title: String
-    let image: UIImage
-    let about: String
-    let deadLine: String
+    var title: String
+    var image: UIImage
+    var about: String
+    var deadLine: String
     let sportName: SportEnum
     let category: String // ou enum??
-    let donations: [Donation]
+    var donations: [Donation]
    
     init(title: String, image: UIImage, about: String, deadLine: String, sportName: SportEnum, category: String, donations: [Donation]) {
         self.title = title

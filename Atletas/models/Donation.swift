@@ -10,11 +10,11 @@ import UIKit
 
 class Donation {
     
-    let receiptImage: UIImage
+    var receiptImage: UIImage
     let supporter: String
     let supporterSaysThisAmount: Double
     let athleteSaysThisAmount: Double
-    let donationStatus: DonationStatusEnum
+    var donationStatus: DonationStatusEnum
     
     init(receiptImage: UIImage, supporter: String, supporterSaysThisAmount: Double, AthleteSaysThisAmount: Double, donationStatus: DonationStatusEnum){
         self.receiptImage = receiptImage
