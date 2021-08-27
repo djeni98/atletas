@@ -9,8 +9,8 @@ import Foundation
 
 class Supporter: User {
     var name: String
-    var badges: [Badge]?
-    var donations: [Donation]?
+    var badges: [Badge] = []
+    var donations: [Donation] = []
     var level: LevelEnum = .noLevel
 
     init(name: String, username: String, password: String) {
