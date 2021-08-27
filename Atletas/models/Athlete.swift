@@ -12,7 +12,7 @@ class Athlete: User {
     var name: String
     var image: UIImage
     var about: String
-    var type: Type
+    var type: SportCategoryEnum
     var contact: String
     var pixKey: String
     var city: String
@@ -20,7 +20,7 @@ class Athlete: User {
     var projects: [Project]
     var sport: Sport
 
-    init(name: String, username: String, password: String, image: UIImage, about: String, type: Type, contact: String, pixKey: String, city: String, social: Social, projects: [Project], sport: Sport) {
+    init(name: String, username: String, password: String, image: UIImage, about: String, type: SportCategoryEnum, contact: String, pixKey: String, city: String, social: Social, projects: [Project], sport: Sport) {
         self.name = name
         self.image = image
         self.about = about

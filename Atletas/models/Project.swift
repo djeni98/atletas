@@ -13,11 +13,11 @@ class Project {
     let image: UIImage
     let about: String
     let deadLine: String
-    let sportName: SportList
+    let sportName: SportEnum
     let category: String // ou enum??
     let donations: [Donation]
    
-    init(title: String, image: UIImage, about: String, deadLine: String, sportName: SportList, category: String, donations: [Donation]) {
+    init(title: String, image: UIImage, about: String, deadLine: String, sportName: SportEnum, category: String, donations: [Donation]) {
         self.title = title
         self.image = image
         self.about = about

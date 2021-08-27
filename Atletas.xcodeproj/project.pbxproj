@@ -11,14 +11,14 @@
 		610C7D7226D7DB3100F2FDB6 /* Supporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7126D7DB3100F2FDB6 /* Supporter.swift */; };
 		610C7D7426D7DBB100F2FDB6 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7326D7DBB100F2FDB6 /* Athlete.swift */; };
 		610C7D7626D80B1500F2FDB6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7526D80B1500F2FDB6 /* Badge.swift */; };
-		610C7D7826D80BCC00F2FDB6 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7726D80BCC00F2FDB6 /* Level.swift */; };
-		610C7D7A26D80C5F00F2FDB6 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7926D80C5F00F2FDB6 /* Type.swift */; };
+		610C7D7826D80BCC00F2FDB6 /* LevelEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7726D80BCC00F2FDB6 /* LevelEnum.swift */; };
+		610C7D7A26D80C5F00F2FDB6 /* SportCategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7926D80C5F00F2FDB6 /* SportCategoryEnum.swift */; };
 		610C7D7C26D918D300F2FDB6 /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7B26D918D300F2FDB6 /* Social.swift */; };
 		B254BFE326D82FF900A68D55 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE226D82FF900A68D55 /* Project.swift */; };
 		B254BFE526D8301F00A68D55 /* Donation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE426D8301F00A68D55 /* Donation.swift */; };
-		B254BFE726D8302B00A68D55 /* DonationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE626D8302B00A68D55 /* DonationStatus.swift */; };
+		B254BFE726D8302B00A68D55 /* DonationStatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE626D8302B00A68D55 /* DonationStatusEnum.swift */; };
 		B254BFE926D8304700A68D55 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE826D8304700A68D55 /* UserType.swift */; };
-		B254BFEB26D8307700A68D55 /* SportList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFEA26D8307700A68D55 /* SportList.swift */; };
+		B254BFEB26D8307700A68D55 /* SportEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFEA26D8307700A68D55 /* SportEnum.swift */; };
 		B254BFED26D8308F00A68D55 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFEC26D8308F00A68D55 /* Sport.swift */; };
 		B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82026D7BABB0090966F /* AppDelegate.swift */; };
 		B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82226D7BABB0090966F /* SceneDelegate.swift */; };
@@ -34,14 +34,14 @@
 		610C7D7126D7DB3100F2FDB6 /* Supporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supporter.swift; sourceTree = "<group>"; };
 		610C7D7326D7DBB100F2FDB6 /* Athlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
 		610C7D7526D80B1500F2FDB6 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
-		610C7D7726D80BCC00F2FDB6 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
-		610C7D7926D80C5F00F2FDB6 /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		610C7D7726D80BCC00F2FDB6 /* LevelEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelEnum.swift; sourceTree = "<group>"; };
+		610C7D7926D80C5F00F2FDB6 /* SportCategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportCategoryEnum.swift; sourceTree = "<group>"; };
 		610C7D7B26D918D300F2FDB6 /* Social.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
 		B254BFE226D82FF900A68D55 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		B254BFE426D8301F00A68D55 /* Donation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donation.swift; sourceTree = "<group>"; };
-		B254BFE626D8302B00A68D55 /* DonationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationStatus.swift; sourceTree = "<group>"; };
+		B254BFE626D8302B00A68D55 /* DonationStatusEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationStatusEnum.swift; sourceTree = "<group>"; };
 		B254BFE826D8304700A68D55 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
-		B254BFEA26D8307700A68D55 /* SportList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportList.swift; sourceTree = "<group>"; };
+		B254BFEA26D8307700A68D55 /* SportEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportEnum.swift; sourceTree = "<group>"; };
 		B254BFEC26D8308F00A68D55 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		B7D5E81D26D7BABB0090966F /* Atletas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atletas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D5E82026D7BABB0090966F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,14 +74,14 @@
 				610C7D7126D7DB3100F2FDB6 /* Supporter.swift */,
 				610C7D7326D7DBB100F2FDB6 /* Athlete.swift */,
 				610C7D7526D80B1500F2FDB6 /* Badge.swift */,
-				610C7D7726D80BCC00F2FDB6 /* Level.swift */,
-				610C7D7926D80C5F00F2FDB6 /* Type.swift */,
+				610C7D7726D80BCC00F2FDB6 /* LevelEnum.swift */,
+				610C7D7926D80C5F00F2FDB6 /* SportCategoryEnum.swift */,
 				610C7D7B26D918D300F2FDB6 /* Social.swift */,
 				B254BFE226D82FF900A68D55 /* Project.swift */,
-				B254BFE626D8302B00A68D55 /* DonationStatus.swift */,
+				B254BFE626D8302B00A68D55 /* DonationStatusEnum.swift */,
 				B254BFE426D8301F00A68D55 /* Donation.swift */,
 				B254BFE826D8304700A68D55 /* UserType.swift */,
-				B254BFEA26D8307700A68D55 /* SportList.swift */,
+				B254BFEA26D8307700A68D55 /* SportEnum.swift */,
 				B254BFEC26D8308F00A68D55 /* Sport.swift */,
 			);
 			path = models;
@@ -201,19 +201,19 @@
 				610C7D7C26D918D300F2FDB6 /* Social.swift in Sources */,
 				610C7D7626D80B1500F2FDB6 /* Badge.swift in Sources */,
 				610C7D7026D7DA6F00F2FDB6 /* User.swift in Sources */,
-				B254BFEB26D8307700A68D55 /* SportList.swift in Sources */,
+				B254BFEB26D8307700A68D55 /* SportEnum.swift in Sources */,
 				610C7D7426D7DBB100F2FDB6 /* Athlete.swift in Sources */,
 				B7D5E82526D7BABB0090966F /* ViewController.swift in Sources */,
 				B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */,
-				B254BFE726D8302B00A68D55 /* DonationStatus.swift in Sources */,
+				B254BFE726D8302B00A68D55 /* DonationStatusEnum.swift in Sources */,
 				B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */,
-				610C7D7826D80BCC00F2FDB6 /* Level.swift in Sources */,
+				610C7D7826D80BCC00F2FDB6 /* LevelEnum.swift in Sources */,
 				B254BFE926D8304700A68D55 /* UserType.swift in Sources */,
 				B254BFE526D8301F00A68D55 /* Donation.swift in Sources */,
 				B254BFE326D82FF900A68D55 /* Project.swift in Sources */,
 				B254BFED26D8308F00A68D55 /* Sport.swift in Sources */,
 				610C7D7226D7DB3100F2FDB6 /* Supporter.swift in Sources */,
-				610C7D7A26D80C5F00F2FDB6 /* Type.swift in Sources */,
+				610C7D7A26D80C5F00F2FDB6 /* SportCategoryEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

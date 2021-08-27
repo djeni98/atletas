@@ -1,12 +1,12 @@
 //
-//  DonationStatus.swift
-//  DonationStatus
+//  DonationStatusEnum.swift
+//  DonationStatusEnum
 //
 //  Created by Guilerme Barciki on 26/08/21.
 //
 
 import Foundation
 
-enum DonationStatus {
+enum DonationStatusEnum {
     case pending, confirmed
 }
