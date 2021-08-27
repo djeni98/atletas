@@ -15,6 +15,8 @@ class Athlete: User {
     var type: Type
     var contact: String
     var pixKey: String
+    var city: String
+    var social: Social
     var projects: [Project]
     var sport: Sport
     

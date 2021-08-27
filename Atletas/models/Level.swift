@@ -9,8 +9,8 @@ import Foundation
 
 enum Level {
     case bronze
-    case prata
-    case ouro
-    case platina
-    case diamante
+    case silver
+    case gold
+    case platinum
+    case diamond
 }

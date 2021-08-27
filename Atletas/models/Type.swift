@@ -8,8 +8,8 @@
 import Foundation
 
 enum Type {
-    case amador
-    case olimpico
+    case amateur
+    case olympic
     case base
-    case selecaoBrasileira
+    case brazilianTeam
 }
