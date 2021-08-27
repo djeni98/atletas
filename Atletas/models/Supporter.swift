@@ -9,12 +9,12 @@ import Foundation
 
 class Supporter: User {
     var name: String
-    var badges: [Badge]
-    var donations: [Donation]
-    var level: Level
+    var badges: [Badge]?
+    var donations: [Donation]?
+    var level: Level = .noLevel
     
     init(name: String, username: String, password: String) {
-        super.init(username: username, password: password)
         self.name = name
+        super.init(username: username, password: password)
     }
 }

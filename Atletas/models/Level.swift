@@ -8,6 +8,7 @@
 import Foundation
 
 enum Level {
+    case noLevel
     case bronze
     case silver
     case gold
