@@ -12,25 +12,21 @@ class Project {
     var title: String
     var image: UIImage
     var about: String
-    var deadLine: String
-    let sportName: SportEnum
-    let category: String // ou enum??
-    var donations: [Donation]
+    var goal: Double
+    var deadline: String
+    let sport: SportEnum
+    let category: SportCategoryEnum
+    var donations: [Donation] = []
    
-    init(title: String, image: UIImage, about: String, deadLine: String, sportName: SportEnum, category: String, donations: [Donation]) {
+    init(title: String, image: UIImage, about: String, goal: Double, deadline: String, sport: SportEnum, category: SportCategoryEnum) {
         self.title = title
         self.image = image
         self.about = about
-        self.deadLine = deadLine
-        self.sportName = sportName
+        self.goal = goal
+        self.deadline = deadline
+        self.sport = sport
         self.category = category
-        self.donations = donations
     }
     
-    func getValueCollected () {
-        
-    }
-    
-
-
+    func getValueCollected () {}
 }
