@@ -1,5 +1,5 @@
 //
-//  Level.swift
+//  LevelEnum.swift
 //  Atletas
 //
 //  Created by André Schueda on 26/08/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Level {
+enum LevelEnum {
     case noLevel
     case bronze
     case silver

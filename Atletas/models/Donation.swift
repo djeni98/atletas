@@ -10,19 +10,17 @@ import UIKit
 
 class Donation {
     
-    let receiptImage: UIImage
+    var receiptImage: UIImage
     let supporter: String
-    let supporterSaysThisAmount: Double
-    let athleteSaysThisAmount: Double
-    let donationStatus: DonationStatus
+    let supporterAmount: Double
+    let athleteAmount: Double
+    var status: DonationStatusEnum
     
-    init(receiptImage: UIImage, supporter: String, supporterSaysThisAmount: Double, AthleteSaysThisAmount: Double, donationStatus: DonationStatus){
+    init(receiptImage: UIImage, supporter: String, supporterAmount: Double, athleteAmount: Double, status: DonationStatusEnum) {
         self.receiptImage = receiptImage
         self.supporter = supporter
-        self.supporterSaysThisAmount = supporterSaysThisAmount
-        self.athleteSaysThisAmount = AthleteSaysThisAmount
-        self.donationStatus = donationStatus
+        self.supporterAmount = supporterAmount
+        self.athleteAmount = athleteAmount
+        self.status = status
     }
-    
-
 }

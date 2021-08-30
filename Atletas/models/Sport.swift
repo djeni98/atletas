@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 class Sport {
-    let sport: SportList
+    let sport: SportEnum
     let sportImage: UIImage
     
-    init(sport: SportList, sportImage: UIImage){
+    init(sport: SportEnum, sportImage: UIImage){
         self.sport = sport
         self.sportImage = sportImage
     }

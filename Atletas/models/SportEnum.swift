@@ -1,3 +1,3 @@
-enum SportList {
+enum SportEnum {
     case softball
 }
