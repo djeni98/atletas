@@ -11,8 +11,19 @@ class AthleteListItem: UIView {
     var nameString = "Name String"
     var descriptionString = "Description String"
 
+    var circleImageView: UIImageView!
+    var nameLabel: UILabel!
+    var descriptionLabel: UILabel!
+
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupViews()
+    }
+
+    init(name: String, description: String) {
+        super.init(frame: .zero)
+        nameString = name
+        descriptionString = description
         setupViews()
     }
 
@@ -29,19 +40,19 @@ class AthleteListItem: UIView {
 
     func setupViews() {
         let circleSize: CGFloat = 40
-        let circleImageView = UIImageView()
+        circleImageView = UIImageView()
         circleImageView.backgroundColor = UIColor.gray
         circleImageView.layer.cornerRadius = circleSize / 2
         circleImageView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(circleImageView)
 
-        let nameLabel = UILabel()
+        nameLabel = UILabel()
         nameLabel.text = nameString
         nameLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(nameLabel)
 
-        let descriptionLabel = UILabel()
+        descriptionLabel = UILabel()
         descriptionLabel.text = descriptionString
         descriptionLabel.font = UIFont.systemFont(ofSize: 14)
         descriptionLabel.textColor = UIColor.secondaryLabel
@@ -70,10 +81,10 @@ struct AthleteListItem_Preview: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView {
-                let item = AthleteListItem()
-                item.nameString = "Mayra Sayumi Akamine"
-
-                return item
+                AthleteListItem(
+                    name: "Mayra Sayumi Akamine",
+                    description: "Atleta da Seleção Brasileira de Softbol"
+                )
             }
         }.previewLayout(.fixed(width: 330, height: 80))
     }
