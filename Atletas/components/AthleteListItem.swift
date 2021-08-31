@@ -1,5 +1,5 @@
 //
-//  AthleteListIem.swift
+//  AthleteListItem.swift
 //  Atletas
 //
 //  Created by Djenifer Renata Pereira on 31/08/21.
