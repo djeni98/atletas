@@ -7,15 +7,20 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+// SearchBar references:
+// https://github.com/codepath/ios_guides/wiki/Search-Bar-Guide
+
+class SearchViewController: UIViewController, UISearchResultsUpdating {
     var tableView: UITableView!
     var tableViewAdapter = AthleteListTableViewAdapter()
 
+    var searchController: UISearchController!
+
     override func loadView() {
         super.loadView()
+        view.backgroundColor = .systemBackground
 
         tableView = UITableView()
-        tableView.backgroundColor = .red
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
 
@@ -27,7 +32,7 @@ class SearchViewController: UIViewController {
 
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
@@ -36,7 +41,20 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.sizeToFit()
+        tableView.tableHeaderView = searchController.searchBar
 
+        definesPresentationContext = true
+    }
+
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            // filter data
+            print(searchText)
+            // tableView.reloadData()
+        }
     }
 }
 
@@ -50,7 +68,10 @@ struct SearchViewController_Previews: PreviewProvider {
     struct ContentView: UIViewControllerRepresentable {
 
         func makeUIViewController(context: Context) -> UIViewController {
-            return SearchViewController()
+            let navigationController = UINavigationController(rootViewController: SearchViewController())
+            navigationController.setNavigationBarHidden(true, animated: true)
+
+            return navigationController
         }
 
         func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
