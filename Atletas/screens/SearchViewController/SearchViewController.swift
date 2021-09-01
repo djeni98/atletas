@@ -61,6 +61,16 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         tableView.reloadData()
     }
 
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+    }
+
     func searchBar(_ searchBar: UISearchBar,
                    selectedScopeButtonIndexDidChange selectedScope: Int) {
         let category = SearchScopeButton.allCases[selectedScope]
