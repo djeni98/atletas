@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,10 @@
 		610C7D7826D80BCC00F2FDB6 /* LevelEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7726D80BCC00F2FDB6 /* LevelEnum.swift */; };
 		610C7D7A26D80C5F00F2FDB6 /* SportCategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7926D80C5F00F2FDB6 /* SportCategoryEnum.swift */; };
 		610C7D7C26D918D300F2FDB6 /* SocialMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7B26D918D300F2FDB6 /* SocialMedia.swift */; };
-		610C7D7E26DE5D9F00F2FDB6 /* ExplorarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D7D26DE5D9F00F2FDB6 /* ExplorarViewController.swift */; };
+		610C7D8126DFAC5600F2FDB6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 610C7D8026DFAC5600F2FDB6 /* SnapKit */; };
+		610C7D8326DFB3B500F2FDB6 /* SupportableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D8226DFB3B500F2FDB6 /* SupportableRowView.swift */; };
+		610C7D8526DFB8E300F2FDB6 /* Supportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D8426DFB8E300F2FDB6 /* Supportable.swift */; };
+		610C7D8826DFBC4300F2FDB6 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D8726DFBC4300F2FDB6 /* CollectionCell.swift */; };
 		B254BFE326D82FF900A68D55 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE226D82FF900A68D55 /* Project.swift */; };
 		B254BFE526D8301F00A68D55 /* Donation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE426D8301F00A68D55 /* Donation.swift */; };
 		B254BFE726D8302B00A68D55 /* DonationStatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE626D8302B00A68D55 /* DonationStatusEnum.swift */; };
@@ -37,7 +40,9 @@
 		610C7D7726D80BCC00F2FDB6 /* LevelEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelEnum.swift; sourceTree = "<group>"; };
 		610C7D7926D80C5F00F2FDB6 /* SportCategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportCategoryEnum.swift; sourceTree = "<group>"; };
 		610C7D7B26D918D300F2FDB6 /* SocialMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMedia.swift; sourceTree = "<group>"; };
-		610C7D7D26DE5D9F00F2FDB6 /* ExplorarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorarViewController.swift; sourceTree = "<group>"; };
+		610C7D8226DFB3B500F2FDB6 /* SupportableRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportableRowView.swift; sourceTree = "<group>"; };
+		610C7D8426DFB8E300F2FDB6 /* Supportable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supportable.swift; sourceTree = "<group>"; };
+		610C7D8726DFBC4300F2FDB6 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		B254BFE226D82FF900A68D55 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		B254BFE426D8301F00A68D55 /* Donation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donation.swift; sourceTree = "<group>"; };
 		B254BFE626D8302B00A68D55 /* DonationStatusEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationStatusEnum.swift; sourceTree = "<group>"; };
@@ -61,13 +66,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7D5E83726D7BAD40090966F /* CloudKit.framework in Frameworks */,
+				610C7D8126DFAC5600F2FDB6 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		610C7D6E26D7D99900F2FDB6 /* models */ = {
+		610C7D6E26D7D99900F2FDB6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				610C7D6F26D7DA6F00F2FDB6 /* User.swift */,
@@ -84,7 +90,15 @@
 				B254BFEA26D8307700A68D55 /* SportEnum.swift */,
 				B254BFEC26D8308F00A68D55 /* Sport.swift */,
 			);
-			path = models;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		610C7D8626DFB8E800F2FDB6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				610C7D8426DFB8E300F2FDB6 /* Supportable.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		B7D5E81426D7BABB0090966F = {
@@ -111,11 +125,13 @@
 				B7D5E82026D7BABB0090966F /* AppDelegate.swift */,
 				B7D5E82226D7BABB0090966F /* SceneDelegate.swift */,
 				B7D5E82426D7BABB0090966F /* ViewController.swift */,
-				610C7D7D26DE5D9F00F2FDB6 /* ExplorarViewController.swift */,
+				610C7D8226DFB3B500F2FDB6 /* SupportableRowView.swift */,
+				610C7D8726DFBC4300F2FDB6 /* CollectionCell.swift */,
 				B7D5E82926D7BABD0090966F /* Assets.xcassets */,
 				B7D5E82B26D7BABD0090966F /* LaunchScreen.storyboard */,
 				B7D5E82E26D7BABD0090966F /* Info.plist */,
-				610C7D6E26D7D99900F2FDB6 /* models */,
+				610C7D8626DFB8E800F2FDB6 /* ViewModels */,
+				610C7D6E26D7D99900F2FDB6 /* Models */,
 			);
 			path = Atletas;
 			sourceTree = "<group>";
@@ -144,6 +160,9 @@
 			dependencies = (
 			);
 			name = Atletas;
+			packageProductDependencies = (
+				610C7D8026DFAC5600F2FDB6 /* SnapKit */,
+			);
 			productName = Atletas;
 			productReference = B7D5E81D26D7BABB0090966F /* Atletas.app */;
 			productType = "com.apple.product-type.application";
@@ -171,6 +190,9 @@
 				Base,
 			);
 			mainGroup = B7D5E81426D7BABB0090966F;
+			packageReferences = (
+				610C7D7F26DFAC5600F2FDB6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = B7D5E81E26D7BABB0090966F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -205,15 +227,17 @@
 				B7D5E82526D7BABB0090966F /* ViewController.swift in Sources */,
 				B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */,
 				B254BFE726D8302B00A68D55 /* DonationStatusEnum.swift in Sources */,
+				610C7D8526DFB8E300F2FDB6 /* Supportable.swift in Sources */,
 				B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */,
-				610C7D7E26DE5D9F00F2FDB6 /* ExplorarViewController.swift in Sources */,
 				610C7D7826D80BCC00F2FDB6 /* LevelEnum.swift in Sources */,
 				B254BFE926D8304700A68D55 /* UserType.swift in Sources */,
 				B254BFE526D8301F00A68D55 /* Donation.swift in Sources */,
 				B254BFE326D82FF900A68D55 /* Project.swift in Sources */,
 				B254BFED26D8308F00A68D55 /* Sport.swift in Sources */,
+				610C7D8326DFB3B500F2FDB6 /* SupportableRowView.swift in Sources */,
 				610C7D7226D7DB3100F2FDB6 /* Supporter.swift in Sources */,
 				610C7D7A26D80C5F00F2FDB6 /* SportCategoryEnum.swift in Sources */,
+				610C7D8826DFBC4300F2FDB6 /* CollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +433,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		610C7D7F26DFAC5600F2FDB6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		610C7D8026DFAC5600F2FDB6 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 610C7D7F26DFAC5600F2FDB6 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B7D5E81526D7BABB0090966F /* Project object */;
 }
