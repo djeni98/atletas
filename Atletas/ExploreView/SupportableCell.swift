@@ -25,14 +25,22 @@ class SupportableCell: UICollectionViewCell {
         return background
     }()
     
+    lazy var darkeningLayer: UIView = {
+        let layer = UIView()
+        layer.translatesAutoresizingMaskIntoConstraints = false
+        layer.layer.cornerRadius = 8
+        layer.backgroundColor = .init(white: 0, alpha: 0.5)
+        return layer
+    }()
+    
     lazy var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.sizeToFit()
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
-        label.textColor = .gray
+        label.textColor = .white
         return label
     }()
     
@@ -43,6 +51,7 @@ class SupportableCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         addSubview(background)
+        addSubview(darkeningLayer)
         addSubview(label)
         
         background.snp.makeConstraints { make in
@@ -52,11 +61,17 @@ class SupportableCell: UICollectionViewCell {
             make.bottom.equalToSuperview()
         }
         
+        darkeningLayer.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        
         label.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(4)
+            make.bottom.equalToSuperview().offset(-4)
             make.trailing.equalToSuperview().offset(-4)
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
         }
     }
 }

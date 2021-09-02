@@ -46,7 +46,7 @@ class ProjectsCell: UICollectionViewCell {
             make.top.equalToSuperview().offset(30)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-20)
         }
 
         projectsContainer.addSubview(projectsLabel)

@@ -70,6 +70,15 @@ extension ExploreContentView: UICollectionViewDataSource {
 
 extension ExploreContentView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: frame.size.width, height: 160)
+        switch indexPath.row {
+        case 0:
+            return CGSize(width: frame.size.width, height: 190)
+        case 1:
+            return CGSize(width: frame.size.width, height: 190)
+        case 2:
+            return CGSize(width: frame.size.width, height: 210)
+        default:
+            return CGSize(width: frame.size.width, height: 190)
+        }
     }
 }

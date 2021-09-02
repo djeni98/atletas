@@ -27,7 +27,7 @@ class ExploreViewController: UIViewController {
     override func loadView() {
         super.loadView()
         
-        setupSearchBar()
+//        setupSearchBar()
         setupContent()
     }
     
@@ -43,7 +43,7 @@ class ExploreViewController: UIViewController {
     func setupContent() {
         view.addSubview(contentView)
         contentView.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom)
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
@@ -58,7 +58,6 @@ class ExploreViewController: UIViewController {
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Ajude um atleta"
-        
     }
     
     
