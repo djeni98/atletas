@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CollectionCell: UICollectionViewCell {
+class SupportableCell: UICollectionViewCell {
     var data: Supportable? {
         didSet {
             guard let data = data else { return }

@@ -13,7 +13,9 @@ class SupportableRowView: UIView {
         layout.scrollDirection = .horizontal
         
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.register(CollectionCell.self, forCellWithReuseIdentifier: "cell")
+        
+        collection.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+        collection.register(SupportableCell.self, forCellWithReuseIdentifier: "cell")
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.delegate = self
         collection.dataSource = self
@@ -28,7 +30,7 @@ class SupportableRowView: UIView {
         Supportable(imageName: "???", text: "Ciclismo"),
         Supportable(imageName: "???", text: "Beteombro"),
         Supportable(imageName: "???", text: "Racketbol"),
-        Supportable(imageName: "???", text: "Ciclismo"),
+        Supportable(imageName: "???", text: "Ciclismo")
     ]
     
     required init?(coder: NSCoder) {
@@ -39,7 +41,7 @@ class SupportableRowView: UIView {
         super.init(frame: .zero)
         
         addSubview(collection)
-        collection.backgroundColor = .init(white: 1, alpha: 0)
+        collection.backgroundColor = .clear
         collection.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
@@ -56,7 +58,7 @@ extension SupportableRowView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SupportableCell
         cell.data = supportables[indexPath[1]]
         return cell
     }
