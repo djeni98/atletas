@@ -83,12 +83,13 @@ class ViewController: UIViewController {
         return row
     }()
 
+    let expectedHeight = 600
     
     override func loadView() {
         super.loadView()
         
         setupSearchBar()
-//        setupScroll()
+        setupScroll()
         setupSports()
         setupAthletes()
         setupProjects()
@@ -121,18 +122,18 @@ class ViewController: UIViewController {
     }
 
     func setupSports() {
-        view.addSubview(sportsContainer)
+        scrollContent.addSubview(sportsContainer)
         sportsContainer.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom).offset(25)
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().offset(-16)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
         }
         
         sportsContainer.addSubview(sportsLabel)
         sportsLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
         }
         
         sportsContainer.addSubview(sportsRow)
@@ -146,7 +147,7 @@ class ViewController: UIViewController {
     }
     
     func setupAthletes() {
-        view.addSubview(athletesContainer)
+        scrollContent.addSubview(athletesContainer)
         athletesContainer.snp.makeConstraints { make in
             make.top.equalTo(sportsContainer.snp.bottom).offset(30)
             make.leading.equalToSuperview().offset(16)
@@ -171,7 +172,7 @@ class ViewController: UIViewController {
     }
     
     func setupProjects() {
-        view.addSubview(projectsContainer)
+        scrollContent.addSubview(projectsContainer)
         projectsContainer.snp.makeConstraints { make in
             make.top.equalTo(athletesContainer.snp.bottom).offset(30)
             make.leading.equalToSuperview().offset(16)
@@ -207,21 +208,21 @@ class ViewController: UIViewController {
     
 }
 
-//#if DEBUG
-//import SwiftUI
-//struct ViewController_Preview: PreviewProvider {
-//    static var previews: some View {
-//        ContentView().previewDevice("iPhone 12")
-//    }
-//
-//    struct ContentView: UIViewControllerRepresentable {
-//
-//        func makeUIViewController(context: Context) -> UIViewController {
-//            return ViewController()
-//        }
-//
-//        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-//        }
-//    }
-//}
-//#endif
+#if DEBUG
+import SwiftUI
+struct ViewController_Preview: PreviewProvider {
+    static var previews: some View {
+        ContentView().previewDevice("iPhone 12")
+    }
+
+    struct ContentView: UIViewControllerRepresentable {
+
+        func makeUIViewController(context: Context) -> UIViewController {
+            UINavigationController(rootViewController: ViewController())
+        }
+
+        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        }
+    }
+}
+#endif

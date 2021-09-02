@@ -25,6 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let nav = UINavigationController(rootViewController: ViewController())
         window?.rootViewController = nav
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
