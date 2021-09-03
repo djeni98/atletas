@@ -121,7 +121,7 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		614282F626E110EF00F04601 /* ExploreView */ = {
+		614282F626E110EF00F04601 /* ExploreViewController */ = {
 			isa = PBXGroup;
 			children = (
 				614282F926E28A6A00F04601 /* ExploreViewController.swift */,
@@ -132,7 +132,7 @@
 				614282F026E1109100F04601 /* SportsCell.swift */,
 				614282F226E110A300F04601 /* AthletesCell.swift */,
 			);
-			path = ExploreView;
+			path = ExploreViewController;
 			sourceTree = "<group>";
 		};
 		B7653C8E26DE5D1A0070BBF9 /* components */ = {
@@ -147,6 +147,7 @@
 		B7653C9126DED2120070BBF9 /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				614282F626E110EF00F04601 /* ExploreViewController */,
 				B7653C9226DED21B0070BBF9 /* SearchViewController */,
 			);
 			path = screens;
@@ -186,15 +187,13 @@
 				B7D5E82026D7BABB0090966F /* AppDelegate.swift */,
 				B7D5E82226D7BABB0090966F /* SceneDelegate.swift */,
 				B7D5E82426D7BABB0090966F /* ViewController.swift */,
-				614282F626E110EF00F04601 /* ExploreView */,
 				B7D5E82926D7BABD0090966F /* Assets.xcassets */,
 				B7D5E82B26D7BABD0090966F /* LaunchScreen.storyboard */,
 				B7D5E82E26D7BABD0090966F /* Info.plist */,
 				610C7D8626DFB8E800F2FDB6 /* ViewModels */,
-				610C7D6E26D7D99900F2FDB6 /* Models */,
 				B7653C9126DED2120070BBF9 /* screens */,
 				B7653C8E26DE5D1A0070BBF9 /* components */,
-				610C7D6E26D7D99900F2FDB6 /* models */,
+				610C7D6E26D7D99900F2FDB6 /* Models */,
 			);
 			path = Atletas;
 			sourceTree = "<group>";
