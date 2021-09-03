@@ -6,16 +6,10 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        view.backgroundColor = .red
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-
+    
 }
 
 #if DEBUG
@@ -28,11 +22,10 @@ struct ViewController_Preview: PreviewProvider {
     struct ContentView: UIViewControllerRepresentable {
 
         func makeUIViewController(context: Context) -> UIViewController {
-            return ViewController()
+            UINavigationController(rootViewController: ViewController())
         }
 
         func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-            //
         }
     }
 }
