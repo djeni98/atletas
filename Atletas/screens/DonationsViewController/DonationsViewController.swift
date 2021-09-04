@@ -20,6 +20,11 @@ class DonationsViewController: UIViewController {
         
         setupContent()
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        content.updateHeaderViewHeight()
+    }
 
     func setupContent() {
         view.addSubview(content)
@@ -34,10 +39,11 @@ class DonationsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = UIColor(named: "background")
-        navigationController?.navigationBar.prefersLargeTitles = true
+        guard let navBar = navigationController?.navigationBar else { return }
+        navBar.prefersLargeTitles = true
         navigationItem.title = "Doações"
+        navBar.sizeToFit()
+        view.backgroundColor = UIColor(named: "background")
     }
 }
 

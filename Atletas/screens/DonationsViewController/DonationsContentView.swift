@@ -17,24 +17,17 @@ class DonationsContentView: UIView {
         tableView.register(DonationCell.self, forCellReuseIdentifier: "donation")
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.backgroundColor = UIColor(named: "background")
+        tableView.tableHeaderView = donationTableTitleView
         
         return tableView
     }()
     
-//    lazy var donationTableTitleView: DonationsTableTitleView = {
-//        let tableView = DonationsTableTitleView()
-//        tableView.backgroundColor = .red
-//        tableView.snp.makeConstraints { make in
-//            make.height.equalTo(50)
-//        }
-//
-//        return tableView
-//    }()
-//
-//    override func willMove(toSuperview newSuperview: UIView?) {
-//         super.willMove(toSuperview: newSuperview)
-//        donationsTableView.tableHeaderView = donationTableTitleView
-//       }
+    lazy var donationTableTitleView: DonationsTableTitleView = {
+        let tableView = DonationsTableTitleView()
+
+        return tableView
+    }()
+    
     
     var months: [MonthDonations] = [
         MonthDonations(month: "Julho", donations: [
@@ -50,8 +43,27 @@ class DonationsContentView: UIView {
             Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 40, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
             Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
             Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta")
+        ]),
+        MonthDonations(month: "Maio", donations: [
+            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
+            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
+            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 40, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
+            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
+            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta")
+        ]),
+        MonthDonations(month: "Abril", donations: [
+            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
+            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
+            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 40, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
+            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
+            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta")
         ])
     ]
+    
+    func updateHeaderViewHeight() {
+        guard let header = donationsTableView.tableHeaderView else { return }
+        header.frame.size.height = header.systemLayoutSizeFitting(CGSize(width: self.frame.width - 32.0, height: 0)).height
+    }
     
     required init?(coder: NSCoder) {
         fatalError("Couldn't init")

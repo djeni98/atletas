@@ -30,8 +30,8 @@ class DonationsTableSubheaderView: UIView {
         addSubview(label)
         label.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().offset(-16)
+            make.leading.equalToSuperview().offset(22)
+            make.trailing.equalToSuperview().offset(-22)
             make.bottom.equalToSuperview().offset(-3)
         }
     }

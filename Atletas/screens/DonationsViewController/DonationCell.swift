@@ -96,8 +96,8 @@ class DonationCell: UITableViewCell {
         addSubview(donationView)
         donationView.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().offset(-16)
+            make.leading.equalToSuperview().offset(22)
+            make.trailing.equalToSuperview().offset(-22)
             make.bottom.equalToSuperview().offset(-6)
             make.height.equalTo(70)
         }
@@ -132,8 +132,8 @@ class DonationCell: UITableViewCell {
         statusImage.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalTo(chevronImage.snp.leading).offset(-20)
-            make.width.equalTo(25)
-            make.height.equalTo(25)
+            make.width.equalTo(30)
+            make.height.equalTo(30)
         }
     }
 

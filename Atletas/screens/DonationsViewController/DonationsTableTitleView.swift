@@ -23,14 +23,14 @@ class DonationsTableTitleView: UIView {
     }
     
     override init(frame: CGRect) {
-        super.init(frame: .zero)
+        super.init(frame: frame)
         
         addSubview(label)
         label.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().offset(-16)
-            make.bottom.equalToSuperview()
+            make.top.equalToSuperview().offset(20)
+            make.leading.equalToSuperview().offset(22)
+            make.trailing.equalToSuperview().offset(-22)
+            make.bottom.equalToSuperview().offset(5)
         }
     }
     
