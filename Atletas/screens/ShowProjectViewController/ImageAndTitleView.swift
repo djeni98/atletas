@@ -97,3 +97,46 @@ class ImageAndTitleView: UIView {
         }
     }
 }
+
+#if DEBUG
+import SwiftUI
+struct ImageAndTitleView_Preview: PreviewProvider {
+
+    static var previews: some View {
+        Group {
+            ContentView {
+                ImageAndTitleView()
+            }
+        }.previewLayout(.fixed(width: 400, height: 400))
+    }
+
+    struct ContentView: UIViewRepresentable {
+        let viewBuilder: () -> UIView
+
+        init(_ viewBuilder: @escaping () -> UIView) {
+            self.viewBuilder = {
+                let superView = UIView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
+                let view = viewBuilder()
+
+                superView.addSubview(view)
+                view.translatesAutoresizingMaskIntoConstraints = true
+                view.snp.makeConstraints { make in
+                    make.centerY.equalToSuperview()
+                    make.centerX.equalToSuperview()
+                    make.width.equalTo(375)
+                }
+
+                return superView
+            }
+        }
+
+        func makeUIView(context: Context) -> some UIView {
+            viewBuilder()
+        }
+
+        func updateUIView(_ uiView: UIViewType, context: Context) {
+            // Not needed
+        }
+    }
+}
+#endif

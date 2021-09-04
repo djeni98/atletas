@@ -93,8 +93,6 @@ class GraySquareView: UIView {
 
 #if DEBUG
 import SwiftUI
-let VIEW_WIDTH: CGFloat = 200
-let VIEW_HEIGHT: CGFloat = 150
 struct GraySquareView_Preview: PreviewProvider {
     static var previews: some View {
         Group {
@@ -104,7 +102,7 @@ struct GraySquareView_Preview: PreviewProvider {
             ContentView {
                 GraySquareView(value: "05/09/2021", type: .deadline)
             }
-        }.previewLayout(.fixed(width: VIEW_WIDTH, height: VIEW_HEIGHT))
+        }.previewLayout(.fixed(width: 200, height: 150))
     }
 
     struct ContentView: UIViewRepresentable {
@@ -112,7 +110,7 @@ struct GraySquareView_Preview: PreviewProvider {
 
         init(_ viewBuilder: @escaping () -> UIView) {
             self.viewBuilder = {
-                let superView = UIView(frame: CGRect(x: 0, y: 0, width: VIEW_WIDTH, height: VIEW_HEIGHT))
+                let superView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 150))
                 let view = viewBuilder()
 
                 superView.addSubview(view)
