@@ -54,6 +54,7 @@ class DonationCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.tintColor = UIColor(named: "donationText")
         return label
     }()
     
@@ -61,6 +62,7 @@ class DonationCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
+        label.tintColor = UIColor(named: "donationText")
         return label
     }()
     
@@ -69,7 +71,7 @@ class DonationCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(systemName: "chevron.right")
-        imageView.tintColor = .black
+        imageView.tintColor = UIColor(named: "donationText")
         return imageView
     }()
 
