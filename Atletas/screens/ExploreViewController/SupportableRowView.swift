@@ -14,7 +14,7 @@ class SupportableRowView: UIView {
         
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
-        collection.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+        collection.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         collection.register(SupportableCell.self, forCellWithReuseIdentifier: "cell")
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.delegate = self
