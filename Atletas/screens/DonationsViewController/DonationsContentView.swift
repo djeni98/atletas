@@ -8,8 +8,6 @@
 import UIKit
 
 class DonationsContentView: UIView {
-    var actualSection = 0
-    
     
     lazy var donationsTableView: UITableView = {
         let tableView = UITableView()
@@ -84,13 +82,12 @@ extension DonationsContentView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        actualSection = section
         return months[section].donations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = donationsTableView.dequeueReusableCell(withIdentifier: "donation", for: indexPath) as! DonationCell
-        cell.data = months[actualSection].donations[indexPath.row]
+        cell.data = months[indexPath.section].donations[indexPath.row]
         cell.backgroundColor = .clear
         return cell
     }
