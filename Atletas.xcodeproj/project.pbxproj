@@ -19,6 +19,7 @@
 		610C7D8526DFB8E300F2FDB6 /* Supportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D8426DFB8E300F2FDB6 /* Supportable.swift */; };
 		610C7D8826DFBC4300F2FDB6 /* SupportableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D8726DFBC4300F2FDB6 /* SupportableCell.swift */; };
 		610C7D8A26E0FC1500F2FDB6 /* ExploreContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D8926E0FC1500F2FDB6 /* ExploreContentView.swift */; };
+		610FE1CC26E423D9002FC0A5 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610FE1CB26E423D9002FC0A5 /* ProjectViewController.swift */; };
 		614282F126E1109100F04601 /* SportsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F026E1109100F04601 /* SportsCell.swift */; };
 		614282F326E110A300F04601 /* AthletesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F226E110A300F04601 /* AthletesCell.swift */; };
 		614282F526E110B000F04601 /* ProjectsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F426E110B000F04601 /* ProjectsCell.swift */; };
@@ -55,6 +56,7 @@
 		610C7D8426DFB8E300F2FDB6 /* Supportable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supportable.swift; sourceTree = "<group>"; };
 		610C7D8726DFBC4300F2FDB6 /* SupportableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportableCell.swift; sourceTree = "<group>"; };
 		610C7D8926E0FC1500F2FDB6 /* ExploreContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreContentView.swift; sourceTree = "<group>"; };
+		610FE1CB26E423D9002FC0A5 /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		614282F026E1109100F04601 /* SportsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCell.swift; sourceTree = "<group>"; };
 		614282F226E110A300F04601 /* AthletesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthletesCell.swift; sourceTree = "<group>"; };
 		614282F426E110B000F04601 /* ProjectsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCell.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		610FE1CA26E423B8002FC0A5 /* ProjectViewController */ = {
+			isa = PBXGroup;
+			children = (
+				610FE1CB26E423D9002FC0A5 /* ProjectViewController.swift */,
+			);
+			path = ProjectViewController;
+			sourceTree = "<group>";
+		};
 		614282F626E110EF00F04601 /* ExploreViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +160,7 @@
 		B7653C9126DED2120070BBF9 /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				610FE1CA26E423B8002FC0A5 /* ProjectViewController */,
 				614282F626E110EF00F04601 /* ExploreViewController */,
 				B7653C9226DED21B0070BBF9 /* SearchViewController */,
 			);
@@ -314,6 +325,7 @@
 				610C7D7226D7DB3100F2FDB6 /* Supporter.swift in Sources */,
 				610C7D7A26D80C5F00F2FDB6 /* SportCategoryEnum.swift in Sources */,
 				610C7D8826DFBC4300F2FDB6 /* SupportableCell.swift in Sources */,
+				610FE1CC26E423D9002FC0A5 /* ProjectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
