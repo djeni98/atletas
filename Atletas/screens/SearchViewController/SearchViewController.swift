@@ -10,7 +10,6 @@ import UIKit
 // SearchBar references:
 // https://github.com/codepath/ios_guides/wiki/Search-Bar-Guide
 // https://www.raywenderlich.com/4363809-uisearchcontroller-tutorial-getting-started
-// https://github.com/codepath/ios_guides/wiki/Search-Bar-Guide
 
 enum SearchScopeButton: String, CaseIterable {
     case all = "Principais"
@@ -19,11 +18,9 @@ enum SearchScopeButton: String, CaseIterable {
     case project = "Projetos"
 }
 
-class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
+class SearchViewController: UIViewController, UISearchBarDelegate {
     var tableView: UITableView!
     var tableViewAdapter = AthleteListTableViewAdapter()
-
-    var searchController: UISearchController!
 
     override func loadView() {
         super.loadView()
@@ -50,35 +47,37 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.sizeToFit()
-        tableView.tableHeaderView = searchController.searchBar
-
-        definesPresentationContext = true
-
-        searchController.searchBar.scopeButtonTitles = SearchScopeButton.allCases.map { $0.rawValue }
-        searchController.searchBar.delegate = self
+        let searchBarController = SearchBarWithScopeButton(width: view.frame.width)
+        searchBarController.setDelegate(self)
+        tableView.tableHeaderView = searchBarController
+        tableView.tableFooterView = UIView()
     }
 
-    func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        let category = SearchScopeButton(
-            rawValue: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        )
-
-        tableViewAdapter.filterContent(by: searchBar.text, withCategory: category)
+    func searchBar(_ searchBar: UISearchBar,
+                   textDidChange searchText: String) {
+        let selectedScope = searchBar.selectedScopeButtonIndex
+        let category = SearchScopeButton.allCases[selectedScope]
+        tableViewAdapter.filterContent(by: searchText, withCategory: category)
         tableView.reloadData()
+    }
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
     }
 
     func searchBar(_ searchBar: UISearchBar,
                    selectedScopeButtonIndexDidChange selectedScope: Int) {
-        let category = SearchScopeButton(
-            rawValue: searchBar.scopeButtonTitles![selectedScope]
-        )
+        let category = SearchScopeButton.allCases[selectedScope]
         tableViewAdapter.filterContent(by: searchBar.text, withCategory: category)
         tableView.reloadData()
     }
+
 }
 
 #if DEBUG
