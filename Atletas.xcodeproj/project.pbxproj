@@ -34,6 +34,7 @@
 		B7653C9826DEDDBD0070BBF9 /* AthleteListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7653C9726DEDDBD0070BBF9 /* AthleteListItemCell.swift */; };
 		B7653C9A26DEE06A0070BBF9 /* AthleteListTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7653C9926DEE06A0070BBF9 /* AthleteListTableViewAdapter.swift */; };
 		B775EF9B26E38E0E0005502E /* GreenRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775EF9A26E38E0E0005502E /* GreenRoundedButton.swift */; };
+		B775EF9D26E395A00005502E /* ShowProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775EF9C26E395A00005502E /* ShowProjectViewController.swift */; };
 		B7B7C7B526DFB7D7009000D1 /* SearchBarWithScopeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */; };
 		B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82026D7BABB0090966F /* AppDelegate.swift */; };
 		B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82226D7BABB0090966F /* SceneDelegate.swift */; };
@@ -70,6 +71,7 @@
 		B7653C9726DEDDBD0070BBF9 /* AthleteListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteListItemCell.swift; sourceTree = "<group>"; };
 		B7653C9926DEE06A0070BBF9 /* AthleteListTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteListTableViewAdapter.swift; sourceTree = "<group>"; };
 		B775EF9A26E38E0E0005502E /* GreenRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenRoundedButton.swift; sourceTree = "<group>"; };
+		B775EF9C26E395A00005502E /* ShowProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowProjectViewController.swift; sourceTree = "<group>"; };
 		B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarWithScopeButton.swift; sourceTree = "<group>"; };
 		B7D5E81D26D7BABB0090966F /* Atletas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atletas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D5E82026D7BABB0090966F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		B7653C9126DED2120070BBF9 /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				B775EF9726E38C9C0005502E /* ShowProjectViewController */,
 				614282F626E110EF00F04601 /* ExploreViewController */,
 				B7653C9226DED21B0070BBF9 /* SearchViewController */,
 			);
@@ -164,6 +167,14 @@
 				B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */,
 			);
 			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		B775EF9726E38C9C0005502E /* ShowProjectViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B775EF9C26E395A00005502E /* ShowProjectViewController.swift */,
+			);
+			path = ShowProjectViewController;
 			sourceTree = "<group>";
 		};
 		B7D5E81426D7BABB0090966F = {
@@ -304,6 +315,7 @@
 				614282F326E110A300F04601 /* AthletesCell.swift in Sources */,
 				B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */,
 				610C7D7826D80BCC00F2FDB6 /* LevelEnum.swift in Sources */,
+				B775EF9D26E395A00005502E /* ShowProjectViewController.swift in Sources */,
 				B254BFE926D8304700A68D55 /* UserType.swift in Sources */,
 				B7653C9426DED23B0070BBF9 /* SearchViewController.swift in Sources */,
 				B254BFE526D8301F00A68D55 /* Donation.swift in Sources */,
