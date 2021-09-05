@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     }()
     
     @objc func pressed() {
-        self.present(ProjectViewController(), animated: true)
+        navigationController?.present(UINavigationController(rootViewController: ProjectViewController()), animated: true)
     }
     
     override func loadView() {
@@ -29,6 +29,9 @@ class ViewController: UIViewController {
             make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(16)
             make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-16)
         }
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Maequisnho"
     }
 }
 

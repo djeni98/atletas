@@ -20,6 +20,9 @@
 		610C7D8826DFBC4300F2FDB6 /* SupportableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D8726DFBC4300F2FDB6 /* SupportableCell.swift */; };
 		610C7D8A26E0FC1500F2FDB6 /* ExploreContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D8926E0FC1500F2FDB6 /* ExploreContentView.swift */; };
 		610FE1CC26E423D9002FC0A5 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610FE1CB26E423D9002FC0A5 /* ProjectViewController.swift */; };
+		610FE1CE26E547B6002FC0A5 /* ProjectContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610FE1CD26E547B6002FC0A5 /* ProjectContentView.swift */; };
+		610FE1D026E5493E002FC0A5 /* ProjectImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610FE1CF26E5493E002FC0A5 /* ProjectImageView.swift */; };
+		610FE1D326E54D42002FC0A5 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610FE1D226E54D42002FC0A5 /* UIFontExtension.swift */; };
 		614282F126E1109100F04601 /* SportsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F026E1109100F04601 /* SportsCell.swift */; };
 		614282F326E110A300F04601 /* AthletesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F226E110A300F04601 /* AthletesCell.swift */; };
 		614282F526E110B000F04601 /* ProjectsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F426E110B000F04601 /* ProjectsCell.swift */; };
@@ -57,6 +60,9 @@
 		610C7D8726DFBC4300F2FDB6 /* SupportableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportableCell.swift; sourceTree = "<group>"; };
 		610C7D8926E0FC1500F2FDB6 /* ExploreContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreContentView.swift; sourceTree = "<group>"; };
 		610FE1CB26E423D9002FC0A5 /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
+		610FE1CD26E547B6002FC0A5 /* ProjectContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectContentView.swift; sourceTree = "<group>"; };
+		610FE1CF26E5493E002FC0A5 /* ProjectImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectImageView.swift; sourceTree = "<group>"; };
+		610FE1D226E54D42002FC0A5 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		614282F026E1109100F04601 /* SportsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCell.swift; sourceTree = "<group>"; };
 		614282F226E110A300F04601 /* AthletesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthletesCell.swift; sourceTree = "<group>"; };
 		614282F426E110B000F04601 /* ProjectsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCell.swift; sourceTree = "<group>"; };
@@ -129,8 +135,18 @@
 			isa = PBXGroup;
 			children = (
 				610FE1CB26E423D9002FC0A5 /* ProjectViewController.swift */,
+				610FE1CD26E547B6002FC0A5 /* ProjectContentView.swift */,
+				610FE1CF26E5493E002FC0A5 /* ProjectImageView.swift */,
 			);
 			path = ProjectViewController;
+			sourceTree = "<group>";
+		};
+		610FE1D126E54D20002FC0A5 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				610FE1D226E54D42002FC0A5 /* UIFontExtension.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 		614282F626E110EF00F04601 /* ExploreViewController */ = {
@@ -208,6 +224,7 @@
 				B7653C9126DED2120070BBF9 /* screens */,
 				B7653C8E26DE5D1A0070BBF9 /* components */,
 				610C7D6E26D7D99900F2FDB6 /* Models */,
+				610FE1D126E54D20002FC0A5 /* extensions */,
 			);
 			path = Atletas;
 			sourceTree = "<group>";
@@ -295,7 +312,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				610FE1CE26E547B6002FC0A5 /* ProjectContentView.swift in Sources */,
 				610C7D8A26E0FC1500F2FDB6 /* ExploreContentView.swift in Sources */,
+				610FE1D326E54D42002FC0A5 /* UIFontExtension.swift in Sources */,
 				614282F126E1109100F04601 /* SportsCell.swift in Sources */,
 				610C7D7C26D918D300F2FDB6 /* SocialMedia.swift in Sources */,
 				B7653C9026DE5D470070BBF9 /* AthleteListItem.swift in Sources */,
@@ -313,6 +332,7 @@
 				B254BFE726D8302B00A68D55 /* DonationStatusEnum.swift in Sources */,
 				610C7D8526DFB8E300F2FDB6 /* Supportable.swift in Sources */,
 				614282F326E110A300F04601 /* AthletesCell.swift in Sources */,
+				610FE1D026E5493E002FC0A5 /* ProjectImageView.swift in Sources */,
 				B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */,
 				610C7D7826D80BCC00F2FDB6 /* LevelEnum.swift in Sources */,
 				B254BFE926D8304700A68D55 /* UserType.swift in Sources */,
