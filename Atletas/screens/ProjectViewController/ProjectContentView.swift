@@ -11,6 +11,7 @@ class ProjectContentView: UIView {
 
     lazy var imageView: ProjectImageView = {
         let view = ProjectImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     

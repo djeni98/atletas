@@ -10,6 +10,7 @@ import UIKit
 class ProjectViewController: UIViewController {
     lazy var contentView: ProjectContentView = {
         let view = ProjectContentView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         return view
     }()

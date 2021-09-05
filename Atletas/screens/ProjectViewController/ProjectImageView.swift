@@ -10,19 +10,30 @@ import UIKit
 class ProjectImageView: UIView {
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "???")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
     }()
     
+    lazy var darkeningLayer: UIView = {
+        let layer = UIView()
+        layer.translatesAutoresizingMaskIntoConstraints = false
+        layer.layer.cornerRadius = 8
+        layer.backgroundColor = .init(white: 0, alpha: 0.5)
+        return layer
+    }()
+    
     lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.preferredFont(for: .title2, weight: .bold)
         label.adjustsFontForContentSizeCategory = true
         label.text = "Ljhsd khfaasdlkajsdjkalsks"
         label.numberOfLines = 0
-        label.backgroundColor = .blue
+        label.textColor = .white
         return label
     }()
     
