@@ -129,7 +129,7 @@ class ShowProjectViewController: UIViewController {
         }
 
         scrollViewContainer.snp.makeConstraints { make in
-            make.edges.equalTo(scrollView)
+            make.edges.equalTo(scrollView).inset(UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0))
             // this is important for scrolling
             make.width.equalTo(scrollView)
         }
