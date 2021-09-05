@@ -29,8 +29,8 @@ class ShowProjectViewController: UIViewController {
         return view
     }()
 
-    lazy var aboutTextView: UITextView = {
-        let view = UITextView()
+    lazy var aboutView: AboutView = {
+        let view = AboutView()
         view.translatesAutoresizingMaskIntoConstraints = false
 
         return view
@@ -58,6 +58,14 @@ class ShowProjectViewController: UIViewController {
 
         projectMetricsView.snp.makeConstraints { make in
             make.top.equalTo(headerView.snp.bottom)
+            make.leading.equalToSuperview().offset(32)
+            make.trailing.equalToSuperview().offset(-32)
+        }
+
+        view.addSubview(aboutView)
+
+        aboutView.snp.makeConstraints { make in
+            make.top.equalTo(projectMetricsView.snp.bottom)
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
         }

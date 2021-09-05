@@ -47,6 +47,7 @@
 		B7D5E83726D7BAD40090966F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7D5E83626D7BAD40090966F /* CloudKit.framework */; };
 		B7E52DCF26E430EA0025A7A1 /* ImageAndTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E52DCE26E430EA0025A7A1 /* ImageAndTitleView.swift */; };
 		B7E52DD126E435270025A7A1 /* ProjectMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E52DD026E435270025A7A1 /* ProjectMetricsView.swift */; };
+		B7E52DD326E43C540025A7A1 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E52DD226E43C540025A7A1 /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		B7D5E83626D7BAD40090966F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		B7E52DCE26E430EA0025A7A1 /* ImageAndTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndTitleView.swift; sourceTree = "<group>"; };
 		B7E52DD026E435270025A7A1 /* ProjectMetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMetricsView.swift; sourceTree = "<group>"; };
+		B7E52DD226E43C540025A7A1 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				B775EFA926E3DF1A0005502E /* GraySquareView.swift */,
 				B7E52DCE26E430EA0025A7A1 /* ImageAndTitleView.swift */,
 				B7E52DD026E435270025A7A1 /* ProjectMetricsView.swift */,
+				B7E52DD226E43C540025A7A1 /* AboutView.swift */,
 			);
 			path = ShowProjectViewController;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				B775EFA526E3C7B40005502E /* ProjectProgressView.swift in Sources */,
 				B775EF9D26E395A00005502E /* ShowProjectViewController.swift in Sources */,
 				B254BFE926D8304700A68D55 /* UserType.swift in Sources */,
+				B7E52DD326E43C540025A7A1 /* AboutView.swift in Sources */,
 				B7653C9426DED23B0070BBF9 /* SearchViewController.swift in Sources */,
 				B254BFE526D8301F00A68D55 /* Donation.swift in Sources */,
 				B254BFE326D82FF900A68D55 /* Project.swift in Sources */,
