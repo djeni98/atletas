@@ -19,6 +19,12 @@
 		610C7D8526DFB8E300F2FDB6 /* Supportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D8426DFB8E300F2FDB6 /* Supportable.swift */; };
 		610C7D8826DFBC4300F2FDB6 /* SupportableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D8726DFBC4300F2FDB6 /* SupportableCell.swift */; };
 		610C7D8A26E0FC1500F2FDB6 /* ExploreContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C7D8926E0FC1500F2FDB6 /* ExploreContentView.swift */; };
+		613C3AF826E29A6B00968D43 /* DonationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613C3AF726E29A6B00968D43 /* DonationsViewController.swift */; };
+		613C3AFA26E2A04000968D43 /* DonationsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613C3AF926E2A04000968D43 /* DonationsContentView.swift */; };
+		613C3AFC26E2A32000968D43 /* DonationsTableTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613C3AFB26E2A32000968D43 /* DonationsTableTitleView.swift */; };
+		613C3AFE26E2A35100968D43 /* DonationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613C3AFD26E2A35100968D43 /* DonationCell.swift */; };
+		613C3B0026E2B66C00968D43 /* MonthDonations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613C3AFF26E2B66C00968D43 /* MonthDonations.swift */; };
+		613C3B0226E2BE6400968D43 /* DonationsTableSubheaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613C3B0126E2BE6400968D43 /* DonationsTableSubheaderView.swift */; };
 		614282F126E1109100F04601 /* SportsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F026E1109100F04601 /* SportsCell.swift */; };
 		614282F326E110A300F04601 /* AthletesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F226E110A300F04601 /* AthletesCell.swift */; };
 		614282F526E110B000F04601 /* ProjectsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F426E110B000F04601 /* ProjectsCell.swift */; };
@@ -63,6 +69,12 @@
 		610C7D8426DFB8E300F2FDB6 /* Supportable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supportable.swift; sourceTree = "<group>"; };
 		610C7D8726DFBC4300F2FDB6 /* SupportableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportableCell.swift; sourceTree = "<group>"; };
 		610C7D8926E0FC1500F2FDB6 /* ExploreContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreContentView.swift; sourceTree = "<group>"; };
+		613C3AF726E29A6B00968D43 /* DonationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationsViewController.swift; sourceTree = "<group>"; };
+		613C3AF926E2A04000968D43 /* DonationsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationsContentView.swift; sourceTree = "<group>"; };
+		613C3AFB26E2A32000968D43 /* DonationsTableTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationsTableTitleView.swift; sourceTree = "<group>"; };
+		613C3AFD26E2A35100968D43 /* DonationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationCell.swift; sourceTree = "<group>"; };
+		613C3AFF26E2B66C00968D43 /* MonthDonations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthDonations.swift; sourceTree = "<group>"; };
+		613C3B0126E2BE6400968D43 /* DonationsTableSubheaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationsTableSubheaderView.swift; sourceTree = "<group>"; };
 		614282F026E1109100F04601 /* SportsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCell.swift; sourceTree = "<group>"; };
 		614282F226E110A300F04601 /* AthletesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthletesCell.swift; sourceTree = "<group>"; };
 		614282F426E110B000F04601 /* ProjectsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCell.swift; sourceTree = "<group>"; };
@@ -135,8 +147,21 @@
 			isa = PBXGroup;
 			children = (
 				610C7D8426DFB8E300F2FDB6 /* Supportable.swift */,
+				613C3AFF26E2B66C00968D43 /* MonthDonations.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		613C3AF626E29A5500968D43 /* DonationsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				613C3AF726E29A6B00968D43 /* DonationsViewController.swift */,
+				613C3AF926E2A04000968D43 /* DonationsContentView.swift */,
+				613C3AFB26E2A32000968D43 /* DonationsTableTitleView.swift */,
+				613C3AFD26E2A35100968D43 /* DonationCell.swift */,
+				613C3B0126E2BE6400968D43 /* DonationsTableSubheaderView.swift */,
+			);
+			path = DonationsViewController;
 			sourceTree = "<group>";
 		};
 		614282F626E110EF00F04601 /* ExploreViewController */ = {
@@ -168,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				B775EF9726E38C9C0005502E /* ShowProjectViewController */,
+				613C3AF626E29A5500968D43 /* DonationsViewController */,
 				614282F626E110EF00F04601 /* ExploreViewController */,
 				B7653C9226DED21B0070BBF9 /* SearchViewController */,
 			);
@@ -332,6 +358,7 @@
 				B77E60F126E4F62A00B29E45 /* DateExtension.swift in Sources */,
 				610C7D7626D80B1500F2FDB6 /* Badge.swift in Sources */,
 				610C7D7026D7DA6F00F2FDB6 /* User.swift in Sources */,
+				613C3AFA26E2A04000968D43 /* DonationsContentView.swift in Sources */,
 				B254BFEB26D8307700A68D55 /* SportEnum.swift in Sources */,
 				B775EFAA26E3DF1A0005502E /* GraySquareView.swift in Sources */,
 				B775EFA826E3DD850005502E /* UIColorExtension.swift in Sources */,
@@ -341,9 +368,11 @@
 				614282F526E110B000F04601 /* ProjectsCell.swift in Sources */,
 				B7D5E82526D7BABB0090966F /* ViewController.swift in Sources */,
 				B7653C9826DEDDBD0070BBF9 /* AthleteListItemCell.swift in Sources */,
+				613C3AF826E29A6B00968D43 /* DonationsViewController.swift in Sources */,
 				B7B7C7B526DFB7D7009000D1 /* SearchBarWithScopeButton.swift in Sources */,
 				B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */,
 				B7E52DCF26E430EA0025A7A1 /* ImageAndTitleView.swift in Sources */,
+				613C3AFE26E2A35100968D43 /* DonationCell.swift in Sources */,
 				B254BFE726D8302B00A68D55 /* DonationStatusEnum.swift in Sources */,
 				610C7D8526DFB8E300F2FDB6 /* Supportable.swift in Sources */,
 				614282F326E110A300F04601 /* AthletesCell.swift in Sources */,
@@ -351,15 +380,18 @@
 				610C7D7826D80BCC00F2FDB6 /* LevelEnum.swift in Sources */,
 				B775EFA526E3C7B40005502E /* ProjectProgressView.swift in Sources */,
 				B775EF9D26E395A00005502E /* ShowProjectViewController.swift in Sources */,
+				613C3B0026E2B66C00968D43 /* MonthDonations.swift in Sources */,
 				B254BFE926D8304700A68D55 /* UserType.swift in Sources */,
 				B7E52DD326E43C540025A7A1 /* AboutView.swift in Sources */,
 				B7653C9426DED23B0070BBF9 /* SearchViewController.swift in Sources */,
 				B254BFE526D8301F00A68D55 /* Donation.swift in Sources */,
+				613C3AFC26E2A32000968D43 /* DonationsTableTitleView.swift in Sources */,
 				B254BFE326D82FF900A68D55 /* Project.swift in Sources */,
 				B254BFED26D8308F00A68D55 /* Sport.swift in Sources */,
 				610C7D8326DFB3B500F2FDB6 /* SupportableRowView.swift in Sources */,
 				614282FA26E28A6A00F04601 /* ExploreViewController.swift in Sources */,
 				610C7D7226D7DB3100F2FDB6 /* Supporter.swift in Sources */,
+				613C3B0226E2BE6400968D43 /* DonationsTableSubheaderView.swift in Sources */,
 				610C7D7A26D80C5F00F2FDB6 /* SportCategoryEnum.swift in Sources */,
 				610C7D8826DFBC4300F2FDB6 /* SupportableCell.swift in Sources */,
 			);

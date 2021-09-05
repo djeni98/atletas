@@ -8,5 +8,5 @@
 import Foundation
 
 enum DonationStatusEnum {
-    case pending, confirmed
+    case pending, confirmed, rejected
 }

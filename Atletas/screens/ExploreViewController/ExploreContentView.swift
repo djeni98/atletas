@@ -24,7 +24,7 @@ class ExploreContentView: UIView {
     }()
     
     required init?(coder: NSCoder) {
-        fatalError("abuble")
+        fatalError("Couldn't init")
     }
     
     override init(frame: CGRect) {
