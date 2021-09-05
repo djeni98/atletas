@@ -38,6 +38,7 @@
 		B775EFA526E3C7B40005502E /* ProjectProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775EFA426E3C7B40005502E /* ProjectProgressView.swift */; };
 		B775EFA826E3DD850005502E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775EFA726E3DD850005502E /* UIColorExtension.swift */; };
 		B775EFAA26E3DF1A0005502E /* GraySquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775EFA926E3DF1A0005502E /* GraySquareView.swift */; };
+		B77E60F126E4F62A00B29E45 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E60F026E4F62A00B29E45 /* DateExtension.swift */; };
 		B7B7C7B526DFB7D7009000D1 /* SearchBarWithScopeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */; };
 		B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82026D7BABB0090966F /* AppDelegate.swift */; };
 		B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82226D7BABB0090966F /* SceneDelegate.swift */; };
@@ -81,6 +82,7 @@
 		B775EFA426E3C7B40005502E /* ProjectProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectProgressView.swift; sourceTree = "<group>"; };
 		B775EFA726E3DD850005502E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		B775EFA926E3DF1A0005502E /* GraySquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraySquareView.swift; sourceTree = "<group>"; };
+		B77E60F026E4F62A00B29E45 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarWithScopeButton.swift; sourceTree = "<group>"; };
 		B7D5E81D26D7BABB0090966F /* Atletas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atletas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D5E82026D7BABB0090966F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				B775EFA726E3DD850005502E /* UIColorExtension.swift */,
+				B77E60F026E4F62A00B29E45 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				610C7D7C26D918D300F2FDB6 /* SocialMedia.swift in Sources */,
 				B7653C9026DE5D470070BBF9 /* AthleteListItem.swift in Sources */,
 				B775EF9B26E38E0E0005502E /* GreenRoundedButton.swift in Sources */,
+				B77E60F126E4F62A00B29E45 /* DateExtension.swift in Sources */,
 				610C7D7626D80B1500F2FDB6 /* Badge.swift in Sources */,
 				610C7D7026D7DA6F00F2FDB6 /* User.swift in Sources */,
 				B254BFEB26D8307700A68D55 /* SportEnum.swift in Sources */,

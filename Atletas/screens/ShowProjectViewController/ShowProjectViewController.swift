@@ -18,7 +18,7 @@ class ShowProjectViewController: UIViewController {
             image: image,
             about: "Trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n" + "Trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             goal: 3500,
-            deadline: "05/09/2021",
+            deadline: "05/12/2022",
             sport: .softball,
             category: .brazilianTeam
         )
@@ -49,7 +49,8 @@ class ShowProjectViewController: UIViewController {
     }()
 
     lazy var imageAndTitleView: ImageAndTitleView = {
-        let view = ImageAndTitleView(title: project.title, subtitle: "XX dias restantes (Arrumar a data)", image: project.image)
+        let subtitle = project.getRemainingTimeInString()
+        let view = ImageAndTitleView(title: project.title, subtitle: subtitle, image: project.image)
         view.translatesAutoresizingMaskIntoConstraints = false
 
         return view
