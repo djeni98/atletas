@@ -12,15 +12,18 @@ class Donation {
     
     var receiptImage: UIImage
     let supporter: String
+    let project: String
     let supporterAmount: Double
     let athleteAmount: Double
     var status: DonationStatusEnum
     
-    init(receiptImage: UIImage, supporter: String, supporterAmount: Double, athleteAmount: Double, status: DonationStatusEnum) {
+    init(receiptImage: UIImage, supporter: String, supporterAmount: Double, athleteAmount: Double, status: DonationStatusEnum, project: String) {
         self.receiptImage = receiptImage
         self.supporter = supporter
         self.supporterAmount = supporterAmount
         self.athleteAmount = athleteAmount
         self.status = status
+        self.project = project
+        
     }
 }
