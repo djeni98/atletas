@@ -10,6 +10,7 @@ import UIKit
 class DonationsTableSubheaderView: UIView {
     lazy var label: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         return label
     }()
