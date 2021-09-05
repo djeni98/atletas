@@ -34,9 +34,9 @@ class ImageAndTitleView: UIView {
         return label
     }()
 
-    init(title: String, subtitle: String) {
+    init(title: String, subtitle: String, image: UIImage? = nil) {
         super.init(frame: .zero)
-        setup(title: title, subtitle: subtitle)
+        setup(title: title, subtitle: subtitle, image: image)
     }
 
     override init(frame: CGRect) {
@@ -48,14 +48,18 @@ class ImageAndTitleView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setup(title: String, subtitle: String) {
-        setupImage()
+    func setup(title: String, subtitle: String, image: UIImage? = nil) {
+        setupImage(withImage: image)
         setupTitle(withText: title)
         setupSubtitle(withText: subtitle)
     }
 
-    // TODO: setImage
-    func setupImage() {
+    func setImage(withImage image: UIImage?) {
+        imageView.image = image
+    }
+
+    func setupImage(withImage image: UIImage?) {
+        imageView.image = image
         self.addSubview(imageView)
         imageView.snp.makeConstraints { make in
             make.top.equalTo(self.snp.top)

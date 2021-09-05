@@ -11,6 +11,36 @@ import UIKit
 // https://stackoverflow.com/a/54860024
 
 class ShowProjectViewController: UIViewController {
+    var project: Project = {
+        let image = UIImage(named: "???")!
+        let project = Project(
+            title: "Classificatória 2022",
+            image: image,
+            about: "Trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n" + "Trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            goal: 3500,
+            deadline: "05/09/2021",
+            sport: .softball,
+            category: .brazilianTeam
+        )
+
+        project.donations += [
+            Donation(
+                receiptImage: image, supporter: "Apoiador 1",
+                supporterAmount: 1000, athleteAmount: 1000, status: .confirmed
+            ),
+            Donation(
+                receiptImage: image, supporter: "Apoiador 2",
+                supporterAmount: 2000, athleteAmount: 0, status: .pending
+            ),
+            Donation(
+                receiptImage: image, supporter: "Apoiador 3",
+                supporterAmount: 100, athleteAmount: 100, status: .confirmed
+            )
+        ]
+
+        return project
+    }()
+
     lazy var supportButton: GreenRoundedButton = {
         let button = GreenRoundedButton.getSupportButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -19,21 +49,25 @@ class ShowProjectViewController: UIViewController {
     }()
 
     lazy var imageAndTitleView: ImageAndTitleView = {
-        let view = ImageAndTitleView()
+        let view = ImageAndTitleView(title: project.title, subtitle: "XX dias restantes (Arrumar a data)", image: project.image)
         view.translatesAutoresizingMaskIntoConstraints = false
 
         return view
     }()
 
     lazy var projectMetricsView: ProjectMetricsView = {
-        let view = ProjectMetricsView()
+        let view = ProjectMetricsView(
+            collectedValue: project.getValueCollected(),
+            goalValue: project.goal,
+            deadline: project.deadline
+        )
         view.translatesAutoresizingMaskIntoConstraints = false
 
         return view
     }()
 
     lazy var aboutView: AboutView = {
-        let view = AboutView()
+        let view = AboutView(aboutText: project.about)
         view.translatesAutoresizingMaskIntoConstraints = false
 
         return view

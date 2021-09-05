@@ -28,5 +28,7 @@ class Project {
         self.category = category
     }
     
-    func getValueCollected () {}
+    func getValueCollected () -> Double {
+        return donations.reduce(0, { $0 + ($1.status == .confirmed ? $1.athleteAmount : 0) })
+    }
 }
