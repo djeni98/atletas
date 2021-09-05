@@ -67,6 +67,13 @@ class ImageAndTitleView: UIView {
             make.height.equalTo(300)
         }
 
+        let rectLayer = UIView()
+        rectLayer.backgroundColor = UIColor(r: 1, g: 1, b: 1, a: 0.4)
+        self.addSubview(rectLayer)
+        rectLayer.snp.makeConstraints { make in
+            make.edges.equalTo(imageView)
+        }
+
         self.snp.makeConstraints { make in
             make.bottom.equalTo(imageView)
         }
