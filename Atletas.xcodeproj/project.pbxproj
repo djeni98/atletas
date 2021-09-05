@@ -40,6 +40,11 @@
 		B7653C9826DEDDBD0070BBF9 /* AthleteListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7653C9726DEDDBD0070BBF9 /* AthleteListItemCell.swift */; };
 		B7653C9A26DEE06A0070BBF9 /* AthleteListTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7653C9926DEE06A0070BBF9 /* AthleteListTableViewAdapter.swift */; };
 		B775EF9B26E38E0E0005502E /* GreenRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775EF9A26E38E0E0005502E /* GreenRoundedButton.swift */; };
+		B775EF9D26E395A00005502E /* ShowProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775EF9C26E395A00005502E /* ShowProjectViewController.swift */; };
+		B775EFA526E3C7B40005502E /* ProjectProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775EFA426E3C7B40005502E /* ProjectProgressView.swift */; };
+		B775EFA826E3DD850005502E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775EFA726E3DD850005502E /* UIColorExtension.swift */; };
+		B775EFAA26E3DF1A0005502E /* GraySquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775EFA926E3DF1A0005502E /* GraySquareView.swift */; };
+		B77E60F126E4F62A00B29E45 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E60F026E4F62A00B29E45 /* DateExtension.swift */; };
 		B7B7C7B526DFB7D7009000D1 /* SearchBarWithScopeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */; };
 		B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82026D7BABB0090966F /* AppDelegate.swift */; };
 		B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82226D7BABB0090966F /* SceneDelegate.swift */; };
@@ -47,6 +52,9 @@
 		B7D5E82A26D7BABD0090966F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7D5E82926D7BABD0090966F /* Assets.xcassets */; };
 		B7D5E82D26D7BABD0090966F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7D5E82B26D7BABD0090966F /* LaunchScreen.storyboard */; };
 		B7D5E83726D7BAD40090966F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7D5E83626D7BAD40090966F /* CloudKit.framework */; };
+		B7E52DCF26E430EA0025A7A1 /* ImageAndTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E52DCE26E430EA0025A7A1 /* ImageAndTitleView.swift */; };
+		B7E52DD126E435270025A7A1 /* ProjectMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E52DD026E435270025A7A1 /* ProjectMetricsView.swift */; };
+		B7E52DD326E43C540025A7A1 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E52DD226E43C540025A7A1 /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +90,11 @@
 		B7653C9726DEDDBD0070BBF9 /* AthleteListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteListItemCell.swift; sourceTree = "<group>"; };
 		B7653C9926DEE06A0070BBF9 /* AthleteListTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteListTableViewAdapter.swift; sourceTree = "<group>"; };
 		B775EF9A26E38E0E0005502E /* GreenRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenRoundedButton.swift; sourceTree = "<group>"; };
+		B775EF9C26E395A00005502E /* ShowProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowProjectViewController.swift; sourceTree = "<group>"; };
+		B775EFA426E3C7B40005502E /* ProjectProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectProgressView.swift; sourceTree = "<group>"; };
+		B775EFA726E3DD850005502E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		B775EFA926E3DF1A0005502E /* GraySquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraySquareView.swift; sourceTree = "<group>"; };
+		B77E60F026E4F62A00B29E45 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarWithScopeButton.swift; sourceTree = "<group>"; };
 		B7D5E81D26D7BABB0090966F /* Atletas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atletas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D5E82026D7BABB0090966F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +105,9 @@
 		B7D5E82E26D7BABD0090966F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7D5E83426D7BACC0090966F /* Atletas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Atletas.entitlements; sourceTree = "<group>"; };
 		B7D5E83626D7BAD40090966F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		B7E52DCE26E430EA0025A7A1 /* ImageAndTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndTitleView.swift; sourceTree = "<group>"; };
+		B7E52DD026E435270025A7A1 /* ProjectMetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMetricsView.swift; sourceTree = "<group>"; };
+		B7E52DD226E43C540025A7A1 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +184,7 @@
 				B7653C8F26DE5D470070BBF9 /* AthleteListItem.swift */,
 				B7653C9726DEDDBD0070BBF9 /* AthleteListItemCell.swift */,
 				B775EF9A26E38E0E0005502E /* GreenRoundedButton.swift */,
+				B775EFA426E3C7B40005502E /* ProjectProgressView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -175,6 +192,7 @@
 		B7653C9126DED2120070BBF9 /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				B775EF9726E38C9C0005502E /* ShowProjectViewController */,
 				613C3AF626E29A5500968D43 /* DonationsViewController */,
 				614282F626E110EF00F04601 /* ExploreViewController */,
 				B7653C9226DED21B0070BBF9 /* SearchViewController */,
@@ -190,6 +208,27 @@
 				B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */,
 			);
 			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		B775EF9726E38C9C0005502E /* ShowProjectViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B775EF9C26E395A00005502E /* ShowProjectViewController.swift */,
+				B775EFA926E3DF1A0005502E /* GraySquareView.swift */,
+				B7E52DCE26E430EA0025A7A1 /* ImageAndTitleView.swift */,
+				B7E52DD026E435270025A7A1 /* ProjectMetricsView.swift */,
+				B7E52DD226E43C540025A7A1 /* AboutView.swift */,
+			);
+			path = ShowProjectViewController;
+			sourceTree = "<group>";
+		};
+		B775EFA626E3DD780005502E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B775EFA726E3DD850005502E /* UIColorExtension.swift */,
+				B77E60F026E4F62A00B29E45 /* DateExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B7D5E81426D7BABB0090966F = {
@@ -219,6 +258,7 @@
 				B7D5E82926D7BABD0090966F /* Assets.xcassets */,
 				B7D5E82B26D7BABD0090966F /* LaunchScreen.storyboard */,
 				B7D5E82E26D7BABD0090966F /* Info.plist */,
+				B775EFA626E3DD780005502E /* Extensions */,
 				610C7D8626DFB8E800F2FDB6 /* ViewModels */,
 				B7653C9126DED2120070BBF9 /* screens */,
 				B7653C8E26DE5D1A0070BBF9 /* components */,
@@ -315,26 +355,34 @@
 				610C7D7C26D918D300F2FDB6 /* SocialMedia.swift in Sources */,
 				B7653C9026DE5D470070BBF9 /* AthleteListItem.swift in Sources */,
 				B775EF9B26E38E0E0005502E /* GreenRoundedButton.swift in Sources */,
+				B77E60F126E4F62A00B29E45 /* DateExtension.swift in Sources */,
 				610C7D7626D80B1500F2FDB6 /* Badge.swift in Sources */,
 				610C7D7026D7DA6F00F2FDB6 /* User.swift in Sources */,
 				613C3AFA26E2A04000968D43 /* DonationsContentView.swift in Sources */,
 				B254BFEB26D8307700A68D55 /* SportEnum.swift in Sources */,
+				B775EFAA26E3DF1A0005502E /* GraySquareView.swift in Sources */,
+				B775EFA826E3DD850005502E /* UIColorExtension.swift in Sources */,
 				B7653C9A26DEE06A0070BBF9 /* AthleteListTableViewAdapter.swift in Sources */,
 				610C7D7426D7DBB100F2FDB6 /* Athlete.swift in Sources */,
+				B7E52DD126E435270025A7A1 /* ProjectMetricsView.swift in Sources */,
 				614282F526E110B000F04601 /* ProjectsCell.swift in Sources */,
 				B7D5E82526D7BABB0090966F /* ViewController.swift in Sources */,
 				B7653C9826DEDDBD0070BBF9 /* AthleteListItemCell.swift in Sources */,
 				613C3AF826E29A6B00968D43 /* DonationsViewController.swift in Sources */,
 				B7B7C7B526DFB7D7009000D1 /* SearchBarWithScopeButton.swift in Sources */,
 				B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */,
+				B7E52DCF26E430EA0025A7A1 /* ImageAndTitleView.swift in Sources */,
 				613C3AFE26E2A35100968D43 /* DonationCell.swift in Sources */,
 				B254BFE726D8302B00A68D55 /* DonationStatusEnum.swift in Sources */,
 				610C7D8526DFB8E300F2FDB6 /* Supportable.swift in Sources */,
 				614282F326E110A300F04601 /* AthletesCell.swift in Sources */,
 				B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */,
 				610C7D7826D80BCC00F2FDB6 /* LevelEnum.swift in Sources */,
+				B775EFA526E3C7B40005502E /* ProjectProgressView.swift in Sources */,
+				B775EF9D26E395A00005502E /* ShowProjectViewController.swift in Sources */,
 				613C3B0026E2B66C00968D43 /* MonthDonations.swift in Sources */,
 				B254BFE926D8304700A68D55 /* UserType.swift in Sources */,
+				B7E52DD326E43C540025A7A1 /* AboutView.swift in Sources */,
 				B7653C9426DED23B0070BBF9 /* SearchViewController.swift in Sources */,
 				B254BFE526D8301F00A68D55 /* Donation.swift in Sources */,
 				613C3AFC26E2A32000968D43 /* DonationsTableTitleView.swift in Sources */,
