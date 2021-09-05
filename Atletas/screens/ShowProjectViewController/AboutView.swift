@@ -32,7 +32,7 @@ class AboutView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let largeText = Array(1...100).reduce("", { $0 + "\($1)"})
+        let largeText = Array(1...200).reduce("", { $0 + "\($1)"})
         setup(aboutText: largeText)
     }
 
@@ -52,7 +52,7 @@ class AboutView: UIView {
     func setupTitle() {
         self.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(32)
+            make.top.equalToSuperview()
             make.leading.equalToSuperview()
         }
     }

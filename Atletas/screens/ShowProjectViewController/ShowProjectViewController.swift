@@ -7,6 +7,9 @@
 
 import UIKit
 
+// Reference for UIScrollView - "Swift - Creating a vertical UIScrollView programmatically"
+// https://stackoverflow.com/a/54860024
+
 class ShowProjectViewController: UIViewController {
     lazy var supportButton: GreenRoundedButton = {
         let button = GreenRoundedButton.getSupportButton()
@@ -36,6 +39,22 @@ class ShowProjectViewController: UIViewController {
         return view
     }()
 
+    let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+
+        return scrollView
+    }()
+
+    let scrollViewContainer: UIStackView = {
+        let view = UIStackView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .vertical
+        view.spacing = 32
+
+        return view
+    }()
+
     var canEditProject = true
 
     override func loadView() {
@@ -46,28 +65,38 @@ class ShowProjectViewController: UIViewController {
 
     func setup() {
         setupNavigationRightItens()
+
+        view.addSubview(scrollView)
+        scrollView.addSubview(scrollViewContainer)
+
         let headerView = getHeader()
-        view.addSubview(headerView)
+
+        scrollViewContainer.addArrangedSubview(headerView)
+        scrollViewContainer.addArrangedSubview(projectMetricsView)
+        scrollViewContainer.addArrangedSubview(aboutView)
 
         headerView.snp.makeConstraints { make in
-            make.top.equalTo(self.view.layoutMarginsGuide.snp.top)
             make.width.equalToSuperview()
         }
 
-        view.addSubview(projectMetricsView)
-
         projectMetricsView.snp.makeConstraints { make in
-            make.top.equalTo(headerView.snp.bottom)
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
         }
 
-        view.addSubview(aboutView)
-
         aboutView.snp.makeConstraints { make in
-            make.top.equalTo(projectMetricsView.snp.bottom)
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
+        }
+
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
+
+        scrollViewContainer.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView)
+            // this is important for scrolling
+            make.width.equalTo(scrollView)
         }
     }
 

@@ -89,7 +89,7 @@ class ProjectMetricsView: UIView {
 
         statusLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(32)
+            make.top.equalToSuperview()
         }
 
         collectedValueLabel.snp.makeConstraints { make in
