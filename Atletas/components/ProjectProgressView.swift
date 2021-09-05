@@ -8,12 +8,14 @@
 import UIKit
 
 class ProjectProgressView: UIView {
+    let fontColor = UIColor(named: "PrimaryFont")
 
     var titleString: String?
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 18)
+        label.textColor = fontColor
 
         return label
     }()
@@ -24,6 +26,7 @@ class ProjectProgressView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
         label.textAlignment = .right
+        label.textColor = fontColor
 
         let percentage = Int(percentageFloat * 100)
         label.text = "\(percentage)%"
@@ -141,6 +144,7 @@ struct ProjectProgressView_Preview: PreviewProvider {
             ContentView {
                 ProjectProgressView(percentage: 1, title: "Algum Título")
             }
+            .preferredColorScheme(.dark)
         }.previewLayout(.fixed(width: 400, height: 80))
     }
 

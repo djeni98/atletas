@@ -8,10 +8,12 @@
 import UIKit
 
 class GraySquareView: UIView {
+    let fontColor = UIColor(named: "PrimaryFont")
     lazy var goalLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14, weight: .light)
+        label.textColor = fontColor
         label.text = "Meta"
 
         return label
@@ -21,7 +23,7 @@ class GraySquareView: UIView {
         let config = UIImage.SymbolConfiguration(pointSize: 16)
         let image = UIImage(systemName: "calendar", withConfiguration: config)
         let imageView = UIImageView(image: image)
-        imageView.tintColor = UIColor.label
+        imageView.tintColor = fontColor
 
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -33,6 +35,7 @@ class GraySquareView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 18)
+        label.textColor = fontColor
         label.text = valueString
         return label
     }()
@@ -61,7 +64,7 @@ class GraySquareView: UIView {
     }
 
     func setup(descriptionView: UIView) {
-        self.backgroundColor = .systemGray5
+        self.backgroundColor = UIColor(named: "SecondaryFontReverse")
         self.layer.cornerRadius = 10
         setupDescription(withView: descriptionView)
         setupValueLabel(withUpperView: descriptionView)
@@ -99,6 +102,7 @@ struct GraySquareView_Preview: PreviewProvider {
             ContentView {
                 GraySquareView(value: "R$ 3.500,00", type: .goal)
             }
+            .preferredColorScheme(.dark)
             ContentView {
                 GraySquareView(value: "05/09/2021", type: .deadline)
             }

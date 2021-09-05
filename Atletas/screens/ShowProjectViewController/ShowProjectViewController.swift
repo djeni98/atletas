@@ -177,7 +177,7 @@ import SwiftUI
 struct ShowProjectViewController_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .preferredColorScheme(.light)
+            .preferredColorScheme(.dark)
             .previewDevice("iPhone 12")
     }
 

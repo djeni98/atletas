@@ -8,10 +8,12 @@
 import UIKit
 
 class AboutView: UIView {
+    let fontColor = UIColor(named: "SecondaryFont")
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.textColor = fontColor
         label.text = "Sobre"
 
         return label
@@ -21,6 +23,7 @@ class AboutView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = fontColor
 
         return label
     }()

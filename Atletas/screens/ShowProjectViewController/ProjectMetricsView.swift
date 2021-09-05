@@ -8,11 +8,12 @@
 import UIKit
 
 class ProjectMetricsView: UIView {
+    let fontColor = UIColor(named: "PrimaryFont")
     lazy var collectedValueLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
-        label.textColor = .label
+        label.textColor = fontColor
 
         return label
     }()
@@ -78,7 +79,7 @@ class ProjectMetricsView: UIView {
 
     func setupCollectedValue(withValue value: Double) {
         let statusLabel = UILabel()
-        statusLabel.textColor = .label
+        statusLabel.textColor = fontColor
         statusLabel.translatesAutoresizingMaskIntoConstraints = false
         statusLabel.text = "Arrecadado"
 
