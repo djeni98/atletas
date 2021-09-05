@@ -20,23 +20,11 @@ class SportScreenViewController: UIViewController, UISearchResultsUpdating, UISe
     var tableViewAdapter = AthleteListTableViewAdapter()
     var sportName: String!
     var searchController: UISearchController!
+    lazy var searchBar:UISearchBar = UISearchBar()
     
     override func loadView() {
-        
-        //let segmentBarItem = UIBarButtonItem(customView: )
         super.loadView()
-        //view.backgroundColor = .systemBackground
-    
-        
-        
-       
-        
-        
-        
-        
-        
-        
-        
+        view.backgroundColor = .systemBackground
         tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
@@ -58,23 +46,31 @@ class SportScreenViewController: UIViewController, UISearchResultsUpdating, UISe
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        sportName = "Frescobol"
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController!.navigationBar.barStyle = .default
-        navigationController!.navigationBar.isTranslucent = true
-        navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
-        navigationController!.navigationBar.tintColor = .black
-        navigationController?.navigationBar.prefersLargeTitles = true
+        //view.backgroundColor = .white
         
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.sizeToFit()
-        tableView.tableHeaderView = searchController.searchBar
-
-        definesPresentationContext = true
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Softball"
+    
+        //definesPresentationContext = true
+        
+        let searchBarController = SearchBarWithScopeButton(width: view.frame.width)
+        searchBarController.setDelegate(self)
+        
+        searchBar.searchBarStyle = UISearchBar.Style.default
+        searchBar.placeholder = " Search..."
+        searchBar.sizeToFit()
+        searchBar.isTranslucent = false
+        searchBar.backgroundImage = UIImage()
+        searchBar.delegate = self
+        view.addSubview(searchBar)
+        navigationItem.titleView = searchBar
+        
+        //tableView.tableHeaderView = header
+        
+        //tableView.tableFooterView = UIView()
 
         //searchController.searchBar.scopeButtonTitles = SearchScopeButton.allCases.map { $0.rawValue }
-        searchController.searchBar.delegate = self
+        //searchController.searchBar.delegate = self
     }
 
     func updateSearchResults(for searchController: UISearchController) {
@@ -88,13 +84,19 @@ class SportScreenViewController: UIViewController, UISearchResultsUpdating, UISe
     }
 
     func searchBar(_ searchBar: UISearchBar,
-                   selectedScopeButtonIndexDidChange selectedScope: Int) {
-        let category = SearchScopeButton(
-            rawValue: searchBar.scopeButtonTitles![selectedScope]
-        )
-        tableViewAdapter.filterContent(by: searchBar.text, withCategory: category)
+                   textDidChange searchText: String) {
+        let selectedScope = searchBar.selectedScopeButtonIndex
+        let category = SearchScopeButton.allCases[selectedScope]
+        tableViewAdapter.filterContent(by: searchText, withCategory: category)
         tableView.reloadData()
     }
+}
+func setHeader(sportName: String) -> UILabel{
+    var headerText = UILabel()
+    headerText.text = "fspofksd"
+    return headerText
+    
+    
 }
 
 #if DEBUG
