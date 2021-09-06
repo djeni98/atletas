@@ -15,6 +15,13 @@ class AthleteAccountViewController: UIViewController {
         return view
     }()
 
+    lazy var donationView: ShowMoreDonationsSectionView = {
+        let view = ShowMoreDonationsSectionView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+
+        return view
+    }()
+
     override func loadView() {
         super.loadView()
         view.backgroundColor = .systemBackground
@@ -30,6 +37,16 @@ class AthleteAccountViewController: UIViewController {
             make.leading.equalToSuperview().offset(24)
             make.trailing.equalToSuperview().offset(-24)
         }
+
+        view.addSubview(donationView)
+
+        donationView.snp.makeConstraints { make in
+            make.top.equalTo(accountHeaderView.snp.bottom).offset(32)
+
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+        }
+
     }
 
 }
