@@ -34,7 +34,7 @@ class SupportableRowView: UIView {
     ]
     
     required init?(coder: NSCoder) {
-        fatalError("abuble")
+        fatalError("Couldn't init well")
     }
     
     override init(frame: CGRect) {
@@ -68,7 +68,6 @@ extension SupportableRowView: UICollectionViewDataSource {
 
 extension SupportableRowView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("abuble \(indexPath[1] + 1)")
     }
 }
 
