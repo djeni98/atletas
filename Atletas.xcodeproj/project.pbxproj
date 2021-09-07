@@ -50,6 +50,7 @@
 		B7B7C7B526DFB7D7009000D1 /* SearchBarWithScopeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */; };
 		B7BAC1A426E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1A326E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift */; };
 		B7BAC1A626E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1A526E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift */; };
+		B7BAC1AB26E6EF64000CA0F0 /* ProjectCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1AA26E6EF64000CA0F0 /* ProjectCardView.swift */; };
 		B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82026D7BABB0090966F /* AppDelegate.swift */; };
 		B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82226D7BABB0090966F /* SceneDelegate.swift */; };
 		B7D5E82526D7BABB0090966F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82426D7BABB0090966F /* ViewController.swift */; };
@@ -104,6 +105,7 @@
 		B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarWithScopeButton.swift; sourceTree = "<group>"; };
 		B7BAC1A326E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndShowMoreButtonView.swift; sourceTree = "<group>"; };
 		B7BAC1A526E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreDonationsSectionView.swift; sourceTree = "<group>"; };
+		B7BAC1AA26E6EF64000CA0F0 /* ProjectCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCardView.swift; sourceTree = "<group>"; };
 		B7D5E81D26D7BABB0090966F /* Atletas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atletas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D5E82026D7BABB0090966F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7D5E82226D7BABB0090966F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				B7653C9726DEDDBD0070BBF9 /* AthleteListItemCell.swift */,
 				B775EF9A26E38E0E0005502E /* GreenRoundedButton.swift */,
 				B775EFA426E3C7B40005502E /* ProjectProgressView.swift */,
+				B7BAC1AA26E6EF64000CA0F0 /* ProjectCardView.swift */,
 				B7BAC1A326E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift */,
 			);
 			path = components;
@@ -392,6 +395,7 @@
 				B7653C9826DEDDBD0070BBF9 /* AthleteListItemCell.swift in Sources */,
 				613C3AF826E29A6B00968D43 /* DonationsViewController.swift in Sources */,
 				B7B7C7B526DFB7D7009000D1 /* SearchBarWithScopeButton.swift in Sources */,
+				B7BAC1AB26E6EF64000CA0F0 /* ProjectCardView.swift in Sources */,
 				B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */,
 				B7E52DCF26E430EA0025A7A1 /* ImageAndTitleView.swift in Sources */,
 				613C3AFE26E2A35100968D43 /* DonationCell.swift in Sources */,
