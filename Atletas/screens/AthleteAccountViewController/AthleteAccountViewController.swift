@@ -8,6 +8,22 @@
 import UIKit
 
 class AthleteAccountViewController: UIViewController {
+    var athlete: Athlete? {
+        didSet {
+            guard let athlete = athlete else { return }
+
+            accountHeaderView.imageView.image = athlete.image
+            accountHeaderView.titleLabel.text = athlete.getFirstName()
+            accountHeaderView.subtitleLabel.text = "Veja seu perfil"
+
+            let donations = athlete.getDonations().slice(0..<3)
+            donationView.setDonations(donations)
+
+            let projects = athlete.projects.slice(0..<3)
+            projectView.setProjects(projects)
+        }
+    }
+
     lazy var accountHeaderView: AccountHeaderView = {
         let view = AccountHeaderView()
         view.translatesAutoresizingMaskIntoConstraints = false
