@@ -29,6 +29,22 @@ class AthleteAccountViewController: UIViewController {
         return view
     }()
 
+    let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+
+        return scrollView
+    }()
+
+    let scrollViewContainer: UIStackView = {
+        let view = UIStackView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .vertical
+        view.spacing = 32
+
+        return view
+    }()
+
     override func loadView() {
         super.loadView()
         view.backgroundColor = .systemBackground
@@ -36,35 +52,31 @@ class AthleteAccountViewController: UIViewController {
     }
 
     func setup() {
-        view.addSubview(accountHeaderView)
-
-        accountHeaderView.snp.makeConstraints { make in
-            make.top.equalTo(view.layoutMarginsGuide.snp.top).offset(32)
-
-            make.leading.equalToSuperview().offset(24)
-            make.trailing.equalToSuperview().offset(-24)
-        }
-
-        view.addSubview(donationView)
-
-        donationView.snp.makeConstraints { make in
-            make.top.equalTo(accountHeaderView.snp.bottom).offset(32)
-
-            make.leading.equalToSuperview().offset(24)
-            make.trailing.equalToSuperview().offset(-24)
-        }
-
-        view.addSubview(projectView)
-
-        projectView.snp.makeConstraints { make in
-            make.top.equalTo(donationView.snp.bottom).offset(32)
-
-            make.leading.equalToSuperview().offset(24)
-            make.trailing.equalToSuperview().offset(-24)
-        }
-
+        setupScroll()
+        addSectionsToContainer()
     }
 
+    func setupScroll() {
+        view.addSubview(scrollView)
+        scrollView.addSubview(scrollViewContainer)
+
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
+
+        let offset: CGFloat = 24
+        scrollViewContainer.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView).inset(UIEdgeInsets(top: 32, left: offset, bottom: 32, right: offset))
+            // this is important for scrolling
+            make.width.equalTo(scrollView).offset(-offset * 2)
+        }
+    }
+
+    func addSectionsToContainer() {
+        scrollViewContainer.addArrangedSubview(accountHeaderView)
+        scrollViewContainer.addArrangedSubview(donationView)
+        scrollViewContainer.addArrangedSubview(projectView)
+    }
 }
 
 #if DEBUG
