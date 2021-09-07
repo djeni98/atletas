@@ -45,7 +45,14 @@
 		B775EFA826E3DD850005502E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775EFA726E3DD850005502E /* UIColorExtension.swift */; };
 		B775EFAA26E3DF1A0005502E /* GraySquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775EFA926E3DF1A0005502E /* GraySquareView.swift */; };
 		B77E60F126E4F62A00B29E45 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E60F026E4F62A00B29E45 /* DateExtension.swift */; };
+		B77E60F826E54FD700B29E45 /* AthleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E60F726E54FD700B29E45 /* AthleteAccountViewController.swift */; };
+		B77E60FA26E550FD00B29E45 /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E60F926E550FD00B29E45 /* AccountHeaderView.swift */; };
 		B7B7C7B526DFB7D7009000D1 /* SearchBarWithScopeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */; };
+		B7BAC1A426E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1A326E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift */; };
+		B7BAC1A626E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1A526E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift */; };
+		B7BAC1AB26E6EF64000CA0F0 /* ProjectCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1AA26E6EF64000CA0F0 /* ProjectCardView.swift */; };
+		B7BAC1AD26E6F5A7000CA0F0 /* ShowMoreProjectsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1AC26E6F5A7000CA0F0 /* ShowMoreProjectsSectionView.swift */; };
+		B7BAC1AF26E70209000CA0F0 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1AE26E70209000CA0F0 /* ArrayExtension.swift */; };
 		B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82026D7BABB0090966F /* AppDelegate.swift */; };
 		B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82226D7BABB0090966F /* SceneDelegate.swift */; };
 		B7D5E82526D7BABB0090966F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82426D7BABB0090966F /* ViewController.swift */; };
@@ -95,7 +102,14 @@
 		B775EFA726E3DD850005502E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		B775EFA926E3DF1A0005502E /* GraySquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraySquareView.swift; sourceTree = "<group>"; };
 		B77E60F026E4F62A00B29E45 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		B77E60F726E54FD700B29E45 /* AthleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteAccountViewController.swift; sourceTree = "<group>"; };
+		B77E60F926E550FD00B29E45 /* AccountHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
 		B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarWithScopeButton.swift; sourceTree = "<group>"; };
+		B7BAC1A326E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndShowMoreButtonView.swift; sourceTree = "<group>"; };
+		B7BAC1A526E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreDonationsSectionView.swift; sourceTree = "<group>"; };
+		B7BAC1AA26E6EF64000CA0F0 /* ProjectCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCardView.swift; sourceTree = "<group>"; };
+		B7BAC1AC26E6F5A7000CA0F0 /* ShowMoreProjectsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreProjectsSectionView.swift; sourceTree = "<group>"; };
+		B7BAC1AE26E70209000CA0F0 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		B7D5E81D26D7BABB0090966F /* Atletas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atletas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D5E82026D7BABB0090966F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7D5E82226D7BABB0090966F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +199,8 @@
 				B7653C9726DEDDBD0070BBF9 /* AthleteListItemCell.swift */,
 				B775EF9A26E38E0E0005502E /* GreenRoundedButton.swift */,
 				B775EFA426E3C7B40005502E /* ProjectProgressView.swift */,
+				B7BAC1AA26E6EF64000CA0F0 /* ProjectCardView.swift */,
+				B7BAC1A326E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -192,6 +208,7 @@
 		B7653C9126DED2120070BBF9 /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				B77E60F626E54FC600B29E45 /* AthleteAccountViewController */,
 				B775EF9726E38C9C0005502E /* ShowProjectViewController */,
 				613C3AF626E29A5500968D43 /* DonationsViewController */,
 				614282F626E110EF00F04601 /* ExploreViewController */,
@@ -227,8 +244,20 @@
 			children = (
 				B775EFA726E3DD850005502E /* UIColorExtension.swift */,
 				B77E60F026E4F62A00B29E45 /* DateExtension.swift */,
+				B7BAC1AE26E70209000CA0F0 /* ArrayExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B77E60F626E54FC600B29E45 /* AthleteAccountViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B77E60F726E54FD700B29E45 /* AthleteAccountViewController.swift */,
+				B77E60F926E550FD00B29E45 /* AccountHeaderView.swift */,
+				B7BAC1A526E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift */,
+				B7BAC1AC26E6F5A7000CA0F0 /* ShowMoreProjectsSectionView.swift */,
+			);
+			path = AthleteAccountViewController;
 			sourceTree = "<group>";
 		};
 		B7D5E81426D7BABB0090966F = {
@@ -362,20 +391,27 @@
 				B254BFEB26D8307700A68D55 /* SportEnum.swift in Sources */,
 				B775EFAA26E3DF1A0005502E /* GraySquareView.swift in Sources */,
 				B775EFA826E3DD850005502E /* UIColorExtension.swift in Sources */,
+				B7BAC1AD26E6F5A7000CA0F0 /* ShowMoreProjectsSectionView.swift in Sources */,
 				B7653C9A26DEE06A0070BBF9 /* AthleteListTableViewAdapter.swift in Sources */,
+				B77E60FA26E550FD00B29E45 /* AccountHeaderView.swift in Sources */,
 				610C7D7426D7DBB100F2FDB6 /* Athlete.swift in Sources */,
 				B7E52DD126E435270025A7A1 /* ProjectMetricsView.swift in Sources */,
+				B7BAC1A626E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift in Sources */,
+				B7BAC1AF26E70209000CA0F0 /* ArrayExtension.swift in Sources */,
 				614282F526E110B000F04601 /* ProjectsCell.swift in Sources */,
 				B7D5E82526D7BABB0090966F /* ViewController.swift in Sources */,
 				B7653C9826DEDDBD0070BBF9 /* AthleteListItemCell.swift in Sources */,
 				613C3AF826E29A6B00968D43 /* DonationsViewController.swift in Sources */,
 				B7B7C7B526DFB7D7009000D1 /* SearchBarWithScopeButton.swift in Sources */,
+				B7BAC1AB26E6EF64000CA0F0 /* ProjectCardView.swift in Sources */,
 				B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */,
 				B7E52DCF26E430EA0025A7A1 /* ImageAndTitleView.swift in Sources */,
 				613C3AFE26E2A35100968D43 /* DonationCell.swift in Sources */,
 				B254BFE726D8302B00A68D55 /* DonationStatusEnum.swift in Sources */,
+				B7BAC1A426E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift in Sources */,
 				610C7D8526DFB8E300F2FDB6 /* Supportable.swift in Sources */,
 				614282F326E110A300F04601 /* AthletesCell.swift in Sources */,
+				B77E60F826E54FD700B29E45 /* AthleteAccountViewController.swift in Sources */,
 				B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */,
 				610C7D7826D80BCC00F2FDB6 /* LevelEnum.swift in Sources */,
 				B775EFA526E3C7B40005502E /* ProjectProgressView.swift in Sources */,
