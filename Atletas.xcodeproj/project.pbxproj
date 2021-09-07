@@ -51,6 +51,7 @@
 		B7BAC1A426E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1A326E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift */; };
 		B7BAC1A626E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1A526E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift */; };
 		B7BAC1AB26E6EF64000CA0F0 /* ProjectCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1AA26E6EF64000CA0F0 /* ProjectCardView.swift */; };
+		B7BAC1AD26E6F5A7000CA0F0 /* ShowMoreProjectsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1AC26E6F5A7000CA0F0 /* ShowMoreProjectsSectionView.swift */; };
 		B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82026D7BABB0090966F /* AppDelegate.swift */; };
 		B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82226D7BABB0090966F /* SceneDelegate.swift */; };
 		B7D5E82526D7BABB0090966F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82426D7BABB0090966F /* ViewController.swift */; };
@@ -106,6 +107,7 @@
 		B7BAC1A326E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndShowMoreButtonView.swift; sourceTree = "<group>"; };
 		B7BAC1A526E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreDonationsSectionView.swift; sourceTree = "<group>"; };
 		B7BAC1AA26E6EF64000CA0F0 /* ProjectCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCardView.swift; sourceTree = "<group>"; };
+		B7BAC1AC26E6F5A7000CA0F0 /* ShowMoreProjectsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreProjectsSectionView.swift; sourceTree = "<group>"; };
 		B7D5E81D26D7BABB0090966F /* Atletas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atletas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D5E82026D7BABB0090966F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7D5E82226D7BABB0090966F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				B77E60F726E54FD700B29E45 /* AthleteAccountViewController.swift */,
 				B77E60F926E550FD00B29E45 /* AccountHeaderView.swift */,
 				B7BAC1A526E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift */,
+				B7BAC1AC26E6F5A7000CA0F0 /* ShowMoreProjectsSectionView.swift */,
 			);
 			path = AthleteAccountViewController;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				B254BFEB26D8307700A68D55 /* SportEnum.swift in Sources */,
 				B775EFAA26E3DF1A0005502E /* GraySquareView.swift in Sources */,
 				B775EFA826E3DD850005502E /* UIColorExtension.swift in Sources */,
+				B7BAC1AD26E6F5A7000CA0F0 /* ShowMoreProjectsSectionView.swift in Sources */,
 				B7653C9A26DEE06A0070BBF9 /* AthleteListTableViewAdapter.swift in Sources */,
 				B77E60FA26E550FD00B29E45 /* AccountHeaderView.swift in Sources */,
 				610C7D7426D7DBB100F2FDB6 /* Athlete.swift in Sources */,
