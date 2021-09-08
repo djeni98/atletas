@@ -63,6 +63,20 @@ class ProjectContentView: UIStackView {
             self.pixCodeLabel,
             self.testButton
         ].forEach { self.addArrangedSubview($0) }
+        
+        imageView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+        }
+        
+        infoView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(32)
+            make.trailing.equalToSuperview().offset(-32)
+        }
+        
+        instructionLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
+        }
     }
     
     required init(coder: NSCoder) {
