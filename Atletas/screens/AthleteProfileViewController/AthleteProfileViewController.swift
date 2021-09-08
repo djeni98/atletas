@@ -23,6 +23,18 @@ class AthleteProfileViewController: UIViewController {
         return view
     }()
 
+    lazy var supportTabView: AthleteSupportTabView = {
+        let view = AthleteSupportTabView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        let projects: [Project] = Array(1...3).map { n in
+            return Project(title: "Proj \(n)", image: UIImage(named: "???")!, about: "", goal: 100, deadline: "12/12/2021", sport: .softball, category: .brazilianTeam)
+        }
+        view.setProjects(projects)
+
+        return view
+    }()
+
     override func loadView() {
         super.loadView()
         view.backgroundColor = .systemBackground
@@ -38,6 +50,7 @@ class AthleteProfileViewController: UIViewController {
     func setup() {
         view.addSubview(profileHeaderView)
         view.addSubview(tabBarAndButtonView)
+        view.addSubview(supportTabView)
 
         profileHeaderView.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -48,6 +61,13 @@ class AthleteProfileViewController: UIViewController {
 
         tabBarAndButtonView.snp.makeConstraints { make in
             make.top.equalTo(profileHeaderView.snp.bottom).offset(16)
+
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+
+        supportTabView.snp.makeConstraints { make in
+            make.top.equalTo(tabBarAndButtonView.snp.bottom).offset(32)
 
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()

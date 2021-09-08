@@ -47,6 +47,7 @@
 		B775EFA826E3DD850005502E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775EFA726E3DD850005502E /* UIColorExtension.swift */; };
 		B775EFAA26E3DF1A0005502E /* GraySquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775EFA926E3DF1A0005502E /* GraySquareView.swift */; };
 		B77731AB26E937E600F88C90 /* TabBarAndSupportButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77731AA26E937E600F88C90 /* TabBarAndSupportButtonView.swift */; };
+		B77731AD26E948C300F88C90 /* AthleteSupportTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77731AC26E948C300F88C90 /* AthleteSupportTabView.swift */; };
 		B77E60F126E4F62A00B29E45 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E60F026E4F62A00B29E45 /* DateExtension.swift */; };
 		B77E60F826E54FD700B29E45 /* AthleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E60F726E54FD700B29E45 /* AthleteAccountViewController.swift */; };
 		B77E60FA26E550FD00B29E45 /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E60F926E550FD00B29E45 /* AccountHeaderView.swift */; };
@@ -107,6 +108,7 @@
 		B775EFA726E3DD850005502E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		B775EFA926E3DF1A0005502E /* GraySquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraySquareView.swift; sourceTree = "<group>"; };
 		B77731AA26E937E600F88C90 /* TabBarAndSupportButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAndSupportButtonView.swift; sourceTree = "<group>"; };
+		B77731AC26E948C300F88C90 /* AthleteSupportTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteSupportTabView.swift; sourceTree = "<group>"; };
 		B77E60F026E4F62A00B29E45 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		B77E60F726E54FD700B29E45 /* AthleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteAccountViewController.swift; sourceTree = "<group>"; };
 		B77E60F926E550FD00B29E45 /* AccountHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				B73A96D926E82FAC0080555E /* AthleteProfileViewController.swift */,
 				B73A96DB26E831410080555E /* ProfileHeaderView.swift */,
 				B77731AA26E937E600F88C90 /* TabBarAndSupportButtonView.swift */,
+				B77731AC26E948C300F88C90 /* AthleteSupportTabView.swift */,
 			);
 			path = AthleteProfileViewController;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				B7653C9426DED23B0070BBF9 /* SearchViewController.swift in Sources */,
 				B254BFE526D8301F00A68D55 /* Donation.swift in Sources */,
 				613C3AFC26E2A32000968D43 /* DonationsTableTitleView.swift in Sources */,
+				B77731AD26E948C300F88C90 /* AthleteSupportTabView.swift in Sources */,
 				B254BFE326D82FF900A68D55 /* Project.swift in Sources */,
 				B254BFED26D8308F00A68D55 /* Sport.swift in Sources */,
 				610C7D8326DFB3B500F2FDB6 /* SupportableRowView.swift in Sources */,
