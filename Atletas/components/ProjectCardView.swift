@@ -11,12 +11,7 @@ class ProjectCardView: UIView {
     var project: Project? {
         didSet {
             guard let project = project else { return }
-
-            imageView.image = project.image
-            progressView.titleLabel.text = project.title
-
-            let progress = project.getValueCollected() / project.goal
-            progressView.setProgress(Float(progress))
+            setProject(project)
         }
     }
 
@@ -40,7 +35,7 @@ class ProjectCardView: UIView {
 
     init(project: Project) {
         super.init(frame: .zero)
-        self.project = project
+        setProject(project)
         setup()
     }
 
@@ -51,6 +46,14 @@ class ProjectCardView: UIView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func setProject(_ project: Project) {
+        imageView.image = project.image
+        progressView.titleLabel.text = project.title
+
+        let progress = project.getValueCollected() / project.goal
+        progressView.setProgress(Float(progress))
     }
 
     func setup() {
