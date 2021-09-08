@@ -35,6 +35,7 @@
 		614282FA26E28A6A00F04601 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F926E28A6A00F04601 /* ExploreViewController.swift */; };
 		61AD13A126E658B0005FF1F6 /* SupportedInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13A026E658B0005FF1F6 /* SupportedInfoView.swift */; };
 		61AD13A326E82315005FF1F6 /* ValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13A226E82315005FF1F6 /* ValueView.swift */; };
+		61AD13A926E9780A005FF1F6 /* PixCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13A826E9780A005FF1F6 /* PixCodeView.swift */; };
 		B254BFE326D82FF900A68D55 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE226D82FF900A68D55 /* Project.swift */; };
 		B254BFE526D8301F00A68D55 /* Donation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE426D8301F00A68D55 /* Donation.swift */; };
 		B254BFE726D8302B00A68D55 /* DonationStatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE626D8302B00A68D55 /* DonationStatusEnum.swift */; };
@@ -91,6 +92,7 @@
 		614282F926E28A6A00F04601 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		61AD13A026E658B0005FF1F6 /* SupportedInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedInfoView.swift; sourceTree = "<group>"; };
 		61AD13A226E82315005FF1F6 /* ValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueView.swift; sourceTree = "<group>"; };
+		61AD13A826E9780A005FF1F6 /* PixCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixCodeView.swift; sourceTree = "<group>"; };
 		B254BFE226D82FF900A68D55 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		B254BFE426D8301F00A68D55 /* Donation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donation.swift; sourceTree = "<group>"; };
 		B254BFE626D8302B00A68D55 /* DonationStatusEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationStatusEnum.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				610FE1CF26E5493E002FC0A5 /* ProjectImageView.swift */,
 				61AD13A026E658B0005FF1F6 /* SupportedInfoView.swift */,
 				61AD13A226E82315005FF1F6 /* ValueView.swift */,
+				61AD13A826E9780A005FF1F6 /* PixCodeView.swift */,
 			);
 			path = ProjectViewController;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				B7653C9A26DEE06A0070BBF9 /* AthleteListTableViewAdapter.swift in Sources */,
 				610C7D7426D7DBB100F2FDB6 /* Athlete.swift in Sources */,
 				B7E52DD126E435270025A7A1 /* ProjectMetricsView.swift in Sources */,
+				61AD13A926E9780A005FF1F6 /* PixCodeView.swift in Sources */,
 				614282F526E110B000F04601 /* ProjectsCell.swift in Sources */,
 				B7D5E82526D7BABB0090966F /* ViewController.swift in Sources */,
 				B7653C9826DEDDBD0070BBF9 /* AthleteListItemCell.swift in Sources */,

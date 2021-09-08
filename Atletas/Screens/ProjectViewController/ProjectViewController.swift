@@ -11,7 +11,6 @@ class ProjectViewController: UIViewController {
     let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = .white
 
         return scrollView
     }()
@@ -28,6 +27,7 @@ class ProjectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .systemBackground
         setupContent()
         setupNav()
     }
@@ -35,7 +35,7 @@ class ProjectViewController: UIViewController {
     func setupContent() {
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
-            make.edges.equalTo(view)
+            make.edges.equalTo(view.safeAreaLayoutGuide)
         }
         
         scrollView.addSubview(scrollViewContainer)
