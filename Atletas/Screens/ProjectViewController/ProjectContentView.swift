@@ -7,26 +7,15 @@
 
 import UIKit
 
-class ProjectContentView: UIView {
+class ProjectContentView: UIStackView {
 
     lazy var imageView: ProjectImageView = {
         let view = ProjectImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.snp.makeConstraints { make in
+            make.height.equalTo(UIScreen.main.bounds.size.height * 0.20)
+        }
         return view
-    }()
-    
-    lazy var contentStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.distribution = .equalSpacing
-        stack.axis = .vertical
-        stack.alignment = .center
-        [
-            self.infoView,
-            self.instructionLabel,
-            self.pixCodeLabel,
-            self.testButton
-        ].forEach { stack.addArrangedSubview($0) }
-        return stack
     }()
 
     lazy var infoView: SupportedInfoView = {
@@ -63,34 +52,40 @@ class ProjectContentView: UIView {
         return label
     }()
     
-    required init?(coder: NSCoder) {
-        fatalError("Couldn't init well")
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
-        setupImageView()
-        setupStackView()
-    }
-
-    func setupImageView() {
-        addSubview(imageView)
-        imageView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
-            make.leading.equalTo(safeAreaLayoutGuide.snp.leading)
-            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
-            make.height.equalTo(UIScreen.main.bounds.size.height * 0.20)
-        }
+//        setupImageView()
+        [
+            self.imageView,
+            self.infoView,
+            self.instructionLabel,
+            self.pixCodeLabel,
+            self.testButton
+        ].forEach { self.addArrangedSubview($0) }
     }
     
-    func setupStackView() {
-        addSubview(contentStackView)
-        contentStackView.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(16)
-            make.leading.equalToSuperview().offset(22)
-            make.trailing.equalToSuperview().offset(-22)
-            make.bottom.equalToSuperview().offset(-32)
-        }
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
+    
+//    func setupImageView() {
+//        addSubview(imageView)
+//        imageView.snp.makeConstraints { make in
+//            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+//            make.leading.equalTo(safeAreaLayoutGuide.snp.leading)
+//            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
+//            make.height.equalTo(UIScreen.main.bounds.size.height * 0.20)
+//        }
+//    }
+    
+//    func setupStackView() {
+//        addSubview(contentStackView)
+//        contentStackView.snp.makeConstraints { make in
+//            make.top.equalTo(imageView.snp.bottom).offset(16)
+//            make.leading.equalToSuperview().offset(22)
+//            make.trailing.equalToSuperview().offset(-22)
+//            make.bottom.equalToSuperview().offset(-32)
+//        }
+//    }
 }

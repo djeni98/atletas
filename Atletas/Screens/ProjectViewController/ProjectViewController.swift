@@ -8,11 +8,21 @@
 import UIKit
 
 class ProjectViewController: UIViewController {
-    lazy var contentView: ProjectContentView = {
-        let view = ProjectContentView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
-        return view
+    let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = .white
+
+        return scrollView
+    }()
+    
+    lazy var scrollViewContainer: ProjectContentView = {
+        let container = ProjectContentView()
+        container.translatesAutoresizingMaskIntoConstraints = false
+        container.axis = .vertical
+        container.spacing = 32
+        
+        return container
     }()
     
     override func viewDidLoad() {
@@ -23,12 +33,15 @@ class ProjectViewController: UIViewController {
     }
     
     func setupContent() {
-        view.addSubview(contentView)
-        contentView.snp.makeConstraints { make in
-            make.height.equalToSuperview()
-            make.width.equalToSuperview()
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview()
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
+        
+        scrollView.addSubview(scrollViewContainer)
+        scrollViewContainer.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView).inset(UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0))
+            make.width.equalTo(scrollView)
         }
     }
     
