@@ -16,6 +16,13 @@ class AthleteProfileViewController: UIViewController {
         return view
     }()
 
+    lazy var tabBarAndButtonView: TabBarAndSupportButtonView = {
+        let view = TabBarAndSupportButtonView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+
+        return view
+    }()
+
     override func loadView() {
         super.loadView()
         view.backgroundColor = .systemBackground
@@ -30,9 +37,17 @@ class AthleteProfileViewController: UIViewController {
 
     func setup() {
         view.addSubview(profileHeaderView)
+        view.addSubview(tabBarAndButtonView)
 
         profileHeaderView.snp.makeConstraints { make in
             make.top.equalToSuperview()
+
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+
+        tabBarAndButtonView.snp.makeConstraints { make in
+            make.top.equalTo(profileHeaderView.snp.bottom).offset(16)
 
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
