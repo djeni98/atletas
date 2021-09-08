@@ -15,12 +15,52 @@ class ProjectContentView: UIView {
         return view
     }()
     
+    lazy var contentStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.distribution = .equalSpacing
+        stack.axis = .vertical
+        stack.alignment = .center
+        [
+            self.infoView,
+            self.instructionLabel,
+            self.pixCodeLabel,
+            self.testButton
+        ].forEach { stack.addArrangedSubview($0) }
+        return stack
+    }()
+
     lazy var infoView: SupportedInfoView = {
         let view = SupportedInfoView()
         view.layer.borderColor = UIColor(named: "ButtonGreen")?.cgColor
         view.layer.borderWidth = 1
+        view.layer.cornerRadius = 3
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
+    }()
+    
+    lazy var instructionLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Copie o código abaixo e utilize o Pix Copia e Cola no aplicativo que você vai fazer o pagamento:"
+        label.numberOfLines = 0
+        label.font = UIFont.preferredFont(for: .footnote, weight: .regular)
+        label.textAlignment = .center
+        return label
+    }()
+
+    lazy var pixCodeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "000.000.000-99"
+        label.font = UIFont.preferredFont(for: .headline, weight: .bold)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var testButton: GreenRoundedButton = {
+        let label = GreenRoundedButton.getSupportButton()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     required init?(coder: NSCoder) {
@@ -31,7 +71,7 @@ class ProjectContentView: UIView {
         super.init(frame: .zero)
         
         setupImageView()
-        setupInfoView()
+        setupStackView()
     }
 
     func setupImageView() {
@@ -44,11 +84,13 @@ class ProjectContentView: UIView {
         }
     }
     
-    func setupInfoView() {
-        addSubview(infoView)
-        infoView.snp.makeConstraints { make in
+    func setupStackView() {
+        addSubview(contentStackView)
+        contentStackView.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(16)
-            make.centerX.equalToSuperview()
+            make.leading.equalToSuperview().offset(22)
+            make.trailing.equalToSuperview().offset(-22)
+            make.bottom.equalToSuperview().offset(-32)
         }
     }
 }
