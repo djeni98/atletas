@@ -6,8 +6,7 @@
 //
 
 import UIKit
-
-class AthleteProfileViewController: UIViewController {
+class AthleteProfileViewController: UIViewController, UITabBarDelegate {
 
     lazy var profileHeaderView: ProfileHeaderView = {
         let view = ProfileHeaderView()
@@ -16,9 +15,12 @@ class AthleteProfileViewController: UIViewController {
         return view
     }()
 
+    var selectedItem: UITabBarItem?
     lazy var tabBarAndButtonView: TabBarAndSupportButtonView = {
         let view = TabBarAndSupportButtonView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.tabBar.delegate = self
+        selectedItem = view.tabBar.selectedItem
 
         return view
     }()
@@ -81,6 +83,7 @@ class AthleteProfileViewController: UIViewController {
             make.trailing.equalToSuperview()
         }
 
+        infoTabView.alpha = 0
         infoTabView.isHidden = true
 
         infoTabView.snp.makeConstraints { make in
@@ -90,6 +93,37 @@ class AthleteProfileViewController: UIViewController {
             make.trailing.equalToSuperview()
         }
 
+    }
+
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if item == selectedItem { return }
+
+        selectedItem = item
+        if item.tag == 0 {
+            selectSupportTabView()
+        } else if item.tag == 1 {
+            selectInfoTabView()
+        }
+    }
+
+    func selectSupportTabView() {
+        UIView.animate(withDuration: 0.2) {
+            self.infoTabView.alpha = 0
+            self.supportTabView.alpha = 1
+        } completion: { _ in
+            self.supportTabView.isHidden = false
+            self.infoTabView.isHidden = true
+        }
+    }
+
+    func selectInfoTabView() {
+        UIView.animate(withDuration: 0.2) {
+            self.infoTabView.alpha = 1
+            self.supportTabView.alpha = 0
+        } completion: { _ in
+            self.supportTabView.isHidden = true
+            self.infoTabView.isHidden = false
+        }
     }
 }
 

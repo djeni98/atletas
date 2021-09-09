@@ -26,7 +26,7 @@ class TabBarAndSupportButtonView: UIView {
         let info = UITabBarItem(
             title: "Info",
             image: UIImage(systemName: "person.fill"),
-            tag: 0
+            tag: 1
         )
         // info.setTitleTextAttributes(fontAttributes, for: .normal)
 
