@@ -69,6 +69,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         searchBar.setShowsCancelButton(false, animated: true)
         searchBar.text = ""
         searchBar.resignFirstResponder()
+        tableViewAdapter.filterContent(by: "")
+        tableView.reloadData()
     }
 
     func searchBar(_ searchBar: UISearchBar,
