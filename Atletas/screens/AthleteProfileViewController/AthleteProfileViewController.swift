@@ -44,6 +44,24 @@ class AthleteProfileViewController: UIViewController, UITabBarDelegate {
         return view
     }()
 
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.contentInsetAdjustmentBehavior = .never
+        scrollView.showsVerticalScrollIndicator = false
+
+        return scrollView
+    }()
+
+    lazy var scrollViewContainer: UIStackView = {
+        let view = UIStackView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .vertical
+        view.spacing = 16
+
+        return view
+    }()
+
     override func loadView() {
         super.loadView()
         view.backgroundColor = .systemBackground
@@ -57,42 +75,35 @@ class AthleteProfileViewController: UIViewController, UITabBarDelegate {
     }
 
     func setup() {
-        view.addSubview(profileHeaderView)
-        view.addSubview(tabBarAndButtonView)
-        view.addSubview(supportTabView)
-        view.addSubview(infoTabView)
+        setupScroll()
+        addSectionsToContainer()
 
-        profileHeaderView.snp.makeConstraints { make in
+        selectSupportTabView()
+    }
+
+    func setupScroll() {
+        view.addSubview(scrollView)
+        scrollView.addSubview(scrollViewContainer)
+
+        scrollView.snp.makeConstraints { make in
             make.top.equalToSuperview()
-
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
+            make.bottom.equalTo(view.layoutMarginsGuide.snp.bottom)
         }
 
-        tabBarAndButtonView.snp.makeConstraints { make in
-            make.top.equalTo(profileHeaderView.snp.bottom).offset(16)
-
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+        scrollViewContainer.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView).inset(UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0))
+            // this is important for scrolling
+            make.width.equalTo(scrollView)
         }
+    }
 
-        supportTabView.snp.makeConstraints { make in
-            make.top.equalTo(tabBarAndButtonView.snp.bottom).offset(32)
-
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-        }
-
-        infoTabView.alpha = 0
-        infoTabView.isHidden = true
-
-        infoTabView.snp.makeConstraints { make in
-            make.top.equalTo(tabBarAndButtonView.snp.bottom).offset(32)
-
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-        }
-
+    func addSectionsToContainer() {
+        scrollViewContainer.addArrangedSubview(profileHeaderView)
+        scrollViewContainer.addArrangedSubview(tabBarAndButtonView)
+        scrollViewContainer.addArrangedSubview(supportTabView)
+        scrollViewContainer.addArrangedSubview(infoTabView)
     }
 
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

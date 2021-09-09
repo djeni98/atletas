@@ -95,7 +95,7 @@ class AthleteInfoTabView: UIView {
         let detailsItems = [descriptionLabelView, cityLabelView]
         setupSection(view: detailsView, title: "Detalhes", items: detailsItems)
         detailsView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(16)
         }
 
         let firstSeparator = addSeparator(to: self, withPreviousView: detailsView)
