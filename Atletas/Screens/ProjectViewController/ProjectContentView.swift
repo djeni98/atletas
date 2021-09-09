@@ -8,7 +8,7 @@
 import UIKit
 
 class ProjectContentView: UIStackView {
-
+    
     lazy var imageView: ProjectImageView = {
         let view = ProjectImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -17,7 +17,7 @@ class ProjectContentView: UIStackView {
         }
         return view
     }()
-
+    
     lazy var infoView: SupportedInfoView = {
         let view = SupportedInfoView()
         view.layer.borderColor = UIColor(named: "ButtonGreen")?.cgColor
@@ -36,7 +36,7 @@ class ProjectContentView: UIStackView {
         label.textAlignment = .center
         return label
     }()
-
+    
     lazy var pixCodeView: PixCodeView = {
         let view = PixCodeView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -52,6 +52,14 @@ class ProjectContentView: UIStackView {
         label.textAlignment = .center
         return label
     }()
+    
+    lazy var valueInput: ValueInputView = {
+        let view = ValueInputView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isUserInteractionEnabled = true
+        return view
+    }()
+    
     lazy var testButton: GreenRoundedButton = {
         let label = GreenRoundedButton.getSupportButton()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -67,6 +75,7 @@ class ProjectContentView: UIStackView {
             self.instructionLabel,
             self.pixCodeView,
             self.valueInstructionLabel,
+            self.valueInput,
             self.testButton
         ].forEach { self.addArrangedSubview($0) }
         
@@ -88,9 +97,6 @@ class ProjectContentView: UIStackView {
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
         }
-        
-        
-        
     }
     
     required init(coder: NSCoder) {

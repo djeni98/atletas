@@ -13,7 +13,7 @@ class SupportedInfoView: UIView {
         label.text = "Dados de quem receberá sua doação:"
         label.font = UIFont.preferredFont(for: .subheadline, weight: .regular)
         label.adjustsFontForContentSizeCategory = true
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.numberOfLines = 0
         return label
     }()

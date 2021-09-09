@@ -29,10 +29,7 @@ class DonationsViewController: UIViewController {
     func setupContent() {
         view.addSubview(content)
         content.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading)
-            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
