@@ -7,6 +7,15 @@
 
 import UIKit
 class AthleteProfileViewController: UIViewController, UITabBarDelegate {
+    var athlete: Athlete? {
+        didSet {
+            guard let athlete = athlete else { return }
+
+            profileHeaderView.athlete = athlete
+            supportTabView.athlete = athlete
+            infoTabView.athlete = athlete
+        }
+    }
 
     lazy var profileHeaderView: ProfileHeaderView = {
         let view = ProfileHeaderView()

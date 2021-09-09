@@ -8,6 +8,22 @@
 import UIKit
 
 class AthleteInfoTabView: UIView {
+    var athlete: Athlete? {
+        didSet {
+            guard let athlete = athlete else { return }
+
+            descriptionLabelView.text = athlete.getDescription()
+            cityLabelView.text = athlete.city
+
+            instagramLabelView.text = athlete.socialMedia.instagram
+            facebookLabelView.text = athlete.socialMedia.facebook
+            twitterLabelView.text = athlete.socialMedia.twitter
+
+            phoneLabelView.text = athlete.getPhone()
+            emailLabelView.text = athlete.getEmail()
+        }
+    }
+    
 
     // ----- Details -----
     lazy var detailsView: UIView = {

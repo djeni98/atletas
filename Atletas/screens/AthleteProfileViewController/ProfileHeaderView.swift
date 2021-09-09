@@ -8,6 +8,16 @@
 import UIKit
 
 class ProfileHeaderView: UIView {
+    var athlete: Athlete? {
+        didSet {
+            guard let athlete = athlete else { return }
+
+            imageView.image = athlete.image
+            titleLabel.text = athlete.name
+            subtitleLabel.text = athlete.getDescription()
+        }
+    }
+    
     let imageSize: CGFloat = 126
 
     lazy var backgroundImageView: UIImageView = {
