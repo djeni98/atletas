@@ -19,6 +19,7 @@ class ProjectViewController: UIViewController {
         let container = ProjectContentView()
         container.translatesAutoresizingMaskIntoConstraints = false
         container.axis = .vertical
+        container.alignment = .center
         container.spacing = 32
         
         return container

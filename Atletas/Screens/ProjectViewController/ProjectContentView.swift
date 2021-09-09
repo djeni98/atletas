@@ -83,11 +83,6 @@ class ProjectContentView: UIStackView {
             make.width.equalToSuperview()
         }
         
-        infoView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(32)
-            make.trailing.equalToSuperview().offset(-32)
-        }
-        
         instructionLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
@@ -96,6 +91,10 @@ class ProjectContentView: UIStackView {
         pixCodeView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
+        }
+        
+        valueInput.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
         }
     }
     

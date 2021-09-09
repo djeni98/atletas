@@ -8,6 +8,8 @@
 import UIKit
 
 class ValueInputView: UIView {
+    var currentValue: Int = 10
+    
     lazy var minusButton: UIButton = {
         let button = UIButton()
         button.setTitle("-", for: .normal)
@@ -18,6 +20,7 @@ class ValueInputView: UIView {
         button.layer.borderColor = UIColor(named: "changeValueButton")?.cgColor
         button.layer.borderWidth = 2
         button.layer.cornerRadius = 15
+        button.addTarget(self, action: #selector(clickedMinus), for: .touchUpInside)
         return button
     }()
     
@@ -35,7 +38,7 @@ class ValueInputView: UIView {
         field.translatesAutoresizingMaskIntoConstraints = false
         field.borderStyle = .none
         field.font = UIFont.systemFont(ofSize: 35, weight: .bold)
-        field.text = "10"
+        field.text = "\(10)"
         field.isUserInteractionEnabled = true
         return field
     }()
@@ -50,37 +53,28 @@ class ValueInputView: UIView {
         button.layer.borderColor = UIColor(named: "changeValueButton")?.cgColor
         button.layer.borderWidth = 2
         button.layer.cornerRadius = 15
+        button.addTarget(self, action: #selector(clickedPlus), for: .touchUpInside)
         return button
     }()
+    
+    @objc func clickedPlus() {
+        currentValue += 1
+        inputField.text = "\(currentValue)"
+    }
+    
+    @objc func clickedMinus() {
+        currentValue = currentValue == 1 ? 1 : currentValue - 1
+        inputField.text = "\(currentValue)"
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupMinusButton()
         setupCurrencyLabel()
         setupInputField()
-        setupMinusButton()
         setupPlusButton()
         
-    }
-    
-    func setupCurrencyLabel() {
-        addSubview(currencyLabel)
-        currencyLabel.snp.makeConstraints { make in
-            make.trailing.equalTo(self.snp.centerX).offset(-2)
-            make.centerY.equalToSuperview()
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
-    }
-    
-    func setupInputField() {
-        addSubview(inputField)
-        inputField.snp.makeConstraints { make in
-            make.leading.equalTo(self.snp.centerX).offset(2)
-            make.centerY.equalToSuperview()
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
     }
     
     func setupMinusButton() {
@@ -89,7 +83,25 @@ class ValueInputView: UIView {
             make.centerY.equalToSuperview()
             make.width.equalTo(30)
             make.height.equalTo(30)
-            make.trailing.equalTo(currencyLabel.snp.leading).offset(-16)
+            make.leading.equalToSuperview()
+        }
+    }
+    
+    func setupCurrencyLabel() {
+        addSubview(currencyLabel)
+        currencyLabel.snp.makeConstraints { make in
+            make.leading.equalTo(minusButton.snp.trailing).offset(16)
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+    }
+    
+    func setupInputField() {
+        addSubview(inputField)
+        inputField.snp.makeConstraints { make in
+            make.leading.equalTo(currencyLabel.snp.trailing).offset(2)
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
     }
     
@@ -100,6 +112,7 @@ class ValueInputView: UIView {
             make.width.equalTo(30)
             make.height.equalTo(30)
             make.leading.equalTo(inputField.snp.trailing).offset(16)
+            make.trailing.equalToSuperview()
         }
     }
     
