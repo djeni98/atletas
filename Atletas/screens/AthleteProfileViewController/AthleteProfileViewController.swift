@@ -35,6 +35,13 @@ class AthleteProfileViewController: UIViewController {
         return view
     }()
 
+    lazy var infoTabView: AthleteInfoTabView = {
+        let view = AthleteInfoTabView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+
+        return view
+    }()
+
     override func loadView() {
         super.loadView()
         view.backgroundColor = .systemBackground
@@ -51,6 +58,7 @@ class AthleteProfileViewController: UIViewController {
         view.addSubview(profileHeaderView)
         view.addSubview(tabBarAndButtonView)
         view.addSubview(supportTabView)
+        view.addSubview(infoTabView)
 
         profileHeaderView.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -72,6 +80,16 @@ class AthleteProfileViewController: UIViewController {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }
+
+        infoTabView.isHidden = true
+
+        infoTabView.snp.makeConstraints { make in
+            make.top.equalTo(tabBarAndButtonView.snp.bottom).offset(32)
+
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+
     }
 }
 
