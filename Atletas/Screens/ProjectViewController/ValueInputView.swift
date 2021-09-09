@@ -33,8 +33,8 @@ class ValueInputView: UIView {
         return label
     }()
     
-    lazy var inputField: UITextField = {
-        let field = UITextField()
+    lazy var valueTextField: ValueTextField = {
+        let field = ValueTextField()
         field.translatesAutoresizingMaskIntoConstraints = false
         field.borderStyle = .none
         field.font = UIFont.systemFont(ofSize: 35, weight: .bold)
@@ -60,12 +60,12 @@ class ValueInputView: UIView {
     
     @objc func clickedPlus() {
         currentValue += 1
-        inputField.text = "\(currentValue)"
+        valueTextField.text = "\(currentValue)"
     }
     
     @objc func clickedMinus() {
         currentValue = currentValue == 1 ? 1 : currentValue - 1
-        inputField.text = "\(currentValue)"
+        valueTextField.text = "\(currentValue)"
     }
     
     override init(frame: CGRect) {
@@ -73,7 +73,7 @@ class ValueInputView: UIView {
         
         setupMinusButton()
         setupCurrencyLabel()
-        setupInputField()
+        setupValueTextField()
         setupPlusButton()
         
     }
@@ -97,9 +97,9 @@ class ValueInputView: UIView {
         }
     }
     
-    func setupInputField() {
-        addSubview(inputField)
-        inputField.snp.makeConstraints { make in
+    func setupValueTextField() {
+        addSubview(valueTextField)
+        valueTextField.snp.makeConstraints { make in
             make.leading.equalTo(currencyLabel.snp.trailing).offset(2)
             make.top.equalToSuperview()
             make.bottom.equalToSuperview()
@@ -112,7 +112,7 @@ class ValueInputView: UIView {
             make.centerY.equalToSuperview()
             make.width.equalTo(30)
             make.height.equalTo(30)
-            make.leading.equalTo(inputField.snp.trailing).offset(16)
+            make.leading.equalTo(valueTextField.snp.trailing).offset(16)
             make.trailing.equalToSuperview()
         }
     }

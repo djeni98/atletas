@@ -8,6 +8,7 @@
 import UIKit
 
 class ProjectContentView: UIStackView {
+    var nav: UINavigationController?
     
     lazy var imageView: ProjectImageView = {
         let view = ProjectImageView()
@@ -60,11 +61,19 @@ class ProjectContentView: UIStackView {
         return view
     }()
     
-    lazy var testButton: GreenRoundedButton = {
-        let label = GreenRoundedButton.getSupportButton()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    lazy var confirmButton: GreenRoundedButton = {
+        let button = GreenRoundedButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Copiar chave pix", for: .normal)
+        button.setTitleColor(UIColor(named: "copyButton"), for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        button.addTarget(self, action: #selector(confirmButtonClicked), for: .touchUpInside)
+        return button
     }()
+    
+    @objc func confirmButtonClicked() {
+        nav?.show(ConfirmDonationViewController(), sender: self)
+    }
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -76,7 +85,7 @@ class ProjectContentView: UIStackView {
             self.pixCodeView,
             self.valueInstructionLabel,
             self.valueInput,
-            self.testButton
+            self.confirmButton
         ].forEach { self.addArrangedSubview($0) }
         
         imageView.snp.makeConstraints { make in
@@ -99,6 +108,12 @@ class ProjectContentView: UIStackView {
         
         valueInput.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
+        }
+        
+        confirmButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(44)
+            make.trailing.equalToSuperview().offset(-44)
+            make.height.equalTo(50)
         }
     }
     

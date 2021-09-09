@@ -38,6 +38,7 @@
 		61AD13AB26EA3393005FF1F6 /* ValueInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13AA26EA3393005FF1F6 /* ValueInputView.swift */; };
 		61AD13AE26EAA592005FF1F6 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 61AD13AD26EAA592005FF1F6 /* IQKeyboardManagerSwift */; };
 		61AD13B026EAA833005FF1F6 /* ValueTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13AF26EAA833005FF1F6 /* ValueTextField.swift */; };
+		61AD13B326EAD3F7005FF1F6 /* ConfirmDonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13B226EAD3F7005FF1F6 /* ConfirmDonationViewController.swift */; };
 		B254BFE326D82FF900A68D55 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE226D82FF900A68D55 /* Project.swift */; };
 		B254BFE526D8301F00A68D55 /* Donation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE426D8301F00A68D55 /* Donation.swift */; };
 		B254BFE726D8302B00A68D55 /* DonationStatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE626D8302B00A68D55 /* DonationStatusEnum.swift */; };
@@ -96,6 +97,7 @@
 		61AD13A826E9780A005FF1F6 /* PixCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixCodeView.swift; sourceTree = "<group>"; };
 		61AD13AA26EA3393005FF1F6 /* ValueInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueInputView.swift; sourceTree = "<group>"; };
 		61AD13AF26EAA833005FF1F6 /* ValueTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTextField.swift; sourceTree = "<group>"; };
+		61AD13B226EAD3F7005FF1F6 /* ConfirmDonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDonationViewController.swift; sourceTree = "<group>"; };
 		B254BFE226D82FF900A68D55 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		B254BFE426D8301F00A68D55 /* Donation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donation.swift; sourceTree = "<group>"; };
 		B254BFE626D8302B00A68D55 /* DonationStatusEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationStatusEnum.swift; sourceTree = "<group>"; };
@@ -210,6 +212,14 @@
 			path = ExploreViewController;
 			sourceTree = "<group>";
 		};
+		61AD13B126EAD3BC005FF1F6 /* ConfirmDonationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				61AD13B226EAD3F7005FF1F6 /* ConfirmDonationViewController.swift */,
+			);
+			path = ConfirmDonationViewController;
+			sourceTree = "<group>";
+		};
 		B7653C8E26DE5D1A0070BBF9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +234,7 @@
 		B7653C9126DED2120070BBF9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				61AD13B126EAD3BC005FF1F6 /* ConfirmDonationViewController */,
 				610FE1CA26E423B8002FC0A5 /* ProjectViewController */,
 				B775EF9726E38C9C0005502E /* ShowProjectViewController */,
 				613C3AF626E29A5500968D43 /* DonationsViewController */,
@@ -410,6 +421,7 @@
 				B7D5E82526D7BABB0090966F /* ViewController.swift in Sources */,
 				B7653C9826DEDDBD0070BBF9 /* AthleteListItemCell.swift in Sources */,
 				613C3AF826E29A6B00968D43 /* DonationsViewController.swift in Sources */,
+				61AD13B326EAD3F7005FF1F6 /* ConfirmDonationViewController.swift in Sources */,
 				B7B7C7B526DFB7D7009000D1 /* SearchBarWithScopeButton.swift in Sources */,
 				B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */,
 				B7E52DCF26E430EA0025A7A1 /* ImageAndTitleView.swift in Sources */,
