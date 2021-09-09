@@ -5,22 +5,15 @@
 //  Created by Guilerme Barciki on 01/09/21.
 //
 
-import Foundation
+
 import UIKit
 
-//enum SearchScopeButton: String, CaseIterable {
-//    case all = "Principais"
-//    case sport = "Modalidades"
-//    case athlete = "Atletas"
-//    case project = "Projetos"
-//}
-
-class SportScreenViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
+class SportScreenViewController: UIViewController, UISearchBarDelegate {
     var tableView: UITableView!
     var tableViewAdapter = AthleteListTableViewAdapter()
     var sportName: String!
     var searchController: UISearchController!
-    lazy var searchBar:UISearchBar = UISearchBar()
+    lazy var searchBar = SearchBar(width: view.frame.width)
     
     override func loadView() {
         super.loadView()
@@ -48,55 +41,33 @@ class SportScreenViewController: UIViewController, UISearchResultsUpdating, UISe
         // Do any additional setup after loading the view.
         //view.backgroundColor = .white
         
-        navigationController?.navigationBar.prefersLargeTitles = true
+        guard let naviBar = navigationController?.navigationBar else { return }
+        naviBar.prefersLargeTitles = true
         navigationItem.title = "Softball"
-    
-        //definesPresentationContext = true
-        
-        let searchBarController = SearchBarWithScopeButton(width: view.frame.width)
-        searchBarController.setDelegate(self)
-        
-        searchBar.searchBarStyle = UISearchBar.Style.default
-        searchBar.placeholder = " Search..."
-        searchBar.sizeToFit()
-        searchBar.isTranslucent = false
-        searchBar.backgroundImage = UIImage()
-        searchBar.delegate = self
-        view.addSubview(searchBar)
-        navigationItem.titleView = searchBar
-        
-        //tableView.tableHeaderView = header
-        
-        //tableView.tableFooterView = UIView()
-
-        //searchController.searchBar.scopeButtonTitles = SearchScopeButton.allCases.map { $0.rawValue }
-        //searchController.searchBar.delegate = self
+        naviBar.sizeToFit()
+        tableView.tableHeaderView = searchBar
+        tableView.tableFooterView = UIView()
+        searchBar.setDelegate(self)
     }
 
-    func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        //let category = SearchScopeButton(
-            //rawValue: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        //)
-
-        //tableViewAdapter.filterContent(by: searchBar.text, withCategory: category)
-        tableView.reloadData()
-    }
 
     func searchBar(_ searchBar: UISearchBar,
                    textDidChange searchText: String) {
-        let selectedScope = searchBar.selectedScopeButtonIndex
-        let category = SearchScopeButton.allCases[selectedScope]
-        tableViewAdapter.filterContent(by: searchText, withCategory: category)
+        tableViewAdapter.filterContent(by: searchText)
         tableView.reloadData()
     }
-}
-func setHeader(sportName: String) -> UILabel{
-    var headerText = UILabel()
-    headerText.text = "fspofksd"
-    return headerText
-    
-    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        tableViewAdapter.filterContent(by: "")
+        tableView.reloadData()
+        
+    }
 }
 
 #if DEBUG
