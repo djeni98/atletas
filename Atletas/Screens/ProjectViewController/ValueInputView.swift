@@ -39,7 +39,8 @@ class ValueInputView: UIView {
         field.borderStyle = .none
         field.font = UIFont.systemFont(ofSize: 35, weight: .bold)
         field.text = "\(10)"
-        field.isUserInteractionEnabled = true
+        field.keyboardType = .numberPad
+        field.delegate = self
         return field
     }()
     
@@ -120,4 +121,14 @@ class ValueInputView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+extension ValueInputView: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if Int(textField.text ?? "\(0)") ?? 0 > 0 {
+            currentValue = Int(textField.text ?? "\(currentValue)") ?? currentValue
+        }
+        textField.text = "\(currentValue)"
+        textField.resignFirstResponder()
+    }
 }

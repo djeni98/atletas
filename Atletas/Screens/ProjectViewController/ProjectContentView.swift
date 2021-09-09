@@ -83,6 +83,10 @@ class ProjectContentView: UIStackView {
             make.width.equalToSuperview()
         }
         
+        infoView.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp.bottom).offset(16)
+        }
+        
         instructionLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
