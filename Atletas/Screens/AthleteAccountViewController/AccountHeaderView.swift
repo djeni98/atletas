@@ -118,6 +118,20 @@ class AccountHeaderView: UIView {
             make.trailing.equalTo(titleLabel)
         }
     }
+
+    var tapGestureAction: ( () -> Void )?
+    func setTapGestureToCallAction(_ action: @escaping () -> Void) {
+        if tapGestureAction == nil {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+            self.isUserInteractionEnabled = true
+            self.addGestureRecognizer(tap)
+        }
+        self.tapGestureAction = action
+    }
+
+    @objc func handleTap() {
+        tapGestureAction?()
+    }
 }
 
 #if DEBUG

@@ -29,8 +29,8 @@ class DonationsTableTitleView: UIView {
         label.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(20)
             make.leading.equalToSuperview().offset(22)
-            make.trailing.equalToSuperview().offset(-22)
-            make.bottom.equalToSuperview().offset(5)
+            make.trailing.equalToSuperview().offset(-22).priority(.high)
+            make.bottom.equalToSuperview().offset(5).priority(.high)
         }
     }
     
