@@ -15,8 +15,6 @@ class GreenRoundedButton: UIButton {
         let height = GreenRoundedButton.fixedHeight
         self.layer.cornerRadius = height / 2
         self.layer.backgroundColor = UIColor(named: "ButtonGreen")?.cgColor
-
-        self.titleLabel?.tintColor = .systemBackground
     }
 
     static func getSupportButton() -> GreenRoundedButton {

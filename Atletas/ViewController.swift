@@ -9,24 +9,8 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController {
-    
-}
+    override func loadView() {
+        super.loadView()
 
-#if DEBUG
-import SwiftUI
-struct ViewController_Preview: PreviewProvider {
-    static var previews: some View {
-        ContentView().previewDevice("iPhone 12")
-    }
-
-    struct ContentView: UIViewControllerRepresentable {
-
-        func makeUIViewController(context: Context) -> UIViewController {
-            UINavigationController(rootViewController: ViewController())
-        }
-
-        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        }
     }
 }
-#endif
