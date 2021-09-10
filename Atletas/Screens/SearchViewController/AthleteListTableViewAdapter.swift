@@ -21,12 +21,14 @@ struct TestingItens {
     }
 }
 
-class AthleteListTableViewAdapter: NSObject, UITableViewDataSource {
+class AthleteListTableViewAdapter: NSObject, UITableViewDataSource, UITableViewDelegate {
     var array = [TestingItens]()
     var filtered = [TestingItens]()
     var scope = SearchScopeButton.all
 
-    override init() {
+    var navigationController: UINavigationController?
+
+    init(navigationController: UINavigationController?) {
         var itens = [TestingItens]()
         itens += Array(1...5).map { n in
             return TestingItens(name: "Name \(n)", desc: "Athlete ...", scope: .athlete)
@@ -41,6 +43,8 @@ class AthleteListTableViewAdapter: NSObject, UITableViewDataSource {
         }
         self.array = itens
         self.filtered = itens
+
+        self.navigationController = navigationController
     }
 
     func filterContent(by text: String?, withCategory: SearchScopeButton? = .all) {
@@ -65,5 +69,20 @@ class AthleteListTableViewAdapter: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "athleteCell", for: indexPath) as! AthleteListItemCell
         cell.configure(name: item.name, description: item.desc ?? "")
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var viewController: UIViewController!
+        let item = filtered[indexPath.row]
+
+        switch item.scope {
+        case .sport: viewController = SportScreenViewController()
+        case .athlete: viewController = AthleteProfileViewController()
+        case .project: viewController = ShowProjectViewController()
+        default:
+            fatalError("This item can not be opened.")
+        }
+
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class SportScreenViewController: UIViewController, UISearchBarDelegate {
     var tableView: UITableView!
-    var tableViewAdapter = AthleteListTableViewAdapter()
+    var tableViewAdapter: AthleteListTableViewAdapter!
     var sportName: String!
     var searchController: UISearchController!
     lazy var searchBar = SearchBar(width: view.frame.width)
@@ -22,7 +22,10 @@ class SportScreenViewController: UIViewController, UISearchBarDelegate {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
 
+        tableViewAdapter = AthleteListTableViewAdapter(navigationController: navigationController)
+        tableView.delegate = tableViewAdapter
         tableView.dataSource = tableViewAdapter
+
         tableView.rowHeight = 80
         let inset: CGFloat = 24
         tableView.separatorInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)

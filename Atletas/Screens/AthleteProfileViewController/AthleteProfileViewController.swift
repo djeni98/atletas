@@ -80,7 +80,6 @@ class AthleteProfileViewController: UIViewController, UITabBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // change navBar
-        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     func setup() {
