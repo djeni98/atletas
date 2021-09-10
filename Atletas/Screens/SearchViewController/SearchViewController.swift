@@ -82,7 +82,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         searchBar.setShowsCancelButton(false, animated: true)
         searchBar.text = ""
         searchBar.resignFirstResponder()
-        tableViewAdapter.filterContent(by: "")
+
+        let category = SearchScopeButton.allCases[searchBar.selectedScopeButtonIndex]
+        tableViewAdapter.filterContent(by: "", withCategory: category)
         tableView.reloadData()
     }
 
