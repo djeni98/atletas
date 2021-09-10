@@ -40,4 +40,16 @@ class Athlete: User {
     func getDonations() -> [Donation] {
         return projects.reduce([], { $0 + $1.donations })
     }
+
+    func getDescription() -> String {
+        return "TODO: Athlete Description"
+    }
+
+    func getPhone() -> String {
+        return "(99) 99999-9999"
+    }
+
+    func getEmail() -> String {
+        return "athlete@email.com"
+    }
 }
