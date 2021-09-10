@@ -1,31 +1,23 @@
 //
-//  SearchViewController.swift
+//  File.swift
 //  Atletas
 //
-//  Created by Djenifer Renata Pereira on 31/08/21.
+//  Created by Guilerme Barciki on 01/09/21.
 //
+
 
 import UIKit
 
-// SearchBar references:
-// https://github.com/codepath/ios_guides/wiki/Search-Bar-Guide
-// https://www.raywenderlich.com/4363809-uisearchcontroller-tutorial-getting-started
-
-enum SearchScopeButton: String, CaseIterable {
-    case all = "Principais"
-    case sport = "Modalidades"
-    case athlete = "Atletas"
-    case project = "Projetos"
-}
-
-class SearchViewController: UIViewController, UISearchBarDelegate {
+class SportScreenViewController: UIViewController, UISearchBarDelegate {
     var tableView: UITableView!
     var tableViewAdapter = AthleteListTableViewAdapter()
-
+    var sportName: String!
+    var searchController: UISearchController!
+    lazy var searchBar = SearchBar(width: view.frame.width)
+    
     override func loadView() {
         super.loadView()
         view.backgroundColor = .systemBackground
-
         tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
@@ -47,20 +39,23 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let searchBarController = SearchBarWithScopeButton(width: view.frame.width)
-        searchBarController.setDelegate(self)
-        tableView.tableHeaderView = searchBarController
+        //view.backgroundColor = .white
+        
+        guard let naviBar = navigationController?.navigationBar else { return }
+        naviBar.prefersLargeTitles = true
+        navigationItem.title = "Softball"
+        naviBar.sizeToFit()
+        tableView.tableHeaderView = searchBar
         tableView.tableFooterView = UIView()
+        searchBar.setDelegate(self)
     }
+
 
     func searchBar(_ searchBar: UISearchBar,
                    textDidChange searchText: String) {
-        let selectedScope = searchBar.selectedScopeButtonIndex
-        let category = SearchScopeButton.allCases[selectedScope]
-        tableViewAdapter.filterContent(by: searchText, withCategory: category)
+        tableViewAdapter.filterContent(by: searchText)
         tableView.reloadData()
     }
-
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(true, animated: true)
     }
@@ -71,20 +66,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         searchBar.resignFirstResponder()
         tableViewAdapter.filterContent(by: "")
         tableView.reloadData()
+        
     }
-
-    func searchBar(_ searchBar: UISearchBar,
-                   selectedScopeButtonIndexDidChange selectedScope: Int) {
-        let category = SearchScopeButton.allCases[selectedScope]
-        tableViewAdapter.filterContent(by: searchBar.text, withCategory: category)
-        tableView.reloadData()
-    }
-
 }
 
 #if DEBUG
 import SwiftUI
-struct SearchViewController_Previews: PreviewProvider {
+struct SportScreenViewController_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().previewDevice("iPhone 12")
     }
@@ -92,8 +80,9 @@ struct SearchViewController_Previews: PreviewProvider {
     struct ContentView: UIViewControllerRepresentable {
 
         func makeUIViewController(context: Context) -> UIViewController {
-            let navigationController = UINavigationController(rootViewController: SearchViewController())
-            navigationController.setNavigationBarHidden(true, animated: true)
+            let navigationController = UINavigationController(rootViewController: SportScreenViewController())
+            //navigationController.setNavigationBarHidden(true, animated: true)
+        
 
             return navigationController
         }

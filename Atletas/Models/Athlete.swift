@@ -32,4 +32,24 @@ class Athlete: User {
         self.sport = sport
         super.init(username: username, password: password)
     }
+
+    func getFirstName() -> String {
+        return name.components(separatedBy: " ")[0]
+    }
+
+    func getDonations() -> [Donation] {
+        return projects.reduce([], { $0 + $1.donations })
+    }
+
+    func getDescription() -> String {
+        return "TODO: Athlete Description"
+    }
+
+    func getPhone() -> String {
+        return "(99) 99999-9999"
+    }
+
+    func getEmail() -> String {
+        return "athlete@email.com"
+    }
 }
