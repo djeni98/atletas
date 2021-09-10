@@ -109,6 +109,7 @@ class ShowProjectViewController: UIViewController {
         scrollViewContainer.addArrangedSubview(headerView)
         scrollViewContainer.addArrangedSubview(projectMetricsView)
         scrollViewContainer.addArrangedSubview(aboutView)
+        scrollViewContainer.alignment = .center
 
         headerView.snp.makeConstraints { make in
             make.width.equalToSuperview()
