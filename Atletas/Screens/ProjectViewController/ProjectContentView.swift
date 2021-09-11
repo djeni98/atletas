@@ -65,7 +65,7 @@ class ProjectContentView: UIStackView {
         let button = GreenRoundedButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Copiar chave pix", for: .normal)
-        button.setTitleColor(UIColor(named: "copyButton"), for: .normal)
+        button.setTitleColor(UIColor(named: "greenButtonText"), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         button.addTarget(self, action: #selector(confirmButtonClicked), for: .touchUpInside)
         return button
