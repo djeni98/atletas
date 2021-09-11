@@ -74,7 +74,7 @@ class AthleteProfileViewController: UIViewController, UITabBarDelegate {
 
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(named: "background")
         setup()
     }
 

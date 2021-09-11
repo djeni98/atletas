@@ -29,7 +29,7 @@ class ProjectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(named: "background")
         setupContent()
         setupNav()
     }

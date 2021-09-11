@@ -17,7 +17,6 @@ class SportScreenViewController: UIViewController, UISearchBarDelegate {
     
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .systemBackground
         tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
@@ -37,6 +36,9 @@ class SportScreenViewController: UIViewController, UISearchBarDelegate {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
+
+        view.backgroundColor = UIColor(named: "background")
+        tableView.backgroundColor = UIColor(named: "background")
     }
 
     override func viewDidLoad() {

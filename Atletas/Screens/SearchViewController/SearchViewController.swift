@@ -24,7 +24,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
 
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .systemBackground
 
         tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -45,6 +44,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
+
+        view.backgroundColor = UIColor(named: "background")
+        tableView.backgroundColor = UIColor(named: "background")
     }
     
     override func viewWillAppear(_ animated: Bool) {

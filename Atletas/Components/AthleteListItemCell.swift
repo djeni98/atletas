@@ -11,6 +11,8 @@ class AthleteListItemCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = UIColor(named: "background")
+        selectionStyle = .none
 
         // Set any attributes of your UI components here.
         athleteListItem.translatesAutoresizingMaskIntoConstraints = false
