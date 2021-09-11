@@ -40,6 +40,7 @@ class ConfirmDonationViewController: UIViewController {
             make.edges.equalTo(scrollView).inset(UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0))
             make.width.equalTo(scrollView)
         }
+        scrollContentView.navigationController = self.navigationController
     }
     
     func setupNav() {

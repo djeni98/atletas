@@ -8,6 +8,8 @@
 import UIKit
 
 class ReceiptView: UIView {
+    var navigationController: UINavigationController?
+    
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -24,6 +26,7 @@ class ReceiptView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = UIColor(named: "donationCell")
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 10
         return imageView
     }()
@@ -35,15 +38,19 @@ class ReceiptView: UIView {
         return button
     }()
     
+    @objc func clickedButton() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        
+        navigationController?.present(imagePicker, animated: true, completion: nil)
+    }
+    
     lazy var uploadPhotoButtonContentView: UploadPhotoButtonContentView = {
         let view = UploadPhotoButtonContentView()
         view.isUserInteractionEnabled = false
         return view
     }()
-    
-    @objc func clickedButton() {
-        print("clickedButton")
-    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -90,4 +97,16 @@ class ReceiptView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+extension ReceiptView: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let image = info[.originalImage] as? UIImage else { return }
+        receiptImageView.image = image
+        
+        uploadPhotoButtonContentView.alpha = 0
+        
+        navigationController?.dismiss(animated: true, completion: nil)
+    }
 }

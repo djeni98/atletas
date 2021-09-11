@@ -8,6 +8,12 @@
 import UIKit
 
 class ConfirmDonationContentView: UIView {
+    var navigationController: UINavigationController? {
+        didSet {
+            receiptView.navigationController = self.navigationController
+        }
+    }
+    
     lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
