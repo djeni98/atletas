@@ -72,17 +72,22 @@ class AthleteListTableViewAdapter: NSObject, UITableViewDataSource, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var viewController: UIViewController!
         let item = filtered[indexPath.row]
 
         switch item.scope {
-        case .sport: viewController = SportScreenViewController()
-        case .athlete: viewController = AthleteProfileViewController()
-        case .project: viewController = ShowProjectViewController()
+        case .sport:
+            let viewController = SportScreenViewController()
+            self.navigationController?.pushViewController(viewController, animated: true)
+        case .athlete:
+            let viewController = AthleteProfileViewController()
+            self.navigationController?.pushViewController(viewController, animated: true)
+        case .project:
+            let viewController = UINavigationController(rootViewController: ShowProjectViewController())
+            viewController.modalPresentationStyle = .fullScreen
+            self.navigationController?.present(viewController, animated: true, completion: nil)
         default:
             fatalError("This item can not be opened.")
         }
 
-        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

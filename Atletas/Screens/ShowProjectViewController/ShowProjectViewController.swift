@@ -44,6 +44,7 @@ class ShowProjectViewController: UIViewController {
     lazy var supportButton: GreenRoundedButton = {
         let button = GreenRoundedButton.getSupportButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(navigateToSupport), for: .touchUpInside)
 
         return button
     }()
@@ -90,7 +91,7 @@ class ShowProjectViewController: UIViewController {
         return view
     }()
 
-    var canEditProject = true
+    var canEditProject = false
 
     override func loadView() {
         super.loadView()
@@ -180,6 +181,16 @@ class ShowProjectViewController: UIViewController {
             let editButton = UIBarButtonItem(image: editImage, style: .plain, target: nil, action: nil)
             navigationItem.rightBarButtonItems?.append(editButton)
         }
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancelar", style: .plain, target: self, action: #selector(clickedCancel))
+    }
+
+    @objc func clickedCancel() {
+        dismiss(animated: true, completion: nil)
+    }
+
+    @objc func navigateToSupport() {
+        navigationController?.pushViewController(ProjectViewController(), animated: true)
     }
 }
 

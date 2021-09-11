@@ -43,6 +43,7 @@ class AthleteAccountViewController: UIViewController {
     lazy var projectView: ShowMoreProjectsSectionView = {
         let view = ShowMoreProjectsSectionView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.navigationController = navigationController
 
         return view
     }()

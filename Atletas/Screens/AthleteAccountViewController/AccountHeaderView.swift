@@ -50,6 +50,8 @@ class AccountHeaderView: UIView {
         return imageView
     }()
 
+    var tapGestureAction: ( () -> Void )?
+
     init(title: String, subtitle: String, image: UIImage?) {
         super.init(frame: .zero)
         setup(title: title, subtitle: subtitle, image: image)
@@ -119,7 +121,6 @@ class AccountHeaderView: UIView {
         }
     }
 
-    var tapGestureAction: ( () -> Void )?
     func setTapGestureToCallAction(_ action: @escaping () -> Void) {
         if tapGestureAction == nil {
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))

@@ -8,6 +8,8 @@
 import UIKit
 
 class ShowMoreProjectsSectionView: UIView {
+    var navigationController: UINavigationController?
+    
     let headerView: TitleAndShowMoreButtonView = {
         let view = TitleAndShowMoreButtonView()
         view.setTitle(withText: "Meus Projetos")
@@ -74,6 +76,11 @@ class ShowMoreProjectsSectionView: UIView {
 
         projects.forEach { project in
             let card = ProjectCardView(project: project)
+            card.setTapGestureToCallAction {
+                let viewController = UINavigationController(rootViewController: ShowProjectViewController())
+                viewController.modalPresentationStyle = .fullScreen
+                self.navigationController?.present(viewController, animated: true, completion: nil)
+            }
             stackView.addArrangedSubview(card)
         }
     }
