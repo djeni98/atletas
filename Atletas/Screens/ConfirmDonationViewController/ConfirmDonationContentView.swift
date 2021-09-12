@@ -11,6 +11,13 @@ class ConfirmDonationContentView: UIView {
     var navigationController: UINavigationController? {
         didSet {
             receiptView.navigationController = self.navigationController
+            buttonsView.navigationController = self.navigationController
+        }
+    }
+    
+    var donationValue: Double? {
+        didSet {
+            buttonsView.donationValue = self.donationValue
         }
     }
     
@@ -66,6 +73,7 @@ class ConfirmDonationContentView: UIView {
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
         }
+        receiptView.contentView = self
     }
     
     func setupButtonsView() {

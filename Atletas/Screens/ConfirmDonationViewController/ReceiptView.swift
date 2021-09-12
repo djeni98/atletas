@@ -9,6 +9,7 @@ import UIKit
 
 class ReceiptView: UIView {
     var navigationController: UINavigationController?
+    var contentView: ConfirmDonationContentView?
     
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
@@ -106,6 +107,7 @@ extension ReceiptView: UINavigationControllerDelegate, UIImagePickerControllerDe
         receiptImageView.image = image
         
         uploadPhotoButtonContentView.alpha = 0
+        contentView?.buttonsView.receipt = image
         
         navigationController?.dismiss(animated: true, completion: nil)
     }

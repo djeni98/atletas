@@ -8,6 +8,11 @@
 import UIKit
 
 class ConfirmDonationButtonsView: UIStackView {
+    let donationRepository: DonationRepository = fakeDonationRepository()
+    
+    var navigationController: UINavigationController?
+    var receipt: UIImage?
+    var donationValue: Double?
     
     lazy var laterButton: UIButton = {
         let button = UIButton()
@@ -17,6 +22,7 @@ class ConfirmDonationButtonsView: UIStackView {
         button.setTitleColor(UIColor(named: "laterButtonFont"), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: .semibold)
         button.backgroundColor = UIColor(named: "laterButton")
+        button.addTarget(self, action: #selector(clickedButton), for: .touchUpInside)
         return button
     }()
 
@@ -28,6 +34,7 @@ class ConfirmDonationButtonsView: UIStackView {
         button.setTitleColor(UIColor(named: "greenButtonText"), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: .semibold)
         button.backgroundColor = UIColor(named: "ButtonGreen")
+        button.addTarget(self, action: #selector(clickedButton), for: .touchUpInside)
         return button
     }()
     
@@ -44,4 +51,11 @@ class ConfirmDonationButtonsView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func clickedButton() {
+        navigationController?.dismiss(animated: true, completion: nil)
+        donationRepository.saveDonation(from: Supporter(name: "André Schueda", username: "schueda", password: "alksjd"),
+                                        to: Athlete(name: "Mayra Sayuri", username: "sayurii", password: "alsjdkajlsd", image: UIImage(), about: "bla bla bla", category: .brazilianTeam, contact: "41 99119831", pixKey: "1302091012", city: "Curitiba", socialMedia: SocialMedia(instagram: "@sayuri.mayra", facebook: "Mayra Sayuri", twitter: "@sayuri.mayra"), sport: .softball),
+                                        receipt: receipt,
+                                        value: donationValue ?? 0)
+    }
 }

@@ -8,6 +8,9 @@
 import UIKit
 
 class ConfirmDonationViewController: UIViewController {
+    let donationRepository: DonationRepository = fakeDonationRepository()
+    var donationValue: Double?
+    
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -41,6 +44,7 @@ class ConfirmDonationViewController: UIViewController {
             make.width.equalTo(scrollView)
         }
         scrollContentView.navigationController = self.navigationController
+        scrollContentView.donationValue = self.donationValue
     }
     
     func setupNav() {
@@ -49,6 +53,12 @@ class ConfirmDonationViewController: UIViewController {
     }
     
     @objc func clickedDone() {
-        
+        navigationController?.dismiss(animated: true, completion: nil)
+        donationRepository.saveDonation(from: Supporter(name: "André Schueda", username: "schueda", password: "alksjd"),
+                                        to: Athlete(name: "Mayra Sayuri", username: "sayurii", password: "alsjdkajlsd", image: UIImage(), about: "bla bla bla", category: .brazilianTeam, contact: "41 99119831", pixKey: "1302091012", city: "Curitiba", socialMedia: SocialMedia(instagram: "@sayuri.mayra", facebook: "Mayra Sayuri", twitter: "@sayuri.mayra"), sport: .softball),
+                                        receipt: scrollContentView.receiptView.receiptImageView.image,
+                                        value: donationValue ?? 0)
     }
+    
+    
 }
