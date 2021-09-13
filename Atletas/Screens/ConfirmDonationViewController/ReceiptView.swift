@@ -107,7 +107,6 @@ extension ReceiptView: UINavigationControllerDelegate, UIImagePickerControllerDe
         receiptImageView.image = image
         
         uploadPhotoButtonContentView.alpha = 0
-        contentView?.buttonsView.receipt = image
         
         navigationController?.dismiss(animated: true, completion: nil)
     }

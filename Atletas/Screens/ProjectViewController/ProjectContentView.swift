@@ -70,7 +70,7 @@ class ProjectContentView: UIStackView {
     lazy var confirmButton: GreenRoundedButton = {
         let button = GreenRoundedButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Copiar chave pix", for: .normal)
+        button.setTitle("Prosseguir", for: .normal)
         button.setTitleColor(UIColor(named: "greenButtonText"), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         button.addTarget(self, action: #selector(confirmButtonClicked), for: .touchUpInside)

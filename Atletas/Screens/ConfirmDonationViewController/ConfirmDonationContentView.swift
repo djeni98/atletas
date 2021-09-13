@@ -8,16 +8,11 @@
 import UIKit
 
 class ConfirmDonationContentView: UIView {
+    var donationValue: Double?
+    
     var navigationController: UINavigationController? {
         didSet {
             receiptView.navigationController = self.navigationController
-            buttonsView.navigationController = self.navigationController
-        }
-    }
-    
-    var donationValue: Double? {
-        didSet {
-            buttonsView.donationValue = self.donationValue
         }
     }
     
@@ -36,13 +31,16 @@ class ConfirmDonationContentView: UIView {
         return view
     }()
     
-    lazy var buttonsView: ConfirmDonationButtonsView = {
-        let stackView = ConfirmDonationButtonsView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 25
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        return stackView
+    lazy var sendButton: GreenRoundedButton = {
+        let button = GreenRoundedButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Enviar", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: .semibold)
+        button.setTitleColor(UIColor(named: "laterButtonFont"), for: .disabled)
+        button.setTitleColor(UIColor(named: "greenButtonText"), for: .normal)
+        button.backgroundColor = UIColor(named: "laterButton")
+        button.isEnabled = false
+        return button
     }()
     
     override init(frame: CGRect) {
@@ -50,7 +48,7 @@ class ConfirmDonationContentView: UIView {
         
         setupSubtitleLabel()
         setupReceiptView()
-        setupButtonsView()
+        setupSendButton()
     }
     
     required init(coder: NSCoder) {
@@ -76,11 +74,11 @@ class ConfirmDonationContentView: UIView {
         receiptView.contentView = self
     }
     
-    func setupButtonsView() {
-        addSubview(buttonsView)
-        buttonsView.snp.makeConstraints { make in
+    func setupSendButton() {
+        addSubview(sendButton)
+        sendButton.snp.makeConstraints { make in
             make.top.equalTo(receiptView.snp.bottom).offset(25)
-            make.height.equalTo(44)
+            make.height.equalTo(50)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
             make.bottom.equalToSuperview()

@@ -51,7 +51,6 @@ class ProjectViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.backButtonTitle = "Voltar"
         navigationItem.title = "Apoiar"
-        // navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: self, action: #selector(clickedCancel))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: nil, action: nil)
     }
     

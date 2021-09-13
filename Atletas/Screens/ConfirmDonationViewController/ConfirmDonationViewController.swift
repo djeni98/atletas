@@ -26,7 +26,7 @@ class ConfirmDonationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(named: "background")
         
         setupContent()
         setupNav()
@@ -49,16 +49,5 @@ class ConfirmDonationViewController: UIViewController {
     
     func setupNav() {
         navigationItem.title = "Apoiar"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Concluir", style: .plain, target: self, action: #selector(clickedDone))
     }
-    
-    @objc func clickedDone() {
-        navigationController?.dismiss(animated: true, completion: nil)
-        donationRepository.saveDonation(from: Supporter(name: "André Schueda", username: "schueda", password: "alksjd"),
-                                        to: Athlete(name: "Mayra Sayuri", username: "sayurii", password: "alsjdkajlsd", image: UIImage(), about: "bla bla bla", category: .brazilianTeam, contact: "41 99119831", pixKey: "1302091012", city: "Curitiba", socialMedia: SocialMedia(instagram: "@sayuri.mayra", facebook: "Mayra Sayuri", twitter: "@sayuri.mayra"), sport: .softball),
-                                        receipt: scrollContentView.receiptView.receiptImageView.image,
-                                        value: donationValue ?? 0)
-    }
-    
-    
 }
