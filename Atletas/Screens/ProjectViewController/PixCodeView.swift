@@ -8,6 +8,12 @@
 import UIKit
 
 class PixCodeView: UIView {
+    var pixCode: String? {
+        didSet {
+            pixCodeLabel.text = pixCode
+        }
+    }
+    
     let cornerRadius: CGFloat = 7
     let dashWidth: CGFloat = 1
     let dashColor: UIColor = UIColor(named: "dashedBorder") ?? .black
@@ -32,8 +38,7 @@ class PixCodeView: UIView {
     
     lazy var pixCodeLabel: UILabel = {
         let label = UILabel()
-        label.text = "000.000.000-99"
-        label.font = UIFont.preferredFont(for: .headline, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.textAlignment = .center
         label.textColor = UIColor(named: "pixCode")
         return label
