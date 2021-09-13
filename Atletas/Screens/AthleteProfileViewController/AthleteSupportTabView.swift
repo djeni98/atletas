@@ -18,6 +18,8 @@ class AthleteSupportTabView: UIView {
         }
     }
 
+    var navigationController: UINavigationController?
+
     lazy var aboutTextLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -112,6 +114,11 @@ class AthleteSupportTabView: UIView {
 
         projects.forEach { project in
             let card = ProjectCardView(project: project)
+            card.setTapGestureToCallAction {
+                let viewController = UINavigationController(rootViewController: ShowProjectViewController())
+                viewController.modalPresentationStyle = .fullScreen
+                self.navigationController?.present(viewController, animated: true, completion: nil)
+            }
             stackView.addArrangedSubview(card)
         }
     }

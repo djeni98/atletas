@@ -29,7 +29,7 @@ class ProjectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(named: "background")
         setupContent()
         setupNav()
     }
@@ -51,11 +51,11 @@ class ProjectViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.backButtonTitle = "Voltar"
         navigationItem.title = "Apoiar"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancelar", style: .plain, target: self, action: #selector(clickedCancel))
+        // navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: self, action: #selector(clickedCancel))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: nil, action: nil)
     }
     
     @objc func clickedCancel() {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }

@@ -20,17 +20,19 @@ enum SearchScopeButton: String, CaseIterable {
 
 class SearchViewController: UIViewController, UISearchBarDelegate {
     var tableView: UITableView!
-    var tableViewAdapter = AthleteListTableViewAdapter()
+    var tableViewAdapter: AthleteListTableViewAdapter!
 
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .systemBackground
 
         tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
 
+        tableViewAdapter = AthleteListTableViewAdapter(navigationController: navigationController)
+        tableView.delegate = tableViewAdapter
         tableView.dataSource = tableViewAdapter
+
         tableView.rowHeight = 80
         let inset: CGFloat = 24
         tableView.separatorInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
@@ -42,6 +44,19 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
+
+        view.backgroundColor = UIColor(named: "background")
+        tableView.backgroundColor = UIColor(named: "background")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
     override func viewDidLoad() {
@@ -69,7 +84,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         searchBar.setShowsCancelButton(false, animated: true)
         searchBar.text = ""
         searchBar.resignFirstResponder()
-        tableViewAdapter.filterContent(by: "")
+
+        let category = SearchScopeButton.allCases[searchBar.selectedScopeButtonIndex]
+        tableViewAdapter.filterContent(by: "", withCategory: category)
         tableView.reloadData()
     }
 

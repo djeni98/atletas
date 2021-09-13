@@ -37,6 +37,7 @@ class AthleteProfileViewController: UIViewController, UITabBarDelegate {
     lazy var supportTabView: AthleteSupportTabView = {
         let view = AthleteSupportTabView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.navigationController = navigationController
         
         let projects: [Project] = Array(1...3).map { n in
             return Project(title: "Proj \(n)", image: UIImage(named: "???")!, about: "", goal: 100, deadline: "12/12/2021", sport: .softball, category: .brazilianTeam)
@@ -73,14 +74,13 @@ class AthleteProfileViewController: UIViewController, UITabBarDelegate {
 
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(named: "background")
         setup()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // change navBar
-        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     func setup() {

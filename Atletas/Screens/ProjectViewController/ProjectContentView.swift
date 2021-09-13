@@ -12,6 +12,8 @@ class ProjectContentView: UIStackView {
     
     lazy var imageView: ProjectImageView = {
         let view = ProjectImageView()
+        view.imageName = "???"
+        view.projectName = "Sul Americano 2022"
         view.translatesAutoresizingMaskIntoConstraints = false
         view.snp.makeConstraints { make in
             make.height.equalTo(175)
@@ -25,6 +27,9 @@ class ProjectContentView: UIStackView {
         view.layer.borderWidth = 1
         view.layer.cornerRadius = 3
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.athleteName = "Mayra Sayuri"
+        view.athleteCpf = "***.999.***-**"
+        view.athleteBank = "Banco Do Brasil"
         return view
     }()
     
@@ -33,13 +38,14 @@ class ProjectContentView: UIStackView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Copie o código abaixo e utilize o Pix Copia e Cola no aplicativo que você vai fazer o pagamento:"
         label.numberOfLines = 0
-        label.font = UIFont.preferredFont(for: .footnote, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textAlignment = .center
         return label
     }()
     
     lazy var pixCodeView: PixCodeView = {
         let view = PixCodeView()
+        view.pixCode = "999.999.999-00"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -49,7 +55,7 @@ class ProjectContentView: UIStackView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Informe abaixo o valor de sua doação:"
         label.numberOfLines = 0
-        label.font = UIFont.preferredFont(for: .footnote, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textAlignment = .center
         return label
     }()
