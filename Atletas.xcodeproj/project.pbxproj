@@ -68,6 +68,8 @@
 		B77E60F826E54FD700B29E45 /* AthleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E60F726E54FD700B29E45 /* AthleteAccountViewController.swift */; };
 		B77E60FA26E550FD00B29E45 /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E60F926E550FD00B29E45 /* AccountHeaderView.swift */; };
 		B781090E26EF8864005E19FD /* SportsDataModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781090D26EF8864005E19FD /* SportsDataModule.swift */; };
+		B781091226EF9496005E19FD /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781091126EF9496005E19FD /* Contact.swift */; };
+		B781091426EF977B005E19FD /* PixInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781091326EF977B005E19FD /* PixInformation.swift */; };
 		B7B7C7B526DFB7D7009000D1 /* SearchBarWithScopeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */; };
 		B7BAC1A426E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1A326E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift */; };
 		B7BAC1A626E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1A526E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift */; };
@@ -145,6 +147,8 @@
 		B77E60F726E54FD700B29E45 /* AthleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteAccountViewController.swift; sourceTree = "<group>"; };
 		B77E60F926E550FD00B29E45 /* AccountHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
 		B781090D26EF8864005E19FD /* SportsDataModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsDataModule.swift; sourceTree = "<group>"; };
+		B781091126EF9496005E19FD /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		B781091326EF977B005E19FD /* PixInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixInformation.swift; sourceTree = "<group>"; };
 		B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarWithScopeButton.swift; sourceTree = "<group>"; };
 		B7BAC1A326E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndShowMoreButtonView.swift; sourceTree = "<group>"; };
 		B7BAC1A526E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreDonationsSectionView.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				610C7D6F26D7DA6F00F2FDB6 /* User.swift */,
 				610C7D7126D7DB3100F2FDB6 /* Supporter.swift */,
 				610C7D7326D7DBB100F2FDB6 /* Athlete.swift */,
+				B781091126EF9496005E19FD /* Contact.swift */,
+				B781091326EF977B005E19FD /* PixInformation.swift */,
 				610C7D7526D80B1500F2FDB6 /* Badge.swift */,
 				610C7D7726D80BCC00F2FDB6 /* LevelEnum.swift */,
 				610C7D7926D80C5F00F2FDB6 /* SportCategoryEnum.swift */,
@@ -507,6 +513,7 @@
 				B77E60FA26E550FD00B29E45 /* AccountHeaderView.swift in Sources */,
 				B77731AF26E9537500F88C90 /* AthleteInfoTabView.swift in Sources */,
 				B7506F9526EB88CD0084842B /* AppTabBarController.swift in Sources */,
+				B781091226EF9496005E19FD /* Contact.swift in Sources */,
 				610C7D7426D7DBB100F2FDB6 /* Athlete.swift in Sources */,
 				B7E52DD126E435270025A7A1 /* ProjectMetricsView.swift in Sources */,
 				61AD13A926E9780A005FF1F6 /* PixCodeView.swift in Sources */,
@@ -551,6 +558,7 @@
 				610C7D7226D7DB3100F2FDB6 /* Supporter.swift in Sources */,
 				613C3B0226E2BE6400968D43 /* DonationsTableSubheaderView.swift in Sources */,
 				610C7D7A26D80C5F00F2FDB6 /* SportCategoryEnum.swift in Sources */,
+				B781091426EF977B005E19FD /* PixInformation.swift in Sources */,
 				B77731AB26E937E600F88C90 /* TabBarAndSupportButtonView.swift in Sources */,
 				610C7D8826DFBC4300F2FDB6 /* SupportableCell.swift in Sources */,
 				610FE1CC26E423D9002FC0A5 /* ProjectViewController.swift in Sources */,
