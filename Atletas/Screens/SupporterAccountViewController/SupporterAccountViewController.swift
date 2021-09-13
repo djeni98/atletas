@@ -11,6 +11,7 @@ class SupporterAccountViewController: UIViewController {
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+//        scrollView.delegate = self
         return scrollView
     }()
     
@@ -18,6 +19,7 @@ class SupporterAccountViewController: UIViewController {
         let stackView = SupporterAccountContentView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
+        stackView.alignment = .center
         stackView.spacing = 40
         return stackView
     }()
@@ -38,9 +40,18 @@ class SupporterAccountViewController: UIViewController {
         
         scrollView.addSubview(scrollViewContent)
         scrollViewContent.snp.makeConstraints { make in
-            make.edges.equalTo(scrollView).inset(UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0))
+            make.edges.equalTo(scrollView).inset(UIEdgeInsets(top: 32, left: 0, bottom: 32, right: 0))
             make.width.equalTo(scrollView)
         }
     }
-
 }
+
+//extension SupporterAccountViewController: UIScrollViewDelegate {
+//    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+//        navigationController?.navigationBar.isHidden = true
+//    }
+//
+//    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//        navigationController?.navigationBar.isHidden = false
+//    }
+//}

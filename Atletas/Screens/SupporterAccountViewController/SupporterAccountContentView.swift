@@ -39,9 +39,8 @@ class SupporterAccountContentView: UIStackView {
         ].forEach { addArrangedSubview($0) }
         
         headerView.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().offset(-100)
-            make.top.equalToSuperview().offset(8)
             make.leading.equalToSuperview().offset(22)
+            make.trailing.equalToSuperview().offset(-22)
             make.height.equalTo(100)
         }
         
