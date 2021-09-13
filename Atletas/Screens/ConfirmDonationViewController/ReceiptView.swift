@@ -107,7 +107,8 @@ extension ReceiptView: UINavigationControllerDelegate, UIImagePickerControllerDe
         receiptImageView.image = image
         
         uploadPhotoButtonContentView.alpha = 0
-        
+        contentView?.sendButton.backgroundColor = UIColor(named: "ButtonGreen")
+        contentView?.sendButton.isEnabled = true
         navigationController?.dismiss(animated: true, completion: nil)
     }
 }

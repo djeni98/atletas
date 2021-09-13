@@ -8,6 +8,7 @@
 import UIKit
 
 class ConfirmDonationContentView: UIView {
+    let donationRepository: DonationRepository = fakeDonationRepository()
     var donationValue: Double?
     
     var navigationController: UINavigationController? {
@@ -31,17 +32,26 @@ class ConfirmDonationContentView: UIView {
         return view
     }()
     
-    lazy var sendButton: GreenRoundedButton = {
-        let button = GreenRoundedButton()
+    lazy var sendButton: UIButton = {
+        let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Enviar", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: .semibold)
         button.setTitleColor(UIColor(named: "laterButtonFont"), for: .disabled)
         button.setTitleColor(UIColor(named: "greenButtonText"), for: .normal)
         button.backgroundColor = UIColor(named: "laterButton")
+        button.layer.cornerRadius = 25
         button.isEnabled = false
+        button.addTarget(self, action: #selector(clickedSendButton), for: .touchUpInside)
         return button
     }()
+    
+    @objc func clickedSendButton() {
+        navigationController?.dismiss(animated: true, completion: nil)
+        donationRepository.saveDonation(from: Supporter(name: "André Schueda", username: "asldkj", password: "asdasd"), to: Athlete(name: "Mayra Sayuri", username: "asjkf", password: "asldkja", image: UIImage(), about: "balbalba", category: .brazilianTeam, contact: "12809321", pixKey: "213123", city: "Curitiba", socialMedia: SocialMedia(instagram: "@mayrasay", facebook: "Mayra Sayuri", twitter: "@mayrasay"), sport: .softball), receipt: receiptView.receiptImageView.image, value: donationValue ?? 0)
+        
+        
+    }
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
