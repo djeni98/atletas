@@ -27,6 +27,7 @@ class AthleteAccountViewController: UIViewController {
     lazy var accountHeaderView: AccountHeaderView = {
         let view = AccountHeaderView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.setTapGestureToCallAction(self.navigateToProfile)
 
         return view
     }()
@@ -34,6 +35,7 @@ class AthleteAccountViewController: UIViewController {
     lazy var donationView: ShowMoreDonationsSectionView = {
         let view = ShowMoreDonationsSectionView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.setShowMoreAction(self.navigateToDonations)
 
         return view
     }()
@@ -41,6 +43,7 @@ class AthleteAccountViewController: UIViewController {
     lazy var projectView: ShowMoreProjectsSectionView = {
         let view = ShowMoreProjectsSectionView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.navigationController = navigationController
 
         return view
     }()
@@ -63,8 +66,18 @@ class AthleteAccountViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(named: "background")
         setup()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
     func setup() {
@@ -92,6 +105,14 @@ class AthleteAccountViewController: UIViewController {
         scrollViewContainer.addArrangedSubview(accountHeaderView)
         scrollViewContainer.addArrangedSubview(donationView)
         scrollViewContainer.addArrangedSubview(projectView)
+    }
+
+    func navigateToDonations() {
+        navigationController?.pushViewController(DonationsViewController(), animated: true)
+    }
+
+    func navigateToProfile() {
+        navigationController?.pushViewController(AthleteProfileViewController(), animated: true)
     }
 }
 

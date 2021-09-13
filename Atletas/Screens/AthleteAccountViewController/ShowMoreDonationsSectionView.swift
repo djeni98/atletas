@@ -51,6 +51,10 @@ class ShowMoreDonationsSectionView: UIView {
         }
     }
 
+    func setShowMoreAction(_ action: @escaping () -> Void) {
+        headerView.setShowMoreAction(with: action)
+    }
+
     func setupHeader(withAction action: @escaping () -> Void) {
         headerView.setShowMoreAction(with: action)
 

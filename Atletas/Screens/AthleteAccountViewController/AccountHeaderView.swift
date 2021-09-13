@@ -50,6 +50,8 @@ class AccountHeaderView: UIView {
         return imageView
     }()
 
+    var tapGestureAction: ( () -> Void )?
+
     init(title: String, subtitle: String, image: UIImage?) {
         super.init(frame: .zero)
         setup(title: title, subtitle: subtitle, image: image)
@@ -117,6 +119,19 @@ class AccountHeaderView: UIView {
             make.leading.equalTo(titleLabel)
             make.trailing.equalTo(titleLabel)
         }
+    }
+
+    func setTapGestureToCallAction(_ action: @escaping () -> Void) {
+        if tapGestureAction == nil {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+            self.isUserInteractionEnabled = true
+            self.addGestureRecognizer(tap)
+        }
+        self.tapGestureAction = action
+    }
+
+    @objc func handleTap() {
+        tapGestureAction?()
     }
 }
 

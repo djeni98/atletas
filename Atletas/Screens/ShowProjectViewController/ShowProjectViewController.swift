@@ -44,6 +44,7 @@ class ShowProjectViewController: UIViewController {
     lazy var supportButton: GreenRoundedButton = {
         let button = GreenRoundedButton.getSupportButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(navigateToSupport), for: .touchUpInside)
 
         return button
     }()
@@ -90,12 +91,22 @@ class ShowProjectViewController: UIViewController {
         return view
     }()
 
-    var canEditProject = true
+    var canEditProject = false
 
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(named: "background")
         setup()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     func setup() {
@@ -109,6 +120,7 @@ class ShowProjectViewController: UIViewController {
         scrollViewContainer.addArrangedSubview(headerView)
         scrollViewContainer.addArrangedSubview(projectMetricsView)
         scrollViewContainer.addArrangedSubview(aboutView)
+        scrollViewContainer.alignment = .center
 
         headerView.snp.makeConstraints { make in
             make.width.equalToSuperview()
@@ -169,6 +181,16 @@ class ShowProjectViewController: UIViewController {
             let editButton = UIBarButtonItem(image: editImage, style: .plain, target: nil, action: nil)
             navigationItem.rightBarButtonItems?.append(editButton)
         }
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancelar", style: .plain, target: self, action: #selector(clickedCancel))
+    }
+
+    @objc func clickedCancel() {
+        dismiss(animated: true, completion: nil)
+    }
+
+    @objc func navigateToSupport() {
+        navigationController?.pushViewController(ProjectViewController(), animated: true)
     }
 }
 
