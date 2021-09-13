@@ -34,9 +34,7 @@ class ShowMoreProjectsSectionView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let projects: [Project] = Array(1...3).map { n in
-            return Project(title: "Proj \(n)", image: UIImage(named: "???")!, about: "", goal: 100, deadline: "12/12/2021", sport: .softball, category: .brazilianTeam)
-        }
+        let projects: [Project] = ProjectDataModule.shared.projects.map { $0.clone() }
         setup(projects: projects, showMoreAction: {})
     }
 

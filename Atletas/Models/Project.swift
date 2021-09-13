@@ -10,16 +10,20 @@ import UIKit
 
 class Project {
     var title: String
-    var image: UIImage
-    var about: String
     var goal: Double
     var deadline: String
     var limitDate: Date = Date()
+
+    var image: UIImage?
+    var about: String
+
     let sport: SportEnum
     let category: SportCategoryEnum
     var donations: [Donation] = []
+
+    weak var athlete: Athlete?
    
-    init(title: String, image: UIImage, about: String, goal: Double, deadline: String, sport: SportEnum, category: SportCategoryEnum) {
+    init(title: String, goal: Double, deadline: String, image: UIImage?, about: String = "", sport: SportEnum, category: SportCategoryEnum) {
         self.title = title
         self.image = image
         self.about = about
@@ -33,6 +37,19 @@ class Project {
         } else {
             self.deadline = limitDate.toDayMonthYearString()
         }
+    }
+
+    func clone(withDonations donations: [Donation] = []) -> Project {
+        let p = Project(title: title, goal: goal, deadline: deadline, image: image, about: about, sport: sport, category: category)
+        p.athlete = athlete
+        p.donations = donations
+
+        return p
+    }
+
+    func getDescription() -> String {
+        let percentage = Int(getValueCollected() / goal * 100)
+        return "Finaliza no dia \(deadline) - \(percentage)% concluído"
     }
     
     func getValueCollected () -> Double {
