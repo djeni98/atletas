@@ -11,9 +11,11 @@ import UIKit
 class Sport {
     let sport: SportEnum
     let sportImage: UIImage
+    let headerImage: UIImage
     
-    init(sport: SportEnum, sportImage: UIImage){
+    init(sport: SportEnum, sportImage: UIImage, headerImage: UIImage){
         self.sport = sport
         self.sportImage = sportImage
+        self.headerImage = headerImage
     }
 }
