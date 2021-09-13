@@ -70,6 +70,7 @@
 		B781090E26EF8864005E19FD /* SportsDataModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781090D26EF8864005E19FD /* SportsDataModule.swift */; };
 		B781091226EF9496005E19FD /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781091126EF9496005E19FD /* Contact.swift */; };
 		B781091426EF977B005E19FD /* PixInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781091326EF977B005E19FD /* PixInformation.swift */; };
+		B781091626EFA396005E19FD /* AthleteDataModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781091526EFA396005E19FD /* AthleteDataModule.swift */; };
 		B7B7C7B526DFB7D7009000D1 /* SearchBarWithScopeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */; };
 		B7BAC1A426E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1A326E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift */; };
 		B7BAC1A626E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1A526E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift */; };
@@ -149,6 +150,7 @@
 		B781090D26EF8864005E19FD /* SportsDataModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsDataModule.swift; sourceTree = "<group>"; };
 		B781091126EF9496005E19FD /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		B781091326EF977B005E19FD /* PixInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixInformation.swift; sourceTree = "<group>"; };
+		B781091526EFA396005E19FD /* AthleteDataModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteDataModule.swift; sourceTree = "<group>"; };
 		B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarWithScopeButton.swift; sourceTree = "<group>"; };
 		B7BAC1A326E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndShowMoreButtonView.swift; sourceTree = "<group>"; };
 		B7BAC1A526E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreDonationsSectionView.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				B781090D26EF8864005E19FD /* SportsDataModule.swift */,
+				B781091526EFA396005E19FD /* AthleteDataModule.swift */,
 			);
 			path = TestData;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				610FE1D026E5493E002FC0A5 /* ProjectImageView.swift in Sources */,
 				61AD13AB26EA3393005FF1F6 /* ValueInputView.swift in Sources */,
 				B77E60F826E54FD700B29E45 /* AthleteAccountViewController.swift in Sources */,
+				B781091626EFA396005E19FD /* AthleteDataModule.swift in Sources */,
 				B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */,
 				610C7D7826D80BCC00F2FDB6 /* LevelEnum.swift in Sources */,
 				B775EFA526E3C7B40005502E /* ProjectProgressView.swift in Sources */,
