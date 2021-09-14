@@ -41,7 +41,7 @@ class Athlete: User {
 
         self.contact = contact
         self.socialMedia = socialMedia
-        super.init(username: username, password: password)
+        super.init(username: username, password: password, type: .athlete)
     }
 
     func getFirstName() -> String {
