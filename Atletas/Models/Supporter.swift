@@ -15,6 +15,6 @@ class Supporter: User {
 
     init(name: String, username: String, password: String) {
         self.name = name
-        super.init(username: username, password: password)
+        super.init(username: username, password: password, type: .supporter)
     }
 }
