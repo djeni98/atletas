@@ -40,7 +40,7 @@ class SupportableCell: UICollectionViewCell {
         label.sizeToFit()
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
-        label.textColor = UIColor(named: "background")
+        label.textColor = .white
         return label
     }()
     

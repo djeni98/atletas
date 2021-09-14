@@ -39,6 +39,17 @@
 		61AD13AE26EAA592005FF1F6 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 61AD13AD26EAA592005FF1F6 /* IQKeyboardManagerSwift */; };
 		61AD13B026EAA833005FF1F6 /* ValueTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13AF26EAA833005FF1F6 /* ValueTextField.swift */; };
 		61AD13B326EAD3F7005FF1F6 /* ConfirmDonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13B226EAD3F7005FF1F6 /* ConfirmDonationViewController.swift */; };
+		61AD13D226EFBE60005FF1F6 /* SupporterAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13D126EFBE60005FF1F6 /* SupporterAccountViewController.swift */; };
+		61AD13D426EFBF55005FF1F6 /* SupporterAccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13D326EFBF55005FF1F6 /* SupporterAccountHeaderView.swift */; };
+		61AD13D626EFBF82005FF1F6 /* SupporterDonationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13D526EFBF82005FF1F6 /* SupporterDonationsView.swift */; };
+		61AD13D826EFC17C005FF1F6 /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13D726EFC17C005FF1F6 /* BadgesView.swift */; };
+		61AD13DA26EFC1D2005FF1F6 /* SupporterAccountContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13D926EFC1D2005FF1F6 /* SupporterAccountContentView.swift */; };
+		61AD13DC26F03944005FF1F6 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13DB26F03944005FF1F6 /* BadgeCollectionViewCell.swift */; };
+		61AD13B926ECE8FC005FF1F6 /* ConfirmDonationContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13B826ECE8FC005FF1F6 /* ConfirmDonationContentView.swift */; };
+		61AD13BB26ECEBCD005FF1F6 /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13BA26ECEBCD005FF1F6 /* ReceiptView.swift */; };
+		61AD13BF26ED0DBA005FF1F6 /* UploadPhotoButtonContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13BE26ED0DBA005FF1F6 /* UploadPhotoButtonContentView.swift */; };
+		61AD13C226EE316A005FF1F6 /* DonationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13C126EE316A005FF1F6 /* DonationRepository.swift */; };
+		61AD13C426EF8737005FF1F6 /* CopyButtonContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13C326EF8737005FF1F6 /* CopyButtonContentView.swift */; };
 		B254BFE326D82FF900A68D55 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE226D82FF900A68D55 /* Project.swift */; };
 		B254BFE526D8301F00A68D55 /* Donation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE426D8301F00A68D55 /* Donation.swift */; };
 		B254BFE726D8302B00A68D55 /* DonationStatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE626D8302B00A68D55 /* DonationStatusEnum.swift */; };
@@ -123,6 +134,17 @@
 		61AD13AA26EA3393005FF1F6 /* ValueInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueInputView.swift; sourceTree = "<group>"; };
 		61AD13AF26EAA833005FF1F6 /* ValueTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTextField.swift; sourceTree = "<group>"; };
 		61AD13B226EAD3F7005FF1F6 /* ConfirmDonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDonationViewController.swift; sourceTree = "<group>"; };
+		61AD13D126EFBE60005FF1F6 /* SupporterAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupporterAccountViewController.swift; sourceTree = "<group>"; };
+		61AD13D326EFBF55005FF1F6 /* SupporterAccountHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupporterAccountHeaderView.swift; sourceTree = "<group>"; };
+		61AD13D526EFBF82005FF1F6 /* SupporterDonationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupporterDonationsView.swift; sourceTree = "<group>"; };
+		61AD13D726EFC17C005FF1F6 /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
+		61AD13D926EFC1D2005FF1F6 /* SupporterAccountContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupporterAccountContentView.swift; sourceTree = "<group>"; };
+		61AD13DB26F03944005FF1F6 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
+		61AD13B826ECE8FC005FF1F6 /* ConfirmDonationContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDonationContentView.swift; sourceTree = "<group>"; };
+		61AD13BA26ECEBCD005FF1F6 /* ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptView.swift; sourceTree = "<group>"; };
+		61AD13BE26ED0DBA005FF1F6 /* UploadPhotoButtonContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoButtonContentView.swift; sourceTree = "<group>"; };
+		61AD13C126EE316A005FF1F6 /* DonationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationRepository.swift; sourceTree = "<group>"; };
+		61AD13C326EF8737005FF1F6 /* CopyButtonContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyButtonContentView.swift; sourceTree = "<group>"; };
 		B254BFE226D82FF900A68D55 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		B254BFE426D8301F00A68D55 /* Donation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donation.swift; sourceTree = "<group>"; };
 		B254BFE626D8302B00A68D55 /* DonationStatusEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationStatusEnum.swift; sourceTree = "<group>"; };
@@ -232,6 +254,7 @@
 				610FE1CF26E5493E002FC0A5 /* ProjectImageView.swift */,
 				61AD13A026E658B0005FF1F6 /* SupportedInfoView.swift */,
 				61AD13A826E9780A005FF1F6 /* PixCodeView.swift */,
+				61AD13C326EF8737005FF1F6 /* CopyButtonContentView.swift */,
 				61AD13AA26EA3393005FF1F6 /* ValueInputView.swift */,
 				61AD13AF26EAA833005FF1F6 /* ValueTextField.swift */,
 			);
@@ -268,8 +291,32 @@
 			isa = PBXGroup;
 			children = (
 				61AD13B226EAD3F7005FF1F6 /* ConfirmDonationViewController.swift */,
+				61AD13B826ECE8FC005FF1F6 /* ConfirmDonationContentView.swift */,
+				61AD13BA26ECEBCD005FF1F6 /* ReceiptView.swift */,
+				61AD13BE26ED0DBA005FF1F6 /* UploadPhotoButtonContentView.swift */,
 			);
 			path = ConfirmDonationViewController;
+			sourceTree = "<group>";
+		};
+		61AD13D026EFBD92005FF1F6 /* SupporterAccountViewController */ = {
+			isa = PBXGroup;
+			children = (
+				61AD13D126EFBE60005FF1F6 /* SupporterAccountViewController.swift */,
+				61AD13D926EFC1D2005FF1F6 /* SupporterAccountContentView.swift */,
+				61AD13D326EFBF55005FF1F6 /* SupporterAccountHeaderView.swift */,
+				61AD13D526EFBF82005FF1F6 /* SupporterDonationsView.swift */,
+				61AD13D726EFC17C005FF1F6 /* BadgesView.swift */,
+				61AD13DB26F03944005FF1F6 /* BadgeCollectionViewCell.swift */,
+			);
+			path = SupporterAccountViewController;
+			sourceTree = "<group>";
+		};
+		61AD13C026EE3146005FF1F6 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				61AD13C126EE316A005FF1F6 /* DonationRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		B2C90E1126DFA4EE00DFBB6D /* SportScreenViewController */ = {
@@ -311,6 +358,7 @@
 		B7653C9126DED2120070BBF9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				61AD13D026EFBD92005FF1F6 /* SupporterAccountViewController */,
 				61AD13B126EAD3BC005FF1F6 /* ConfirmDonationViewController */,
 				610FE1CA26E423B8002FC0A5 /* ProjectViewController */,
 				B73A96D826E82F850080555E /* AthleteProfileViewController */,
@@ -410,6 +458,7 @@
 				B7D5E82B26D7BABD0090966F /* LaunchScreen.storyboard */,
 				B7D5E82E26D7BABD0090966F /* Info.plist */,
 				B775EFA626E3DD780005502E /* Extensions */,
+				61AD13C026EE3146005FF1F6 /* Repositories */,
 				610C7D8626DFB8E800F2FDB6 /* ViewModels */,
 				B7653C9126DED2120070BBF9 /* Screens */,
 				B7653C8E26DE5D1A0070BBF9 /* Components */,
@@ -515,9 +564,11 @@
 				610C7D7C26D918D300F2FDB6 /* SocialMedia.swift in Sources */,
 				B7653C9026DE5D470070BBF9 /* AthleteListItem.swift in Sources */,
 				B775EF9B26E38E0E0005502E /* GreenRoundedButton.swift in Sources */,
+				61AD13D426EFBF55005FF1F6 /* SupporterAccountHeaderView.swift in Sources */,
 				B293B1F126EA366900EF875D /* SearchBar.swift in Sources */,
 				B77E60F126E4F62A00B29E45 /* DateExtension.swift in Sources */,
 				61AD13B026EAA833005FF1F6 /* ValueTextField.swift in Sources */,
+				61AD13D826EFC17C005FF1F6 /* BadgesView.swift in Sources */,
 				610C7D7626D80B1500F2FDB6 /* Badge.swift in Sources */,
 				610C7D7026D7DA6F00F2FDB6 /* User.swift in Sources */,
 				613C3AFA26E2A04000968D43 /* DonationsContentView.swift in Sources */,
@@ -525,7 +576,9 @@
 				B254BFEB26D8307700A68D55 /* SportEnum.swift in Sources */,
 				B775EFAA26E3DF1A0005502E /* GraySquareView.swift in Sources */,
 				B775EFA826E3DD850005502E /* UIColorExtension.swift in Sources */,
+				61AD13DA26EFC1D2005FF1F6 /* SupporterAccountContentView.swift in Sources */,
 				B7BAC1AD26E6F5A7000CA0F0 /* ShowMoreProjectsSectionView.swift in Sources */,
+				61AD13C226EE316A005FF1F6 /* DonationRepository.swift in Sources */,
 				B7653C9A26DEE06A0070BBF9 /* AthleteListTableViewAdapter.swift in Sources */,
 				B2C90E0F26DFA4E600DFBB6D /* SportListTableViewAdapter.swift in Sources */,
 				B77E60FA26E550FD00B29E45 /* AccountHeaderView.swift in Sources */,
@@ -534,6 +587,8 @@
 				B781091226EF9496005E19FD /* Contact.swift in Sources */,
 				610C7D7426D7DBB100F2FDB6 /* Athlete.swift in Sources */,
 				B7E52DD126E435270025A7A1 /* ProjectMetricsView.swift in Sources */,
+				61AD13D626EFBF82005FF1F6 /* SupporterDonationsView.swift in Sources */,
+				61AD13DC26F03944005FF1F6 /* BadgeCollectionViewCell.swift in Sources */,
 				61AD13A926E9780A005FF1F6 /* PixCodeView.swift in Sources */,
 				B7BAC1A626E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift in Sources */,
 				B781090E26EF8864005E19FD /* SportsDataModule.swift in Sources */,
@@ -543,8 +598,11 @@
 				B73A96DA26E82FAC0080555E /* AthleteProfileViewController.swift in Sources */,
 				B7D5E82526D7BABB0090966F /* ViewController.swift in Sources */,
 				B7653C9826DEDDBD0070BBF9 /* AthleteListItemCell.swift in Sources */,
+				61AD13BF26ED0DBA005FF1F6 /* UploadPhotoButtonContentView.swift in Sources */,
+				61AD13B926ECE8FC005FF1F6 /* ConfirmDonationContentView.swift in Sources */,
 				613C3AF826E29A6B00968D43 /* DonationsViewController.swift in Sources */,
 				61AD13B326EAD3F7005FF1F6 /* ConfirmDonationViewController.swift in Sources */,
+				61AD13D226EFBE60005FF1F6 /* SupporterAccountViewController.swift in Sources */,
 				B7B7C7B526DFB7D7009000D1 /* SearchBarWithScopeButton.swift in Sources */,
 				B7BAC1AB26E6EF64000CA0F0 /* ProjectCardView.swift in Sources */,
 				B7D5E82126D7BABB0090966F /* AppDelegate.swift in Sources */,
@@ -556,6 +614,7 @@
 				614282F326E110A300F04601 /* AthletesCell.swift in Sources */,
 				610FE1D026E5493E002FC0A5 /* ProjectImageView.swift in Sources */,
 				61AD13AB26EA3393005FF1F6 /* ValueInputView.swift in Sources */,
+				61AD13BB26ECEBCD005FF1F6 /* ReceiptView.swift in Sources */,
 				B77E60F826E54FD700B29E45 /* AthleteAccountViewController.swift in Sources */,
 				B781091626EFA396005E19FD /* AthleteDataModule.swift in Sources */,
 				B7D5E82326D7BABB0090966F /* SceneDelegate.swift in Sources */,
@@ -566,6 +625,7 @@
 				B254BFE926D8304700A68D55 /* UserType.swift in Sources */,
 				B7E52DD326E43C540025A7A1 /* AboutView.swift in Sources */,
 				B7653C9426DED23B0070BBF9 /* SearchViewController.swift in Sources */,
+				61AD13C426EF8737005FF1F6 /* CopyButtonContentView.swift in Sources */,
 				B254BFE526D8301F00A68D55 /* Donation.swift in Sources */,
 				613C3AFC26E2A32000968D43 /* DonationsTableTitleView.swift in Sources */,
 				B77731AD26E948C300F88C90 /* AthleteSupportTabView.swift in Sources */,
