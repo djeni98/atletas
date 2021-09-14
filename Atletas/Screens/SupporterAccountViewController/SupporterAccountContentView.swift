@@ -7,53 +7,64 @@
 
 import UIKit
 
-class SupporterAccountContentView: UIStackView {
+class SupporterAccountContentView: UIView {
+    var supporter: Supporter
+    
     lazy var headerView: SupporterAccountHeaderView = {
-        let view = SupporterAccountHeaderView()
+        let view = SupporterAccountHeaderView(supporter: supporter)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .blue
         return view
     }()
     
     lazy var donationsView: SupporterDonationsView = {
-        let view = SupporterDonationsView()
+        let view = SupporterDonationsView(donations: supporter.donations)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .red
         return view
     }()
     
     lazy var badgesView: BadgesView = {
-        let view = BadgesView()
+        let view = BadgesView(badges: supporter.badges)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .green
         return view
     }()
     
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, supporter: Supporter) {
+        self.supporter = supporter
         super.init(frame: frame)
         
-        [
-            headerView,
-            donationsView,
-            badgesView
-        ].forEach { addArrangedSubview($0) }
+        setupHeaderView()
+        setupDonationsView()
+        setupBadgesView()
         
+    }
+    
+    func setupHeaderView() {
+        addSubview(headerView)
         headerView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
             make.leading.equalToSuperview().offset(22)
             make.trailing.equalToSuperview().offset(-22)
-            make.height.equalTo(100)
         }
-        
+    }
+    
+    func setupDonationsView() {
+        addSubview(donationsView)
         donationsView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(22)
-            make.trailing.equalToSuperview().offset(-22)
-            make.height.equalTo(300)
+            make.top.equalTo(headerView.snp.bottom).offset(40)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(262)
         }
-        
+    }
+    
+    func setupBadgesView() {
+        addSubview(badgesView)
         badgesView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(22)
-            make.trailing.equalToSuperview().offset(-22)
-            make.height.equalTo(300)
+            make.top.equalTo(donationsView.snp.bottom).offset(40)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.height.equalTo(260)
         }
     }
     

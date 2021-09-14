@@ -8,34 +8,7 @@
 import UIKit
 
 class SupporterAccountHeaderView: UIView {
-    var data: Supporter? {
-        didSet {
-            switch data?.level {
-            case .noLevel:
-                imageView.image = nil
-                subtitleLabel.text = "Apoiador sem nível"
-            case .bronze:
-                imageView.image = UIImage(named: "bronze")
-                subtitleLabel.text = "Apoiador nível bronze"
-            case .silver:
-                imageView.image = UIImage(named: "silver")
-                subtitleLabel.text = "Apoiador nível prata"
-            case .gold:
-                imageView.image = UIImage(named: "gold")
-                subtitleLabel.text = "Apoiador nível ouro"
-            case .platinum:
-                imageView.image = UIImage(named: "platinum")
-                subtitleLabel.text = "Apoiador nível platina"
-            case .diamond:
-                imageView.image = UIImage(named: "diamond")
-                subtitleLabel.text = "Apoiador nível diamante"
-            default:
-                imageView.image = nil
-            }
-            
-            titleLabel.text = data?.name
-        }
-    }
+    var supporter: Supporter
     
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -61,7 +34,6 @@ class SupporterAccountHeaderView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = UIColor(named: "SecondaryFont")
-        label.text = "Veja seu perfil"
         
         return label
     }()
@@ -77,13 +49,15 @@ class SupporterAccountHeaderView: UIView {
         return imageView
     }()
     
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, supporter: Supporter) {
+        self.supporter = supporter
         super.init(frame: frame)
         
         setupImageView()
         setupChevron()
         setupTitle()
         setupSubtitle()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -97,6 +71,28 @@ class SupporterAccountHeaderView: UIView {
             make.leading.equalToSuperview()
             make.width.equalTo(56)
             make.height.equalTo(56)
+            make.bottom.equalToSuperview()
+        }
+        
+        switch supporter.level {
+        case .noLevel:
+            imageView.image = nil
+            subtitleLabel.text = "Apoiador sem nível"
+        case .bronze:
+            imageView.image = UIImage(named: "bronze")
+            subtitleLabel.text = "Apoiador nível bronze"
+        case .silver:
+            imageView.image = UIImage(named: "silver")
+            subtitleLabel.text = "Apoiador nível prata"
+        case .gold:
+            imageView.image = UIImage(named: "gold")
+            subtitleLabel.text = "Apoiador nível ouro"
+        case .platinum:
+            imageView.image = UIImage(named: "platinum")
+            subtitleLabel.text = "Apoiador nível platina"
+        case .diamond:
+            imageView.image = UIImage(named: "diamond")
+            subtitleLabel.text = "Apoiador nível diamante"
         }
     }
     
@@ -117,6 +113,8 @@ class SupporterAccountHeaderView: UIView {
             make.leading.equalTo(imageView.snp.trailing).offset(12)
             make.trailing.equalTo(chevronImage.snp.leading).offset(-12)
         }
+        
+        titleLabel.text = supporter.name
     }
     
     func setupSubtitle() {
