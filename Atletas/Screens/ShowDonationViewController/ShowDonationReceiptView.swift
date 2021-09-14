@@ -14,6 +14,7 @@ class ShowDonationReceiptView: UIView {
         label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         label.textAlignment = .left
         label.text = "Comprovante Pix"
+        label.textColor = UIColor(named: "ShowDonationFont")
         return label
     }()
     
@@ -21,6 +22,8 @@ class ShowDonationReceiptView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .gray
+        imageView.layer.cornerRadius = 10
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -28,6 +31,7 @@ class ShowDonationReceiptView: UIView {
         super.init(frame: frame)
         
         setupSubtitleLabel()
+        setupReceiptImageView()
     }
     
     func setupSubtitleLabel() {
@@ -36,6 +40,17 @@ class ShowDonationReceiptView: UIView {
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
+        }
+    }
+    
+    func setupReceiptImageView() {
+        addSubview(receiptImageView)
+        receiptImageView.snp.makeConstraints { make in
+            make.top.equalTo(subtitleLabel.snp.bottom).offset(8)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.height.equalTo(UIScreen.main.bounds.height * 0.25)
         }
     }
     

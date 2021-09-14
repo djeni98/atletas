@@ -32,6 +32,7 @@ class ShowDonationAthleteView: UIView {
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textAlignment = .left
         label.text = "Nome do Atleta"
+        label.textColor = UIColor(named: "ShowDonationFont")
         return label
     }()
     
