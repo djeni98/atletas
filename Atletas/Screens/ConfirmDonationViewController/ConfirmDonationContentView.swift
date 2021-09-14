@@ -48,6 +48,9 @@ class ConfirmDonationContentView: UIView {
     
     @objc func clickedSendButton() {
         navigationController?.dismiss(animated: true, completion: nil)
+        let supporter = SupporterDataModule.shared.supporters[0]
+        let athlete = AthleteDataModule.shared.athletes[0]
+        donationRepository.saveDonation(from: supporter, to: athlete, receipt: receiptView.receiptImageView.image, value: donationValue ?? 0)        
     }
     
     override init(frame: CGRect) {
