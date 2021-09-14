@@ -7,7 +7,9 @@
 
 import UIKit
 
-class AthletesCell: UICollectionViewCell {
+class AthletesView: UICollectionViewCell {
+    var navigationController: UINavigationController?
+    
     static let identifier = UUID().uuidString
     
     lazy var athletesContainer: UIView = {
@@ -27,7 +29,7 @@ class AthletesCell: UICollectionViewCell {
     lazy var athletesRow: SupportableRowView = {
         let supportables = AthleteDataModule.shared.athletes.slice(0..<10)
     
-        let row = SupportableRowView(supportables: supportables)
+        let row = SupportableRowView(supportables: supportables, navigationController: navigationController)
         row.translatesAutoresizingMaskIntoConstraints = false
         return row
     }()
@@ -36,7 +38,8 @@ class AthletesCell: UICollectionViewCell {
         fatalError("init hasn't been implemented")
     }
     
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, navigationController: UINavigationController?) {
+        self.navigationController = navigationController
         super.init(frame: .zero)
         
         setupAthletes()

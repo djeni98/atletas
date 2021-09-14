@@ -29,9 +29,9 @@
 		613C3AFE26E2A35100968D43 /* DonationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613C3AFD26E2A35100968D43 /* DonationCell.swift */; };
 		613C3B0026E2B66C00968D43 /* MonthDonations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613C3AFF26E2B66C00968D43 /* MonthDonations.swift */; };
 		613C3B0226E2BE6400968D43 /* DonationsTableSubheaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613C3B0126E2BE6400968D43 /* DonationsTableSubheaderView.swift */; };
-		614282F126E1109100F04601 /* SportsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F026E1109100F04601 /* SportsCell.swift */; };
-		614282F326E110A300F04601 /* AthletesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F226E110A300F04601 /* AthletesCell.swift */; };
-		614282F526E110B000F04601 /* ProjectsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F426E110B000F04601 /* ProjectsCell.swift */; };
+		614282F126E1109100F04601 /* SportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F026E1109100F04601 /* SportsView.swift */; };
+		614282F326E110A300F04601 /* AthletesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F226E110A300F04601 /* AthletesView.swift */; };
+		614282F526E110B000F04601 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F426E110B000F04601 /* ProjectsView.swift */; };
 		614282FA26E28A6A00F04601 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614282F926E28A6A00F04601 /* ExploreViewController.swift */; };
 		61AD13A126E658B0005FF1F6 /* SupportedInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13A026E658B0005FF1F6 /* SupportedInfoView.swift */; };
 		61AD13A926E9780A005FF1F6 /* PixCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13A826E9780A005FF1F6 /* PixCodeView.swift */; };
@@ -39,17 +39,17 @@
 		61AD13AE26EAA592005FF1F6 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 61AD13AD26EAA592005FF1F6 /* IQKeyboardManagerSwift */; };
 		61AD13B026EAA833005FF1F6 /* ValueTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13AF26EAA833005FF1F6 /* ValueTextField.swift */; };
 		61AD13B326EAD3F7005FF1F6 /* ConfirmDonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13B226EAD3F7005FF1F6 /* ConfirmDonationViewController.swift */; };
+		61AD13B926ECE8FC005FF1F6 /* ConfirmDonationContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13B826ECE8FC005FF1F6 /* ConfirmDonationContentView.swift */; };
+		61AD13BB26ECEBCD005FF1F6 /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13BA26ECEBCD005FF1F6 /* ReceiptView.swift */; };
+		61AD13BF26ED0DBA005FF1F6 /* UploadPhotoButtonContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13BE26ED0DBA005FF1F6 /* UploadPhotoButtonContentView.swift */; };
+		61AD13C226EE316A005FF1F6 /* DonationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13C126EE316A005FF1F6 /* DonationRepository.swift */; };
+		61AD13C426EF8737005FF1F6 /* CopyButtonContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13C326EF8737005FF1F6 /* CopyButtonContentView.swift */; };
 		61AD13D226EFBE60005FF1F6 /* SupporterAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13D126EFBE60005FF1F6 /* SupporterAccountViewController.swift */; };
 		61AD13D426EFBF55005FF1F6 /* SupporterAccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13D326EFBF55005FF1F6 /* SupporterAccountHeaderView.swift */; };
 		61AD13D626EFBF82005FF1F6 /* SupporterDonationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13D526EFBF82005FF1F6 /* SupporterDonationsView.swift */; };
 		61AD13D826EFC17C005FF1F6 /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13D726EFC17C005FF1F6 /* BadgesView.swift */; };
 		61AD13DA26EFC1D2005FF1F6 /* SupporterAccountContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13D926EFC1D2005FF1F6 /* SupporterAccountContentView.swift */; };
 		61AD13DC26F03944005FF1F6 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13DB26F03944005FF1F6 /* BadgeCollectionViewCell.swift */; };
-		61AD13B926ECE8FC005FF1F6 /* ConfirmDonationContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13B826ECE8FC005FF1F6 /* ConfirmDonationContentView.swift */; };
-		61AD13BB26ECEBCD005FF1F6 /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13BA26ECEBCD005FF1F6 /* ReceiptView.swift */; };
-		61AD13BF26ED0DBA005FF1F6 /* UploadPhotoButtonContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13BE26ED0DBA005FF1F6 /* UploadPhotoButtonContentView.swift */; };
-		61AD13C226EE316A005FF1F6 /* DonationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13C126EE316A005FF1F6 /* DonationRepository.swift */; };
-		61AD13C426EF8737005FF1F6 /* CopyButtonContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13C326EF8737005FF1F6 /* CopyButtonContentView.swift */; };
 		B254BFE326D82FF900A68D55 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE226D82FF900A68D55 /* Project.swift */; };
 		B254BFE526D8301F00A68D55 /* Donation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE426D8301F00A68D55 /* Donation.swift */; };
 		B254BFE726D8302B00A68D55 /* DonationStatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254BFE626D8302B00A68D55 /* DonationStatusEnum.swift */; };
@@ -125,26 +125,26 @@
 		613C3AFD26E2A35100968D43 /* DonationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationCell.swift; sourceTree = "<group>"; };
 		613C3AFF26E2B66C00968D43 /* MonthDonations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthDonations.swift; sourceTree = "<group>"; };
 		613C3B0126E2BE6400968D43 /* DonationsTableSubheaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationsTableSubheaderView.swift; sourceTree = "<group>"; };
-		614282F026E1109100F04601 /* SportsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCell.swift; sourceTree = "<group>"; };
-		614282F226E110A300F04601 /* AthletesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthletesCell.swift; sourceTree = "<group>"; };
-		614282F426E110B000F04601 /* ProjectsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCell.swift; sourceTree = "<group>"; };
+		614282F026E1109100F04601 /* SportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsView.swift; sourceTree = "<group>"; };
+		614282F226E110A300F04601 /* AthletesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthletesView.swift; sourceTree = "<group>"; };
+		614282F426E110B000F04601 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		614282F926E28A6A00F04601 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		61AD13A026E658B0005FF1F6 /* SupportedInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedInfoView.swift; sourceTree = "<group>"; };
 		61AD13A826E9780A005FF1F6 /* PixCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixCodeView.swift; sourceTree = "<group>"; };
 		61AD13AA26EA3393005FF1F6 /* ValueInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueInputView.swift; sourceTree = "<group>"; };
 		61AD13AF26EAA833005FF1F6 /* ValueTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTextField.swift; sourceTree = "<group>"; };
 		61AD13B226EAD3F7005FF1F6 /* ConfirmDonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDonationViewController.swift; sourceTree = "<group>"; };
+		61AD13B826ECE8FC005FF1F6 /* ConfirmDonationContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDonationContentView.swift; sourceTree = "<group>"; };
+		61AD13BA26ECEBCD005FF1F6 /* ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptView.swift; sourceTree = "<group>"; };
+		61AD13BE26ED0DBA005FF1F6 /* UploadPhotoButtonContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoButtonContentView.swift; sourceTree = "<group>"; };
+		61AD13C126EE316A005FF1F6 /* DonationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationRepository.swift; sourceTree = "<group>"; };
+		61AD13C326EF8737005FF1F6 /* CopyButtonContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyButtonContentView.swift; sourceTree = "<group>"; };
 		61AD13D126EFBE60005FF1F6 /* SupporterAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupporterAccountViewController.swift; sourceTree = "<group>"; };
 		61AD13D326EFBF55005FF1F6 /* SupporterAccountHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupporterAccountHeaderView.swift; sourceTree = "<group>"; };
 		61AD13D526EFBF82005FF1F6 /* SupporterDonationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupporterDonationsView.swift; sourceTree = "<group>"; };
 		61AD13D726EFC17C005FF1F6 /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
 		61AD13D926EFC1D2005FF1F6 /* SupporterAccountContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupporterAccountContentView.swift; sourceTree = "<group>"; };
 		61AD13DB26F03944005FF1F6 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
-		61AD13B826ECE8FC005FF1F6 /* ConfirmDonationContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDonationContentView.swift; sourceTree = "<group>"; };
-		61AD13BA26ECEBCD005FF1F6 /* ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptView.swift; sourceTree = "<group>"; };
-		61AD13BE26ED0DBA005FF1F6 /* UploadPhotoButtonContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoButtonContentView.swift; sourceTree = "<group>"; };
-		61AD13C126EE316A005FF1F6 /* DonationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationRepository.swift; sourceTree = "<group>"; };
-		61AD13C326EF8737005FF1F6 /* CopyButtonContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyButtonContentView.swift; sourceTree = "<group>"; };
 		B254BFE226D82FF900A68D55 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		B254BFE426D8301F00A68D55 /* Donation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donation.swift; sourceTree = "<group>"; };
 		B254BFE626D8302B00A68D55 /* DonationStatusEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationStatusEnum.swift; sourceTree = "<group>"; };
@@ -278,11 +278,11 @@
 			children = (
 				614282F926E28A6A00F04601 /* ExploreViewController.swift */,
 				610C7D8926E0FC1500F2FDB6 /* ExploreContentView.swift */,
+				614282F026E1109100F04601 /* SportsView.swift */,
+				614282F226E110A300F04601 /* AthletesView.swift */,
+				614282F426E110B000F04601 /* ProjectsView.swift */,
 				610C7D8226DFB3B500F2FDB6 /* SupportableRowView.swift */,
 				610C7D8726DFBC4300F2FDB6 /* SupportableCell.swift */,
-				614282F426E110B000F04601 /* ProjectsCell.swift */,
-				614282F026E1109100F04601 /* SportsCell.swift */,
-				614282F226E110A300F04601 /* AthletesCell.swift */,
 			);
 			path = ExploreViewController;
 			sourceTree = "<group>";
@@ -298,6 +298,14 @@
 			path = ConfirmDonationViewController;
 			sourceTree = "<group>";
 		};
+		61AD13C026EE3146005FF1F6 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				61AD13C126EE316A005FF1F6 /* DonationRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		61AD13D026EFBD92005FF1F6 /* SupporterAccountViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,14 +317,6 @@
 				61AD13DB26F03944005FF1F6 /* BadgeCollectionViewCell.swift */,
 			);
 			path = SupporterAccountViewController;
-			sourceTree = "<group>";
-		};
-		61AD13C026EE3146005FF1F6 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				61AD13C126EE316A005FF1F6 /* DonationRepository.swift */,
-			);
-			path = Repositories;
 			sourceTree = "<group>";
 		};
 		B2C90E1126DFA4EE00DFBB6D /* SportScreenViewController */ = {
@@ -557,7 +557,7 @@
 				610C7D8A26E0FC1500F2FDB6 /* ExploreContentView.swift in Sources */,
 				610FE1D326E54D42002FC0A5 /* UIFontExtension.swift in Sources */,
 				61AD13A126E658B0005FF1F6 /* SupportedInfoView.swift in Sources */,
-				614282F126E1109100F04601 /* SportsCell.swift in Sources */,
+				614282F126E1109100F04601 /* SportsView.swift in Sources */,
 				B788034026F0CAC8001288BE /* DonationDataModule.swift in Sources */,
 				B75B9BE626F009D0008EC073 /* SearchableContentDataModule.swift in Sources */,
 				B75B9BE426EFFCC8008EC073 /* ProjectDataModule.swift in Sources */,
@@ -594,7 +594,7 @@
 				B781090E26EF8864005E19FD /* SportsDataModule.swift in Sources */,
 				B75B9BE226EFCC70008EC073 /* SupporterDataModule.swift in Sources */,
 				B7BAC1AF26E70209000CA0F0 /* ArrayExtension.swift in Sources */,
-				614282F526E110B000F04601 /* ProjectsCell.swift in Sources */,
+				614282F526E110B000F04601 /* ProjectsView.swift in Sources */,
 				B73A96DA26E82FAC0080555E /* AthleteProfileViewController.swift in Sources */,
 				B7D5E82526D7BABB0090966F /* ViewController.swift in Sources */,
 				B7653C9826DEDDBD0070BBF9 /* AthleteListItemCell.swift in Sources */,
@@ -611,7 +611,7 @@
 				B254BFE726D8302B00A68D55 /* DonationStatusEnum.swift in Sources */,
 				B7BAC1A426E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift in Sources */,
 				610C7D8526DFB8E300F2FDB6 /* Supportable.swift in Sources */,
-				614282F326E110A300F04601 /* AthletesCell.swift in Sources */,
+				614282F326E110A300F04601 /* AthletesView.swift in Sources */,
 				610FE1D026E5493E002FC0A5 /* ProjectImageView.swift in Sources */,
 				61AD13AB26EA3393005FF1F6 /* ValueInputView.swift in Sources */,
 				61AD13BB26ECEBCD005FF1F6 /* ReceiptView.swift in Sources */,

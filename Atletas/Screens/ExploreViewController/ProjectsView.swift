@@ -1,5 +1,5 @@
 //
-//  ProjectsCell.swift
+//  ProjectsView.swift
 //  Atletas
 //
 //  Created by André Schueda on 02/09/21.
@@ -7,14 +7,8 @@
 
 import UIKit
 
-class ProjectsCell: UICollectionViewCell {
-    static let identifier = UUID().uuidString
-   
-    lazy var projectsContainer: UIView = {
-        let container = UIView()
-        container.translatesAutoresizingMaskIntoConstraints = false
-        return container
-    }()
+class ProjectsView: UIView {
+    var navigationController: UINavigationController?
     
     lazy var projectsLabel: UILabel = {
         let label = UILabel()
@@ -26,38 +20,34 @@ class ProjectsCell: UICollectionViewCell {
     
     lazy var projectsRow: SupportableRowView = {
         let supportables = ProjectDataModule.shared.projects.slice(0..<10)
-        let row = SupportableRowView(supportables: supportables)
+        let row = SupportableRowView(supportables: supportables, navigationController: navigationController)
         row.translatesAutoresizingMaskIntoConstraints = false
         return row
     }()
     
-    required init?(coder: NSCoder) {
-        fatalError("init hasn't been implemented")
-    }
-    
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, navigationController: UINavigationController?) {
+        self.navigationController = navigationController
         super.init(frame: .zero)
         
-        setupProjects()
+        setupProjectsLabel()
+        setupProjectsRow()
     }
     
-    func setupProjects() {
-        addSubview(projectsContainer)
-        projectsContainer.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(30)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-20)
-        }
-
-        projectsContainer.addSubview(projectsLabel)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupProjectsLabel() {
+        addSubview(projectsLabel)
         projectsLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(25)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
         }
-
-        projectsContainer.addSubview(projectsRow)
+    }
+    
+    func setupProjectsRow() {
+        addSubview(projectsRow)
         projectsRow.snp.makeConstraints { make in
             make.top.equalTo(projectsLabel.snp.bottom).offset(8)
             make.leading.equalToSuperview()

@@ -1,5 +1,5 @@
 //
-//  SportsCell.swift
+//  SportsView.swift
 //  Atletas
 //
 //  Created by André Schueda on 02/09/21.
@@ -7,7 +7,9 @@
 
 import UIKit
 
-class SportsCell: UICollectionViewCell {
+class SportsView: UICollectionViewCell {
+    var navigationController: UINavigationController?
+    
     static let identifier = UUID().uuidString
     
     lazy var sportsContainer: UIView = {
@@ -26,7 +28,7 @@ class SportsCell: UICollectionViewCell {
     
     lazy var sportsRow: SupportableRowView = {
         let supportables = SportsDataModule.shared.sports
-        let row = SupportableRowView(supportables: supportables)
+        let row = SupportableRowView(supportables: supportables, navigationController: navigationController)
         row.translatesAutoresizingMaskIntoConstraints = false
         return row
     }()
@@ -35,8 +37,9 @@ class SportsCell: UICollectionViewCell {
         fatalError("init hasn't been implemented")
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
+    init(frame: CGRect = .zero, navigationController: UINavigationController?) {
+        self.navigationController = navigationController
+        super.init(frame: frame)
         
         setupSports()
     }

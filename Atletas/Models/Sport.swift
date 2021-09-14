@@ -22,6 +22,6 @@ class Sport: Supportable {
         self.headerImage = headerImage
         
         self.image = sportImage
-        self.text = sport.rawValue
+        self.text = sport.getName()
     }
 }

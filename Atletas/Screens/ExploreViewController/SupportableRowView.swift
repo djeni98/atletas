@@ -9,6 +9,7 @@ import UIKit
 
 class SupportableRowView: UIView {
     var supportables: [Supportable]
+    var navigationController: UINavigationController?
     
     lazy var collection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -24,7 +25,8 @@ class SupportableRowView: UIView {
         return collection
     }()
     
-    init(frame: CGRect = .zero, supportables: [Supportable]) {
+    init(frame: CGRect = .zero, supportables: [Supportable], navigationController: UINavigationController?) {
+        self.navigationController = navigationController
         self.supportables = supportables
         super.init(frame: .zero)
         
@@ -59,15 +61,30 @@ extension SupportableRowView: UICollectionViewDataSource {
 
 extension SupportableRowView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch supportables[indexPath.row] {
+        let supportable = supportables[indexPath.row]
+        switch supportable {
         case is Sport:
-            print("hahaha")
+            let sportView = SportScreenViewController()
+            let sport = supportable as! Sport
+            sportView.sport = sport.sport
+            
+            navigationController?.show(sportView, sender: self)
+            
         case is Athlete:
-            print("hihihi")
+            let athleteView = AthleteProfileViewController()
+            athleteView.athlete = supportable as? Athlete
+            
+            navigationController?.show(athleteView, sender: self)
+            
         case is Project:
-            print("hohoho")
+            let projectView = ShowProjectViewController()
+            projectView.project = supportable as! Project
+            let nav = UINavigationController(rootViewController: projectView)
+            nav.modalPresentationStyle = .fullScreen
+            
+            navigationController?.present(nav, animated: true, completion: nil)
         default:
-            print("aí nao meu parceiro")
+            return
         }
     }
 }
