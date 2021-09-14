@@ -41,6 +41,7 @@ class BadgesView: UIView {
         collectionView.dataSource = self
         collectionView.register(BadgeCollectionViewCell.self, forCellWithReuseIdentifier: "badge")
         collectionView.backgroundColor = .clear
+        collectionView.isScrollEnabled = false
         return collectionView
     }()
     
