@@ -25,7 +25,8 @@ class ProjectsCell: UICollectionViewCell {
     }()
     
     lazy var projectsRow: SupportableRowView = {
-        let row = SupportableRowView()
+        let supportables = ProjectDataModule.shared.projects.slice(0..<10)
+        let row = SupportableRowView(supportables: supportables)
         row.translatesAutoresizingMaskIntoConstraints = false
         return row
     }()

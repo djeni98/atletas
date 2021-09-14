@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 
-class Athlete: User {
+class Athlete: User, Supportable {
+    var text: String
+    
     var name: String
     var sport: SportEnum
     var category: SportCategoryEnum
@@ -41,6 +43,8 @@ class Athlete: User {
 
         self.contact = contact
         self.socialMedia = socialMedia
+        
+        self.text = name
         super.init(username: username, password: password, type: .athlete)
     }
 

@@ -8,6 +8,8 @@
 import UIKit
 
 class SupportableRowView: UIView {
+    var supportables: [Supportable]
+    
     lazy var collection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -22,22 +24,8 @@ class SupportableRowView: UIView {
         return collection
     }()
     
-    let supportables: [Supportable] = [
-        Supportable(imageName: "???", text: "Tênis de mesa"),
-        Supportable(imageName: "???", text: "Basquete"),
-        Supportable(imageName: "???", text: "Beteombro"),
-        Supportable(imageName: "???", text: "Racketbol"),
-        Supportable(imageName: "???", text: "Ciclismo"),
-        Supportable(imageName: "???", text: "Beteombro"),
-        Supportable(imageName: "???", text: "Racketbol"),
-        Supportable(imageName: "???", text: "Ciclismo")
-    ]
-    
-    required init?(coder: NSCoder) {
-        fatalError("Couldn't init well")
-    }
-    
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, supportables: [Supportable]) {
+        self.supportables = supportables
         super.init(frame: .zero)
         
         addSubview(collection)
@@ -50,6 +38,9 @@ class SupportableRowView: UIView {
         }
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 extension SupportableRowView: UICollectionViewDataSource {
@@ -59,7 +50,7 @@ extension SupportableRowView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SupportableCell
-        cell.data = supportables[indexPath[1]]
+        cell.supportable = supportables[indexPath[1]]
         return cell
     }
     
@@ -68,7 +59,16 @@ extension SupportableRowView: UICollectionViewDataSource {
 
 extension SupportableRowView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        switch supportables[indexPath.row] {
+        case is Sport:
+            print("hahaha")
+        case is Athlete:
+            print("hihihi")
+        case is Project:
+            print("hohoho")
+        default:
+            print("aí nao meu parceiro")
+        }
     }
 }
 

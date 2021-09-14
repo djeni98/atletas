@@ -25,7 +25,9 @@ class AthletesCell: UICollectionViewCell {
     }()
     
     lazy var athletesRow: SupportableRowView = {
-        let row = SupportableRowView()
+        let supportables = AthleteDataModule.shared.athletes.slice(0..<10)
+    
+        let row = SupportableRowView(supportables: supportables)
         row.translatesAutoresizingMaskIntoConstraints = false
         return row
     }()

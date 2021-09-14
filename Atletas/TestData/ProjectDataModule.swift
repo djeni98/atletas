@@ -30,7 +30,7 @@ class ProjectDataModule {
             let project = Project(
                 title: "Sul Americano 2022", goal: 5000, deadline: "01/01/2022", image: image,
                 sport: athlete.sport, category: athlete.category)
-            project.about = "Essa competição é a classificatória para o Pan-Americano. Vai ser no Peru e preciso custear as despesas da viagem"
+            project.about = "Essa competição é a classificatória para o Sul-Americano. Vai ser no Peru e preciso custear as despesas da viagem"
             project.athlete = athlete
 
             athlete.projects.append(project)

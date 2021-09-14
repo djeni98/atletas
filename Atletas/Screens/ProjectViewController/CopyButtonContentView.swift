@@ -10,6 +10,7 @@ import UIKit
 class CopyButtonContentView: UIView {
     lazy var copyImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.tintColor = UIColor(named: "ButtonGreen")
         imageView.image = UIImage(systemName: "square.on.square.dashed")
         return imageView
