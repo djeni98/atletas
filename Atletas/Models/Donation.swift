@@ -9,21 +9,30 @@ import Foundation
 import UIKit
 
 class Donation {
-    
-    var receiptImage: UIImage
-    let supporter: String
-    let project: String
+    var receiptImage: UIImage?
     let supporterAmount: Double
     let athleteAmount: Double
+    var supporter: String
+    var project: String
     var status: DonationStatusEnum
+
+    let dateString: String
+    let date: Date
     
-    init(receiptImage: UIImage, supporter: String, supporterAmount: Double, athleteAmount: Double, status: DonationStatusEnum, project: String) {
+    init(receiptImage: UIImage?, supporter: String, supporterAmount: Double, athleteAmount: Double, status: DonationStatusEnum, project: String) {
         self.receiptImage = receiptImage
-        self.supporter = supporter
         self.supporterAmount = supporterAmount
         self.athleteAmount = athleteAmount
         self.status = status
-        self.project = project
         
+        self.supporter = supporter
+        self.project = project
+
+        self.date = Date()
+        self.dateString = self.date.toDayMonthYearString()
+    }
+
+    func clone() -> Donation {
+        return Donation(receiptImage: receiptImage, supporter: supporter, supporterAmount: supporterAmount, athleteAmount: athleteAmount, status: status, project: project)
     }
 }

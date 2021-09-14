@@ -39,7 +39,14 @@ class Project {
         }
     }
 
-    func clone(withDonations donations: [Donation] = []) -> Project {
+    func clone() -> Project {
+        let p = clone(withDonations: [])
+        p.donations = donations.map { $0.clone() }
+
+        return p
+    }
+
+    func clone(withDonations donations: [Donation]) -> Project {
         let p = Project(title: title, goal: goal, deadline: deadline, image: image, about: about, sport: sport, category: category)
         p.athlete = athlete
         p.donations = donations

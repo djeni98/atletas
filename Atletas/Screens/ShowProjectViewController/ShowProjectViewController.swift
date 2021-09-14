@@ -15,21 +15,6 @@ class ShowProjectViewController: UIViewController {
         let image = UIImage(named: "???")!
         let project = ProjectDataModule.shared.projects[0].clone()
 
-        project.donations += [
-            Donation(
-                receiptImage: image, supporter: "Apoiador 1",
-                supporterAmount: 1000, athleteAmount: 1000, status: .confirmed, project: ""
-            ),
-            Donation(
-                receiptImage: image, supporter: "Apoiador 2",
-                supporterAmount: 2000, athleteAmount: 0, status: .pending, project: ""
-            ),
-            Donation(
-                receiptImage: image, supporter: "Apoiador 3",
-                supporterAmount: 100, athleteAmount: 100, status: .confirmed, project: ""
-            )
-        ]
-
         return project
     }()
 

@@ -74,6 +74,7 @@
 		B781091226EF9496005E19FD /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781091126EF9496005E19FD /* Contact.swift */; };
 		B781091426EF977B005E19FD /* PixInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781091326EF977B005E19FD /* PixInformation.swift */; };
 		B781091626EFA396005E19FD /* AthleteDataModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B781091526EFA396005E19FD /* AthleteDataModule.swift */; };
+		B788034026F0CAC8001288BE /* DonationDataModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B788033F26F0CAC8001288BE /* DonationDataModule.swift */; };
 		B7B7C7B526DFB7D7009000D1 /* SearchBarWithScopeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */; };
 		B7BAC1A426E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1A326E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift */; };
 		B7BAC1A626E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BAC1A526E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift */; };
@@ -157,6 +158,7 @@
 		B781091126EF9496005E19FD /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		B781091326EF977B005E19FD /* PixInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixInformation.swift; sourceTree = "<group>"; };
 		B781091526EFA396005E19FD /* AthleteDataModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteDataModule.swift; sourceTree = "<group>"; };
+		B788033F26F0CAC8001288BE /* DonationDataModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationDataModule.swift; sourceTree = "<group>"; };
 		B7B7C7B426DFB7D7009000D1 /* SearchBarWithScopeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarWithScopeButton.swift; sourceTree = "<group>"; };
 		B7BAC1A326E6BF8C000CA0F0 /* TitleAndShowMoreButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndShowMoreButtonView.swift; sourceTree = "<group>"; };
 		B7BAC1A526E6C959000CA0F0 /* ShowMoreDonationsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreDonationsSectionView.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				B781091526EFA396005E19FD /* AthleteDataModule.swift */,
 				B75B9BE126EFCC70008EC073 /* SupporterDataModule.swift */,
 				B75B9BE326EFFCC8008EC073 /* ProjectDataModule.swift */,
+				B788033F26F0CAC8001288BE /* DonationDataModule.swift */,
 				B75B9BE526F009D0008EC073 /* SearchableContentDataModule.swift */,
 			);
 			path = TestData;
@@ -506,6 +509,7 @@
 				610FE1D326E54D42002FC0A5 /* UIFontExtension.swift in Sources */,
 				61AD13A126E658B0005FF1F6 /* SupportedInfoView.swift in Sources */,
 				614282F126E1109100F04601 /* SportsCell.swift in Sources */,
+				B788034026F0CAC8001288BE /* DonationDataModule.swift in Sources */,
 				B75B9BE626F009D0008EC073 /* SearchableContentDataModule.swift in Sources */,
 				B75B9BE426EFFCC8008EC073 /* ProjectDataModule.swift in Sources */,
 				610C7D7C26D918D300F2FDB6 /* SocialMedia.swift in Sources */,
