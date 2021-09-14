@@ -7,8 +7,15 @@
 import UIKit
 
 class SportsDataModule {
-    func getAllSports() -> [Sport] {
-        return SportEnum.allCases.map(getSport)
+    var sports = [Sport]()
+    static var shared: SportsDataModule {
+        let instance = SportsDataModule()
+
+        return instance
+    }
+
+    private init() {
+        sports += SportEnum.allCases.map(getSport)
     }
 
     func getSport(withEnum sportEnum: SportEnum) -> Sport {

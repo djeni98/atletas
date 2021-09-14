@@ -29,7 +29,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
 
-        tableViewAdapter = AthleteListTableViewAdapter(navigationController: navigationController)
+        let searchableContent = SearchableContentDataModule.shared.getContent()
+        tableViewAdapter = AthleteListTableViewAdapter(itens: searchableContent, navigationController: navigationController)
         tableView.delegate = tableViewAdapter
         tableView.dataSource = tableViewAdapter
 
