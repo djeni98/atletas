@@ -54,9 +54,13 @@ class AthleteListTableViewAdapter: NSObject, UITableViewDataSource, UITableViewD
             self.navigationController?.pushViewController(viewController, animated: true)
         case .athlete:
             let viewController = AthleteProfileViewController()
+            viewController.athlete = (item.reference as! Athlete)
             self.navigationController?.pushViewController(viewController, animated: true)
         case .project:
-            let viewController = UINavigationController(rootViewController: ShowProjectViewController())
+            let projectVC = ShowProjectViewController()
+            projectVC.project = (item.reference as! Project)
+            
+            let viewController = UINavigationController(rootViewController: projectVC)
             viewController.modalPresentationStyle = .fullScreen
             self.navigationController?.present(viewController, animated: true, completion: nil)
         default:
