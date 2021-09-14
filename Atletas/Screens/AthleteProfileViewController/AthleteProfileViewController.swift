@@ -37,7 +37,6 @@ class AthleteProfileViewController: UIViewController, UITabBarDelegate {
     lazy var supportTabView: AthleteSupportTabView = {
         let view = AthleteSupportTabView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.navigationController = navigationController
         
         let projects: [Project] = ProjectDataModule.shared.projects.map { $0.clone() }
         view.setProjects(projects)
@@ -78,7 +77,7 @@ class AthleteProfileViewController: UIViewController, UITabBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // change navBar
+        supportTabView.navigationController = navigationController
     }
 
     func setup() {
