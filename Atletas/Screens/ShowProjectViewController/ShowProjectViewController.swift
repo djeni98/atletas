@@ -16,7 +16,13 @@ class ShowProjectViewController: UIViewController {
         let project = ProjectDataModule.shared.projects[0].clone()
 
         return project
-    }()
+    }() {
+        didSet {
+            imageAndTitleView.update(with: project)
+            projectMetricsView.update(with: project)
+            aboutView.update(withText: project.about)
+        }
+    }
 
     lazy var supportButton: GreenRoundedButton = {
         let button = GreenRoundedButton.getSupportButton()

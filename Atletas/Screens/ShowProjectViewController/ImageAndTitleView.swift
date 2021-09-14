@@ -107,6 +107,12 @@ class ImageAndTitleView: UIView {
             make.trailing.equalTo(titleLabel)
         }
     }
+
+    func update(with project: Project) {
+        setTitle(withText: project.title)
+        setSubtitle(withText: project.getRemainingTimeInString())
+        setImage(withImage: project.image)
+    }
 }
 
 #if DEBUG

@@ -129,6 +129,13 @@ class ProjectMetricsView: UIView {
             make.trailing.equalTo(progressView)
         }
     }
+
+    func update(with project: Project) {
+        collectedValueLabel.text = getCurrency(withValue: project.getValueCollected())
+        progressView.setProgress(Float(project.getProgress()))
+        goalSquareView.setValue(withText: getCurrency(withValue: project.goal))
+        deadlineSquareView.setValue(withText: project.deadline)
+    }
 }
 
 #if DEBUG

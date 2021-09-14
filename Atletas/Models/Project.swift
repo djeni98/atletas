@@ -63,6 +63,10 @@ class Project {
         return donations.reduce(0, { $0 + ($1.status == .confirmed ? $1.athleteAmount : 0) })
     }
 
+    func getProgress() -> Double {
+        return getValueCollected() / goal
+    }
+
     func getRemainingTimeInString() -> String {
         let today = Date()
         let components = today.getOffsetFrom(date: limitDate)
