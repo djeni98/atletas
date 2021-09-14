@@ -22,8 +22,12 @@ class Project {
     var donations: [Donation] = []
 
     weak var athlete: Athlete?
-   
-    init(title: String, goal: Double, deadline: String, image: UIImage?, about: String = "", sport: SportEnum, category: SportCategoryEnum) {
+
+    let isMonthlyProject: Bool
+
+    init(title: String, goal: Double, deadline: String, image: UIImage?, about: String = "", sport: SportEnum, category: SportCategoryEnum, isMonthlyProject: Bool = false) {
+        self.isMonthlyProject = isMonthlyProject
+
         self.title = title
         self.image = image
         self.about = about

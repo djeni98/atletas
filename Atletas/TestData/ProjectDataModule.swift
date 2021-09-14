@@ -16,10 +16,27 @@ class ProjectDataModule {
     }()
 
     private init() {
+        createRendaAtletaForAll()
         createSulAmericanoProjectForSoftball()
         if let athlete = athletesModule.athletes.filter({ $0.sport == .softball }).first {
             createEquipmentProject(for: athlete)
         }
+    }
+
+    private func createRendaAtletaForAll() {
+        let athletes = athletesModule.athletes
+
+        athletes.forEach { athlete in
+            let image = UIImage(named: "???")
+            let project = MonthlyProject(
+                goal: Double.random(in: 1500...3000), image: image, sport: athlete.sport, category: athlete.category
+            )
+            project.athlete = athlete
+
+            athlete.projects.append(project)
+            projects.append(project)
+        }
+
     }
 
     private func createSulAmericanoProjectForSoftball() {

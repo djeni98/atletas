@@ -8,6 +8,7 @@
 import UIKit
 
 class AppTabBarController: UITabBarController {
+    var dataModule = DataModule.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()

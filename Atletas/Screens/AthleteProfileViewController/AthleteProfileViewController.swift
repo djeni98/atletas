@@ -29,6 +29,7 @@ class AthleteProfileViewController: UIViewController, UITabBarDelegate {
         let view = TabBarAndSupportButtonView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.tabBar.delegate = self
+        view.setSupportButtonAction(self.supportButtonAction)
         selectedItem = view.tabBar.selectedItem
 
         return view
@@ -141,6 +142,16 @@ class AthleteProfileViewController: UIViewController, UITabBarDelegate {
             self.supportTabView.isHidden = true
             self.infoTabView.isHidden = false
         }
+    }
+
+    func supportButtonAction() {
+        guard let project = athlete?.projects.first else { return }
+        let projectVC = ShowProjectViewController()
+        projectVC.project = project
+
+        let viewController = UINavigationController(rootViewController: projectVC)
+        viewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(viewController, animated: true, completion: nil)
     }
 }
 
