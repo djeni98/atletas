@@ -70,15 +70,17 @@ class ProjectContentView: UIStackView {
     lazy var confirmButton: GreenRoundedButton = {
         let button = GreenRoundedButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Copiar chave pix", for: .normal)
-        button.setTitleColor(UIColor(named: "copyButton"), for: .normal)
+        button.setTitle("Prosseguir", for: .normal)
+        button.setTitleColor(UIColor(named: "greenButtonText"), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         button.addTarget(self, action: #selector(confirmButtonClicked), for: .touchUpInside)
         return button
     }()
     
     @objc func confirmButtonClicked() {
-        nav?.show(ConfirmDonationViewController(), sender: self)
+        let viewController = ConfirmDonationViewController()
+        viewController.donationValue = Double(valueInput.currentValue)
+        nav?.show(viewController, sender: self)
     }
     
     override init(frame: CGRect) {

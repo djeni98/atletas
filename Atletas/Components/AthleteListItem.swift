@@ -28,7 +28,7 @@ class AthleteListItem: UIView {
     }
 
     func oldRect() {
-        backgroundColor = .systemBackground
+        backgroundColor = UIColor(named: "background")
         layer.cornerRadius = 32
         layer.borderColor = UIColor.systemBlue.cgColor
         layer.borderWidth = 14
