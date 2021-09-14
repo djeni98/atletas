@@ -6,41 +6,14 @@
 //
 import UIKit
 
-struct TestingItens {
-    var name: String
-    var desc: String?
-    var scope: SearchScopeButton
-
-    func match(_ searchText: String) -> Bool {
-        let text = searchText.lowercased()
-
-        let matchName = name.lowercased().contains(text)
-        let matchDesc = desc?.lowercased().contains(text) ?? false
-
-        return matchName || matchDesc
-    }
-}
-
 class AthleteListTableViewAdapter: NSObject, UITableViewDataSource, UITableViewDelegate {
-    var array = [TestingItens]()
-    var filtered = [TestingItens]()
+    var array = [SearchableContent]()
+    var filtered = [SearchableContent]()
     var scope = SearchScopeButton.all
 
     var navigationController: UINavigationController?
 
-    init(navigationController: UINavigationController?) {
-        var itens = [TestingItens]()
-        itens += Array(1...5).map { n in
-            return TestingItens(name: "Name \(n)", desc: "Athlete ...", scope: .athlete)
-        }
-
-        itens += Array(5...10).map { n in
-            return TestingItens(name: "Project \(n)", desc: "...", scope: .project)
-        }
-
-        itens += Array(11...15).map { n in
-            return TestingItens(name: "Sport \(n)", scope: .sport)
-        }
+    init(itens: [SearchableContent], navigationController: UINavigationController?) {
         self.array = itens
         self.filtered = itens
 
@@ -67,7 +40,7 @@ class AthleteListTableViewAdapter: NSObject, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = filtered[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "athleteCell", for: indexPath) as! AthleteListItemCell
-        cell.configure(name: item.name, description: item.desc ?? "")
+        cell.configure(name: item.name, description: item.description ?? "")
         return cell
     }
 
@@ -77,6 +50,7 @@ class AthleteListTableViewAdapter: NSObject, UITableViewDataSource, UITableViewD
         switch item.scope {
         case .sport:
             let viewController = SportScreenViewController()
+            viewController.sport = (item.reference as! Sport).sport
             self.navigationController?.pushViewController(viewController, animated: true)
         case .athlete:
             let viewController = AthleteProfileViewController()

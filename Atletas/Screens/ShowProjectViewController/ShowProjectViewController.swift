@@ -13,30 +13,7 @@ import UIKit
 class ShowProjectViewController: UIViewController {
     var project: Project = {
         let image = UIImage(named: "???")!
-        let project = Project(
-            title: "Classificatória 2022",
-            image: image,
-            about: "Trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n" + "Trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            goal: 3500,
-            deadline: "05/12/2022",
-            sport: .softball,
-            category: .brazilianTeam
-        )
-
-        project.donations += [
-            Donation(
-                receiptImage: image, supporter: "Apoiador 1",
-                supporterAmount: 1000, athleteAmount: 1000, status: .confirmed, project: ""
-            ),
-            Donation(
-                receiptImage: image, supporter: "Apoiador 2",
-                supporterAmount: 2000, athleteAmount: 0, status: .pending, project: ""
-            ),
-            Donation(
-                receiptImage: image, supporter: "Apoiador 3",
-                supporterAmount: 100, athleteAmount: 100, status: .confirmed, project: ""
-            )
-        ]
+        let project = ProjectDataModule.shared.projects[0].clone()
 
         return project
     }()

@@ -14,6 +14,7 @@ class SportScreenViewController: UIViewController, UISearchBarDelegate {
     var sportName: String!
     var searchController: UISearchController!
     lazy var searchBar = SearchBar(width: view.frame.width)
+    var sport: SportEnum!
     
     override func loadView() {
         super.loadView()
@@ -21,7 +22,8 @@ class SportScreenViewController: UIViewController, UISearchBarDelegate {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
 
-        tableViewAdapter = AthleteListTableViewAdapter(navigationController: navigationController)
+        let searchableContent = SearchableContentDataModule.shared.getContentFiltered(by: sport)
+        tableViewAdapter = AthleteListTableViewAdapter(itens: searchableContent, navigationController: navigationController)
         tableView.delegate = tableViewAdapter
         tableView.dataSource = tableViewAdapter
 
@@ -48,7 +50,7 @@ class SportScreenViewController: UIViewController, UISearchBarDelegate {
         
         guard let naviBar = navigationController?.navigationBar else { return }
         naviBar.prefersLargeTitles = true
-        navigationItem.title = "Softball"
+        navigationItem.title = sport.getName()
         naviBar.sizeToFit()
         tableView.tableHeaderView = searchBar
         tableView.tableFooterView = UIView()

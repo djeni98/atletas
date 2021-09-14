@@ -32,9 +32,7 @@ class ShowMoreDonationsSectionView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let donations: [Donation] = Array(1...3).map { n in
-            return Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta")
-        }
+        let donations: [Donation] = DonationDataModule.shared.donations.slice(0..<3)
         setup(donations: donations, showMoreAction: {})
     }
 

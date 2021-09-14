@@ -32,8 +32,7 @@ class AppTabBarController: UITabBarController {
     }
 
     private func getProfileView() -> UIViewController {
-        // TODO: select profile view when is a supporter
-        let selectedProfileView = AthleteAccountViewController()
+        let selectedProfileView = SupporterAccountViewController()
         let viewController = UINavigationController(rootViewController: selectedProfileView)
         viewController.tabBarItem = UITabBarItem(title: "Conta", image: UIImage(systemName: "person.fill"), tag: 2)
 
