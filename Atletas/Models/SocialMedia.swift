@@ -11,4 +11,8 @@ struct SocialMedia {
     var instagram: String
     var facebook: String
     var twitter: String
+
+    static func notSet() -> SocialMedia {
+        return SocialMedia(instagram: "", facebook: "", twitter: "")
+    }
 }

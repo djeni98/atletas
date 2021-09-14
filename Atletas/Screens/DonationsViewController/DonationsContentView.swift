@@ -30,34 +30,22 @@ class DonationsContentView: UIView {
     
     
     var months: [MonthDonations] = [
-        MonthDonations(month: "Julho", donations: [
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .confirmed, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .rejected, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta")
-        ]),
-        MonthDonations(month: "Junho", donations: [
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 40, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta")
-        ]),
-        MonthDonations(month: "Maio", donations: [
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 40, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta")
-        ]),
-        MonthDonations(month: "Abril", donations: [
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 40, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta")
-        ])
+        MonthDonations(
+            month: "Julho",
+            donations: DonationDataModule.shared.donations.shuffled().slice(0..<5).sorted { $0.status < $1.status }
+        ),
+        MonthDonations(
+            month: "Junho",
+            donations: DonationDataModule.shared.donations.shuffled().slice(0..<5).sorted { $0.status < $1.status }
+        ),
+        MonthDonations(
+            month: "Maio",
+            donations: DonationDataModule.shared.donations.shuffled().slice(0..<5).sorted { $0.status < $1.status }
+        ),
+        MonthDonations(
+            month: "Abril",
+            donations: DonationDataModule.shared.donations.shuffled().slice(0..<5).sorted { $0.status < $1.status }
+        ),
     ]
     
     func updateHeaderViewHeight() {

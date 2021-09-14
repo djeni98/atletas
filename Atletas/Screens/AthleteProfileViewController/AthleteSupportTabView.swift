@@ -131,9 +131,7 @@ struct AthleteSupportTabView_Preview: PreviewProvider {
         Group {
             ContentView {
                 let view = AthleteSupportTabView()
-                let projects: [Project] = Array(1...3).map { n in
-                    return Project(title: "Proj \(n)", image: UIImage(named: "???")!, about: "", goal: 100, deadline: "12/12/2021", sport: .softball, category: .brazilianTeam)
-                }
+                let projects: [Project] = ProjectDataModule.shared.projects.map { $0.clone() }
                 view.setProjects(projects)
 
                 return view
