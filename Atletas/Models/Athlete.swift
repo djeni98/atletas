@@ -18,9 +18,9 @@ class Athlete: User {
     var city: String
     var socialMedia: SocialMedia
     var projects: [Project] = []
-    var sport: Sport
+    var sport: SportEnum
 
-    init(name: String, username: String, password: String, image: UIImage, about: String, category: SportCategoryEnum, contact: String, pixKey: String, city: String, socialMedia: SocialMedia, sport: Sport) {
+    init(name: String, username: String, password: String, image: UIImage, about: String, category: SportCategoryEnum, contact: String, pixKey: String, city: String, socialMedia: SocialMedia, sport: SportEnum) {
         self.name = name
         self.image = image
         self.about = about
