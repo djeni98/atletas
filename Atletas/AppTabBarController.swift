@@ -18,7 +18,7 @@ class AppTabBarController: UITabBarController {
     }
 
     private func getExploreView() -> UIViewController {
-        let viewController = UINavigationController(rootViewController: ShowDonationViewController())
+        let viewController = UINavigationController(rootViewController: ExploreViewController())
         viewController.tabBarItem = UITabBarItem(title: "Explorar", image: UIImage(systemName: "safari.fill"), tag: 0)
 
         return viewController

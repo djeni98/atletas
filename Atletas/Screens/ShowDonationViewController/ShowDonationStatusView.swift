@@ -25,12 +25,23 @@ class ShowDonationStatusView: UIView {
         imageView.tintColor = UIColor(named: "exclamation")
         return imageView
     }()
+    
+    lazy var statusLabel: UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .right
+        label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        label.textColor = UIColor(named: "exclamation")
+        label.text = "Negada pelo atleta"
+        return label
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupDescriptionLabel()
         setupIconImageView()
+        setupStatusLabel()
     }
     
     func setupDescriptionLabel() {
@@ -48,6 +59,15 @@ class ShowDonationStatusView: UIView {
             make.trailing.equalToSuperview()
             make.height.equalTo(30)
             make.width.equalTo(30)
+        }
+    }
+    
+    func setupStatusLabel() {
+        addSubview(statusLabel)
+        statusLabel.snp.makeConstraints { make in
+            make.top.equalTo(iconImageView.snp.bottom).offset(8)
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
     }
     
