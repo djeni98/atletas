@@ -11,7 +11,7 @@ class DonationsViewController: UIViewController {
     var donationsByMonth: [String:[Donation]]
     
     lazy var content: DonationsContentView = {
-        let content = DonationsContentView(donationsByMonth: donationsByMonth)
+        let content = DonationsContentView(donationsByMonth: donationsByMonth, navigationController: navigationController)
         content.translatesAutoresizingMaskIntoConstraints = false
         return content
     }()

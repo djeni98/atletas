@@ -8,6 +8,7 @@
 import UIKit
 
 class DonationsContentView: UIView {
+    var navigationController: UINavigationController?
     var sortedKeys: [String]
     var donationsByMonth: [String:[Donation]]
     
@@ -40,7 +41,8 @@ class DonationsContentView: UIView {
         fatalError("Couldn't init")
     }
     
-    init(frame: CGRect = .zero, donationsByMonth: [String: [Donation]]) {
+    init(frame: CGRect = .zero, donationsByMonth: [String: [Donation]], navigationController: UINavigationController?) {
+        self.navigationController = navigationController
         self.donationsByMonth = donationsByMonth
         sortedKeys = donationsByMonth.keys.sorted(by: >)
         super.init(frame: .zero)
@@ -58,7 +60,12 @@ class DonationsContentView: UIView {
 }
 
 extension DonationsContentView: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let key = sortedKeys[indexPath.section]
+        let donation = donationsByMonth[key]![indexPath.row]
+        
+        navigationController?.present(ShowDonationViewController(donation: donation), animated: true, completion: nil)
+    }
 }
 
 extension DonationsContentView: UITableViewDataSource {
