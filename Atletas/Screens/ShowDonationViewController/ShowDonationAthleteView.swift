@@ -17,6 +17,7 @@ class ShowDonationAthleteView: UIView {
         imageView.layer.cornerRadius = 22
         imageView.backgroundColor = .gray
         imageView.image = donation.project?.athlete?.image
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
