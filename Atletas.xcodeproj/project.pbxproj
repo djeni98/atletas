@@ -49,6 +49,7 @@
 		B293B28126EE9AA200EF875D /* MedalComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B293B28026EE9AA200EF875D /* MedalComponent.swift */; };
 		B293B28526EEA28000EF875D /* BadgeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B293B28426EEA28000EF875D /* BadgeScreenViewController.swift */; };
 		B293B28926EEC59400EF875D /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B293B28826EEC59400EF875D /* BadgeView.swift */; };
+		B293B29026F228CC00EF875D /* 3dModels.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B293B28F26F228CC00EF875D /* 3dModels.scnassets */; };
 		B2C90E0B26DFA4AB00DFBB6D /* SportScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C90E0A26DFA4AB00DFBB6D /* SportScreenViewController.swift */; };
 		B2C90E0F26DFA4E600DFBB6D /* SportListTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C90E0E26DFA4E600DFBB6D /* SportListTableViewAdapter.swift */; };
 		B73A96DA26E82FAC0080555E /* AthleteProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A96D926E82FAC0080555E /* AthleteProfileViewController.swift */; };
@@ -127,6 +128,7 @@
 		B293B28026EE9AA200EF875D /* MedalComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalComponent.swift; sourceTree = "<group>"; };
 		B293B28426EEA28000EF875D /* BadgeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeScreenViewController.swift; sourceTree = "<group>"; };
 		B293B28826EEC59400EF875D /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		B293B28F26F228CC00EF875D /* 3dModels.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = 3dModels.scnassets; sourceTree = "<group>"; };
 		B2C90E0A26DFA4AB00DFBB6D /* SportScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportScreenViewController.swift; sourceTree = "<group>"; };
 		B2C90E0E26DFA4E600DFBB6D /* SportListTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportListTableViewAdapter.swift; sourceTree = "<group>"; };
 		B73A96D926E82FAC0080555E /* AthleteProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteProfileViewController.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 		B7D5E81426D7BABB0090966F = {
 			isa = PBXGroup;
 			children = (
+				B293B28F26F228CC00EF875D /* 3dModels.scnassets */,
 				B7D5E81F26D7BABB0090966F /* Atletas */,
 				B7D5E81E26D7BABB0090966F /* Products */,
 				B7D5E83526D7BAD40090966F /* Frameworks */,
@@ -476,6 +479,7 @@
 			files = (
 				B7D5E82D26D7BABD0090966F /* LaunchScreen.storyboard in Resources */,
 				B7D5E82A26D7BABD0090966F /* Assets.xcassets in Resources */,
+				B293B29026F228CC00EF875D /* 3dModels.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

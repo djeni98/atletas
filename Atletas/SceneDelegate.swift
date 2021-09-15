@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
         
-        let nav = UINavigationController(rootViewController: ViewController())
+        let nav = UINavigationController(rootViewController: BadgeScreenViewController())
         window?.rootViewController = nav
         
     }
