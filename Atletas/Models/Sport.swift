@@ -13,10 +13,10 @@ class Sport: Supportable {
     var text: String
     
     let sport: SportEnum
-    let sportImage: UIImage
-    let headerImage: UIImage
+    let sportImage: UIImage?
+    let headerImage: UIImage?
     
-    init(sport: SportEnum, sportImage: UIImage, headerImage: UIImage){
+    init(sport: SportEnum, sportImage: UIImage?, headerImage: UIImage?){
         self.sport = sport
         self.sportImage = sportImage
         self.headerImage = headerImage

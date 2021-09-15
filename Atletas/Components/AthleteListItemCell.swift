@@ -30,9 +30,10 @@ class AthleteListItemCell: UITableViewCell {
         ])
     }
 
-    func configure(name: String, description: String) {
+    func configure(name: String, description: String, image: UIImage?) {
         athleteListItem.nameLabel.text = name
         athleteListItem.descriptionLabel.text = description
+        athleteListItem.circleImageView.image = image
     }
 
     required init?(coder: NSCoder) {

@@ -17,6 +17,7 @@ class SearchableContent {
         self.name = name
         self.description = description
         self.scope = scope
+        self.image = image
         self.reference = reference
     }
 

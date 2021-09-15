@@ -27,7 +27,7 @@ class ProjectDataModule {
         let athletes = athletesModule.athletes
 
         athletes.forEach { athlete in
-            let image = UIImage(named: "???")
+            let image = UIImage(named: "renda_atleta_capa")
             let project = MonthlyProject(
                 goal: Double.random(in: 1500...3000), image: image, sport: athlete.sport, category: athlete.category
             )
@@ -43,7 +43,7 @@ class ProjectDataModule {
         let athletes = athletesModule.athletes.filter { $0.sport == .softball }
 
         athletes.forEach { athlete in
-            let image = UIImage(named: "???")
+            let image = UIImage(named: "sul_americano_capa")
             let project = Project(
                 title: "Sul Americano 2022", goal: 5000, deadline: "01/01/2022", image: image,
                 sport: athlete.sport, category: athlete.category)

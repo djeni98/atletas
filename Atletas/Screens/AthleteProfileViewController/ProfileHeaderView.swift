@@ -15,6 +15,7 @@ class ProfileHeaderView: UIView {
             imageView.image = athlete.image
             titleLabel.text = athlete.name
             subtitleLabel.text = athlete.getDescription()
+            backgroundImageView.image = athlete.sport.getHeaderImage()
         }
     }
     

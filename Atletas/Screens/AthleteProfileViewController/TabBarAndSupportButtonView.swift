@@ -68,7 +68,7 @@ class TabBarAndSupportButtonView: UIView {
             make.top.equalToSuperview()
 
             make.leading.equalToSuperview().offset(32)
-            make.width.equalTo(128)
+            make.trailing.equalTo(supportButton.snp.leading).offset(-16)
         }
     }
 

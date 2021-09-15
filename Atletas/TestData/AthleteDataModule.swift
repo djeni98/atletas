@@ -23,7 +23,7 @@ class AthleteDataModule {
             name: "Mayra Sayumi", username: "mayrasayumi", password: "********",
             sport: .softball, category: .brazilianTeam,
             pixInfo: PixInformation(key: "123.456.789-00", cpf: "123.456.789-00", bank: "Banco do Brasil"),
-            image: UIImage(named: "???")
+            image: UIImage(named: "mayra_foto_perfil")
         )
         athlete.about = "Oiee! Meu nome é Mayra Sayumi Akamine, tenho 27 anos, moro em Maringá, mas jogo pelo Nikkey Marília desde 2015. Sou formada em engenharia de alimentos, mas não exerço e atualmente curso educação física."
         athlete.city = "Curitiba"
@@ -39,7 +39,7 @@ class AthleteDataModule {
             name: "Beatrice Hitomi Nakae", username: "hitominakae", password: "********",
             sport: .softball, category: .brazilianTeam,
             pixInfo: PixInformation(key: "hitomi@gmail.com", cpf: "456.789.123-00", bank: "Santander"),
-            image: UIImage(named: "???")
+            image: UIImage(named: "beatrice_atleta_card")
         )
         athlete.about = "Oi gente, me chamo Beatrice, tenho 23 anos e sou de Curitiba. Jogo softbol desde os 6 anos e atualmene estou na seleção brasileira."
         athlete.city = "Curitiba"
@@ -55,7 +55,7 @@ class AthleteDataModule {
             name: "Barbara Woll", username: "barbarawoll", password: "********",
             sport: .softball, category: .brazilianTeam,
             pixInfo: PixInformation(key: "abcd-1234-abcd-1234-abcde", cpf: "789.123.456-00", bank: "Itaú"),
-            image: UIImage(named: "???")
+            image: UIImage(named: "atleta_mulher_softbol")
         )
         athlete.about = "Atualmente moro nos Estados Unidos, mas jogo pela Seleção Brasileira de Softbol."
         athlete.city = "Thomasville"
