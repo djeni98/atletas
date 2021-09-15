@@ -34,4 +34,21 @@ class GreenRoundedButton: UIButton {
 
         return button
     }
+    static func getBuyButton() -> GreenRoundedButton {
+        let button = GreenRoundedButton()
+
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .regular)
+        button.setTitle("Comprar Modelo 3D", for: .normal)
+        button.setTitleColor(UIColor(.black), for: .normal)
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        let width: CGFloat = 285
+        button.snp.makeConstraints { make in
+            make.height.equalTo(fixedHeight)
+            make.width.equalTo(width)
+        }
+
+    return button
+}
 }
