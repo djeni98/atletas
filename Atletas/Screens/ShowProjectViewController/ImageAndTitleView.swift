@@ -13,6 +13,7 @@ class ImageAndTitleView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .brown
         view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
 
         return view
     }()
