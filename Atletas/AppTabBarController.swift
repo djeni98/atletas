@@ -21,6 +21,7 @@ class AppTabBarController: UITabBarController {
     private func getExploreView() -> UIViewController {
         let viewController = UINavigationController(rootViewController: ExploreViewController())
         viewController.tabBarItem = UITabBarItem(title: "Explorar", image: UIImage(systemName: "safari.fill"), tag: 0)
+        viewController.navigationBar.prefersLargeTitles = true
 
         return viewController
     }
@@ -28,6 +29,7 @@ class AppTabBarController: UITabBarController {
     private func getSearchView() -> UIViewController {
         let viewController = UINavigationController(rootViewController: SearchViewController())
         viewController.tabBarItem = UITabBarItem(title: "Buscar", image: UIImage(systemName: "magnifyingglass"), tag: 1)
+        viewController.navigationBar.prefersLargeTitles = true
 
         return viewController
     }
@@ -36,6 +38,7 @@ class AppTabBarController: UITabBarController {
         let selectedProfileView = SupporterAccountViewController()
         let viewController = UINavigationController(rootViewController: selectedProfileView)
         viewController.tabBarItem = UITabBarItem(title: "Conta", image: UIImage(systemName: "person.fill"), tag: 2)
+        viewController.navigationBar.prefersLargeTitles = true
 
         return viewController
     }
