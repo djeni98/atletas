@@ -19,7 +19,6 @@ class Supporter: User {
     }
     
     func getDonationsByMonth() -> [String:[Donation]] {
-        let donations = self.donations.sorted { $0.date > $1.date}
         var dict: [String:[Donation]] = [:]
         for donation in donations {
             let yearAndMonth = "\(donation.date.get(.year))/\(donation.date.get(.month))"

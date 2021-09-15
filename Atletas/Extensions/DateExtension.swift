@@ -48,7 +48,6 @@ extension Date {
 }
 
 extension Date {
-    
     static func randomBetween(start: String, end: String, format: String = "yyyy-MM-dd") -> String {
         let date1 = Date.parse(start, format: format)
         let date2 = Date.parse(end, format: format)
@@ -80,5 +79,32 @@ extension Date {
 
         let date = dateFormatter.date(from: string)!
         return date
+    }
+}
+
+extension Date {
+    var readableDate: String {
+        var dateString = ""
+        
+        dateString += self.localizedMonth
+        
+        
+        let year = get(.year)
+        let currentDate = Date()
+        if year != currentDate.get(.year) {
+            dateString += " de \(year)"
+        }
+        
+        return dateString
+    }
+}
+
+extension Date {
+    var localizedMonth: String {
+        var calendar = Calendar.current
+        calendar.locale = Locale(identifier: "pt")
+        let names = calendar.monthSymbols
+        let month = Calendar.current.component(.month, from: self)
+        return names[month - 1]
     }
 }

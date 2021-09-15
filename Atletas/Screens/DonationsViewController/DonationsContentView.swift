@@ -8,6 +8,7 @@
 import UIKit
 
 class DonationsContentView: UIView {
+    var sortedKeys: [String]
     var donationsByMonth: [String:[Donation]]
     
     lazy var donationsTableView: UITableView = {
@@ -41,6 +42,7 @@ class DonationsContentView: UIView {
     
     init(frame: CGRect = .zero, donationsByMonth: [String: [Donation]]) {
         self.donationsByMonth = donationsByMonth
+        sortedKeys = donationsByMonth.keys.sorted(by: >)
         super.init(frame: .zero)
         
         addSubview(donationsTableView)
@@ -65,19 +67,27 @@ extension DonationsContentView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return donationsByMonth[section].value.count
+        let key = sortedKeys[section]
+        return donationsByMonth[key]!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = donationsTableView.dequeueReusableCell(withIdentifier: "donation", for: indexPath) as! DonationCell
-        cell.donation = donationsByMonth[indexPath.section].value[indexPath.row]
+        let key = sortedKeys[indexPath.section]
+        cell.donation = donationsByMonth[key]![indexPath.row]
         cell.backgroundColor = .clear
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = DonationsTableSubheaderView()
-        view.text = donationsByMonth[section].key
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy'/'MM"
+        let date = formatter.date(from: sortedKeys[section])
+        
+        view.text = date?.readableDate
+        
         view.backgroundColor = UIColor(named: "background")
         return view
     }
