@@ -21,7 +21,6 @@ class ProjectViewController: UIViewController {
         container.axis = .vertical
         container.alignment = .center
         container.spacing = 32
-        container.nav = navigationController
         
         return container
     }()
@@ -48,6 +47,7 @@ class ProjectViewController: UIViewController {
     }
     
     func setupNav() {
+        scrollViewContainer.nav = navigationController
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.backButtonTitle = "Voltar"
         navigationItem.title = "Apoiar"
@@ -56,5 +56,9 @@ class ProjectViewController: UIViewController {
     
     @objc func clickedCancel() {
         navigationController?.popViewController(animated: true)
+    }
+
+    func update(with project: Project) {
+        scrollViewContainer.update(with: project)
     }
 }

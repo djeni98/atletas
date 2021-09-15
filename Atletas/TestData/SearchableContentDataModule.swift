@@ -32,7 +32,7 @@ class SearchableContent {
 
 class SearchableContentDataModule {
     var athletes = AthleteDataModule.shared.athletes
-    var projects = ProjectDataModule.shared.projects
+    var projects = ProjectDataModule.shared.projects.filter { $0.isMonthlyProject == false }
     var sports = SportsDataModule.shared.sports
     
     static var shared: SearchableContentDataModule = {

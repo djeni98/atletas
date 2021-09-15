@@ -16,7 +16,13 @@ class ShowProjectViewController: UIViewController {
         let project = ProjectDataModule.shared.projects[0].clone()
 
         return project
-    }()
+    }() {
+        didSet {
+            imageAndTitleView.update(with: project)
+            projectMetricsView.update(with: project)
+            aboutView.update(withText: project.about)
+        }
+    }
 
     lazy var supportButton: GreenRoundedButton = {
         let button = GreenRoundedButton.getSupportButton()
@@ -167,7 +173,9 @@ class ShowProjectViewController: UIViewController {
     }
 
     @objc func navigateToSupport() {
-        navigationController?.pushViewController(ProjectViewController(), animated: true)
+        let projectVC = ProjectViewController()
+        projectVC.update(with: project)
+        navigationController?.pushViewController(projectVC, animated: true)
     }
 }
 

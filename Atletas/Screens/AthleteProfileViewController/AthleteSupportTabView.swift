@@ -115,7 +115,10 @@ class AthleteSupportTabView: UIView {
         projects.forEach { project in
             let card = ProjectCardView(project: project)
             card.setTapGestureToCallAction {
-                let viewController = UINavigationController(rootViewController: ShowProjectViewController())
+                let projectVC = ShowProjectViewController()
+                projectVC.project = project
+                
+                let viewController = UINavigationController(rootViewController: projectVC)
                 viewController.modalPresentationStyle = .fullScreen
                 self.navigationController?.present(viewController, animated: true, completion: nil)
             }
