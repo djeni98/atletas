@@ -94,6 +94,8 @@ class SupporterAccountHeaderView: UIView {
             imageView.image = UIImage(named: "diamond")
             subtitleLabel.text = "Apoiador nível diamante"
         }
+
+        imageView.image = supporter.image ?? UIImage(named: "???")
     }
     
     func setupChevron() {
