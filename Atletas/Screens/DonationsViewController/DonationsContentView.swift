@@ -23,9 +23,10 @@ class DonationsContentView: UIView {
     }()
     
     lazy var donationTableTitleView: DonationsTableTitleView = {
-        let tableView = DonationsTableTitleView()
+        let view = DonationsTableTitleView()
+        view.translatesAutoresizingMaskIntoConstraints = false
 
-        return tableView
+        return view
     }()
     
     

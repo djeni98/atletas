@@ -7,11 +7,17 @@
 
 import UIKit
 
-class ExploreViewController: UIViewController {    
+class ExploreViewController: UIViewController {
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
     lazy var contentView: ExploreContentView = {
-        let contentView = ExploreContentView()
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        return contentView
+        let view = ExploreContentView(navigationController: navigationController)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     override func loadView() {
@@ -21,12 +27,15 @@ class ExploreViewController: UIViewController {
     }
     
     func setupContent() {
-        view.addSubview(contentView)
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        scrollView.addSubview(contentView)
         contentView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.edges.equalTo(scrollView).inset(UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0))
+            make.width.equalTo(scrollView)
         }
     }
     

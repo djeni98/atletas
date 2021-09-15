@@ -8,11 +8,11 @@
 import UIKit
 
 class SupportableCell: UICollectionViewCell {
-    var data: Supportable? {
+    var supportable: Supportable? {
         didSet {
-            guard let data = data else { return }
-            label.text = data.text
-            background.image = UIImage(named: data.imageName)
+            guard let supportable = supportable else { return }
+            label.text = supportable.text
+            background.image = supportable.image
         }
     }
     

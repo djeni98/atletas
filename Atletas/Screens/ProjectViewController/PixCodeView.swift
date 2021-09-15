@@ -38,6 +38,7 @@ class PixCodeView: UIView {
     
     lazy var pixCodeLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.textAlignment = .center
         label.textColor = UIColor(named: "pixCode")
@@ -64,6 +65,7 @@ class PixCodeView: UIView {
     
     lazy var feedbackLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Copiado para área de transferência"
         label.alpha = 0
         label.textAlignment = .center
