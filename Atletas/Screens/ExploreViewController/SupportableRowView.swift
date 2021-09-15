@@ -8,6 +8,9 @@
 import UIKit
 
 class SupportableRowView: UIView {
+    var supportables: [Supportable]
+    var navigationController: UINavigationController?
+    
     lazy var collection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -22,22 +25,9 @@ class SupportableRowView: UIView {
         return collection
     }()
     
-    let supportables: [Supportable] = [
-        Supportable(imageName: "???", text: "Tênis de mesa"),
-        Supportable(imageName: "???", text: "Basquete"),
-        Supportable(imageName: "???", text: "Beteombro"),
-        Supportable(imageName: "???", text: "Racketbol"),
-        Supportable(imageName: "???", text: "Ciclismo"),
-        Supportable(imageName: "???", text: "Beteombro"),
-        Supportable(imageName: "???", text: "Racketbol"),
-        Supportable(imageName: "???", text: "Ciclismo")
-    ]
-    
-    required init?(coder: NSCoder) {
-        fatalError("Couldn't init well")
-    }
-    
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, supportables: [Supportable], navigationController: UINavigationController?) {
+        self.navigationController = navigationController
+        self.supportables = supportables
         super.init(frame: .zero)
         
         addSubview(collection)
@@ -50,6 +40,9 @@ class SupportableRowView: UIView {
         }
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 extension SupportableRowView: UICollectionViewDataSource {
@@ -59,7 +52,7 @@ extension SupportableRowView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SupportableCell
-        cell.data = supportables[indexPath[1]]
+        cell.supportable = supportables[indexPath[1]]
         return cell
     }
     
@@ -68,7 +61,31 @@ extension SupportableRowView: UICollectionViewDataSource {
 
 extension SupportableRowView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let supportable = supportables[indexPath.row]
+        switch supportable {
+        case is Sport:
+            let sportView = SportScreenViewController()
+            let sport = supportable as! Sport
+            sportView.sport = sport.sport
+            
+            navigationController?.show(sportView, sender: self)
+            
+        case is Athlete:
+            let athleteView = AthleteProfileViewController()
+            athleteView.athlete = supportable as? Athlete
+            
+            navigationController?.show(athleteView, sender: self)
+            
+        case is Project:
+            let projectView = ShowProjectViewController()
+            projectView.project = supportable as! Project
+            let nav = UINavigationController(rootViewController: projectView)
+            nav.modalPresentationStyle = .fullScreen
+            
+            navigationController?.present(nav, animated: true, completion: nil)
+        default:
+            return
+        }
     }
 }
 

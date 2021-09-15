@@ -49,6 +49,7 @@ class ReceiptView: UIView {
     
     lazy var uploadPhotoButtonContentView: UploadPhotoButtonContentView = {
         let view = UploadPhotoButtonContentView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.isUserInteractionEnabled = false
         return view
     }()

@@ -1,5 +1,5 @@
 //
-//  AthletesCell.swift
+//  SportsView.swift
 //  Atletas
 //
 //  Created by André Schueda on 02/09/21.
@@ -7,58 +7,62 @@
 
 import UIKit
 
-class AthletesCell: UICollectionViewCell {
+class SportsView: UICollectionViewCell {
+    var navigationController: UINavigationController?
+    
     static let identifier = UUID().uuidString
     
-    lazy var athletesContainer: UIView = {
+    lazy var sportsContainer: UIView = {
         let container = UIView()
         container.translatesAutoresizingMaskIntoConstraints = false
         return container
     }()
     
-    lazy var athletesLabel: UILabel = {
+    lazy var sportsLabel: UILabel = {
         let label = UILabel()
-        label.text = "Novos atletas"
+        label.text = "Modalidades"
         label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    lazy var athletesRow: SupportableRowView = {
-        let row = SupportableRowView()
+    lazy var sportsRow: SupportableRowView = {
+        let supportables = SportsDataModule.shared.sports
+        let row = SupportableRowView(supportables: supportables, navigationController: navigationController)
         row.translatesAutoresizingMaskIntoConstraints = false
         return row
     }()
-
+    
     required init?(coder: NSCoder) {
         fatalError("init hasn't been implemented")
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
+    init(frame: CGRect = .zero, navigationController: UINavigationController?) {
+        self.navigationController = navigationController
+        super.init(frame: frame)
         
-        setupAthletes()
+        setupSports()
     }
-
-    func setupAthletes() {
-        addSubview(athletesContainer)
-        athletesContainer.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(30)
+    
+    func setupSports() {
+        addSubview(sportsContainer)
+        sportsContainer.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(25)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
         
-        athletesContainer.addSubview(athletesLabel)
-        athletesLabel.snp.makeConstraints { make in
+        sportsContainer.addSubview(sportsLabel)
+        sportsLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
         }
         
-        athletesContainer.addSubview(athletesRow)
-        athletesRow.snp.makeConstraints { make in
-            make.top.equalTo(athletesLabel.snp.bottom).offset(8)
+        sportsContainer.addSubview(sportsRow)
+        sportsRow.snp.makeConstraints { make in
+            make.top.equalTo(sportsLabel.snp.bottom).offset(8)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()

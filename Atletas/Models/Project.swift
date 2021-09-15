@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 
-class Project {
+class Project: Supportable {
+    var text: String
+    
     var title: String
     var goal: Double
     var deadline: String
@@ -41,6 +43,8 @@ class Project {
         } else {
             self.deadline = limitDate.toDayMonthYearString()
         }
+        
+        self.text = title
     }
 
     func clone() -> Project {

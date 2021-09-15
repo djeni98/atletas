@@ -8,7 +8,10 @@
 import Foundation
 import UIKit
 
-class Sport {
+class Sport: Supportable {
+    var image: UIImage?
+    var text: String
+    
     let sport: SportEnum
     let sportImage: UIImage
     let headerImage: UIImage
@@ -17,5 +20,8 @@ class Sport {
         self.sport = sport
         self.sportImage = sportImage
         self.headerImage = headerImage
+        
+        self.image = sportImage
+        self.text = sport.getName()
     }
 }
