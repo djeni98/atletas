@@ -9,7 +9,8 @@ import UIKit
 
 class ProjectContentView: UIStackView {
     var nav: UINavigationController?
-    
+    var project: Project?
+
     lazy var imageView: ProjectImageView = {
         let view = ProjectImageView()
         view.imageName = "???"
@@ -101,7 +102,7 @@ class ProjectContentView: UIStackView {
         }
         
         infoView.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(16)
+            make.top.equalTo(imageView.snp.bottom).offset(16).priority(.high)
         }
         
         instructionLabel.snp.makeConstraints { make in
@@ -127,5 +128,23 @@ class ProjectContentView: UIStackView {
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func update(with project: Project) {
+        self.project = project
+        imageView.imageView.image = project.image
+        imageView.projectName = project.title
+
+        guard let athlete = project.athlete else { return }
+
+        if project.isMonthlyProject {
+            imageView.athleteName = athlete.name
+        }
+
+        infoView.athleteName = athlete.name
+        infoView.athleteCpf = athlete.pixInfo.getMaskedCpf()
+        infoView.athleteBank = athlete.pixInfo.bank
+
+        pixCodeView.pixCode = athlete.pixInfo.key
     }
 }

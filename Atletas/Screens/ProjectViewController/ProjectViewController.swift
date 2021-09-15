@@ -57,4 +57,8 @@ class ProjectViewController: UIViewController {
     @objc func clickedCancel() {
         navigationController?.popViewController(animated: true)
     }
+
+    func update(with project: Project) {
+        scrollViewContainer.update(with: project)
+    }
 }

@@ -173,7 +173,9 @@ class ShowProjectViewController: UIViewController {
     }
 
     @objc func navigateToSupport() {
-        navigationController?.pushViewController(ProjectViewController(), animated: true)
+        let projectVC = ProjectViewController()
+        projectVC.update(with: project)
+        navigationController?.pushViewController(projectVC, animated: true)
     }
 }
 
