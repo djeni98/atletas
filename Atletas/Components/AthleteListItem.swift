@@ -45,6 +45,7 @@ class AthleteListItem: UIView {
         circleImageView.layer.cornerRadius = circleSize / 2
         circleImageView.translatesAutoresizingMaskIntoConstraints = false
         circleImageView.clipsToBounds = true
+        circleImageView.contentMode = .scaleAspectFill
         self.addSubview(circleImageView)
 
         nameLabel = UILabel()
