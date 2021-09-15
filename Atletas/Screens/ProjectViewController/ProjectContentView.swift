@@ -81,7 +81,7 @@ class ProjectContentView: UIStackView {
     @objc func confirmButtonClicked() {
         let viewController = ConfirmDonationViewController()
         viewController.donationValue = Double(valueInput.currentValue)
-        nav?.show(viewController, sender: self)
+        nav?.pushViewController(viewController, animated: true)
     }
     
     override init(frame: CGRect) {
