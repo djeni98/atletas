@@ -15,6 +15,7 @@ class SupporterAccountHeaderView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 28
+        imageView.backgroundColor = .gray
         return imageView
     }()
     

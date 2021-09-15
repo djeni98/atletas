@@ -8,6 +8,7 @@
 import UIKit
 
 class SupporterAccountContentView: UIView {
+    var navigationController: UINavigationController?
     var supporter: Supporter
     
     lazy var headerView: SupporterAccountHeaderView = {
@@ -17,7 +18,7 @@ class SupporterAccountContentView: UIView {
     }()
     
     lazy var donationsView: SupporterDonationsView = {
-        let view = SupporterDonationsView(donations: supporter.donations)
+        let view = SupporterDonationsView(supporter: supporter, navigationController: navigationController)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -28,7 +29,8 @@ class SupporterAccountContentView: UIView {
         return view
     }()
     
-    init(frame: CGRect = .zero, supporter: Supporter) {
+    init(frame: CGRect = .zero, supporter: Supporter, navigationController: UINavigationController?) {
+        self.navigationController = navigationController
         self.supporter = supporter
         super.init(frame: frame)
         

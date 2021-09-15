@@ -8,12 +8,7 @@
 import UIKit
 
 class SupporterAccountViewController: UIViewController {
-    lazy var supporter: Supporter = {
-        let supporter = Supporter(name: "André Schueda", username: "schueda__", password: "******")
-        supporter.level = .diamond
-        supporter.donations = [Donation(receiptImage: UIImage(), supporter: supporter.name, supporterAmount: 35, athleteAmount: 35, status: .confirmed, project: "Sul-Americano 2022"), Donation(receiptImage: UIImage(), supporter: supporter.name, supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"), Donation(receiptImage: UIImage(), supporter: supporter.name, supporterAmount: 60, athleteAmount: 60, status: .rejected, project: "Novos Equipamentos")]
-        return supporter
-    }()
+    let supporter = SupporterDataModule.shared.supporters[1]
     
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -22,7 +17,7 @@ class SupporterAccountViewController: UIViewController {
     }()
     
     lazy var scrollViewContent: SupporterAccountContentView = {
-        let view = SupporterAccountContentView(supporter: supporter)
+        let view = SupporterAccountContentView(supporter: supporter, navigationController: navigationController)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -32,25 +27,33 @@ class SupporterAccountViewController: UIViewController {
         view.backgroundColor = UIColor(named: "background")
 
         setupContent()
-        navigationController?.navigationBar.isHidden = true
-        
     }
     
-
     func setupContent() {
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.leading.equalTo(view.safeAreaLayoutGuide)
+            make.trailing.equalTo(view.safeAreaLayoutGuide)
             make.bottom.equalToSuperview()
         }
         
         scrollView.addSubview(scrollViewContent)
         scrollViewContent.snp.makeConstraints { make in
-            make.edges.equalTo(scrollView).inset(UIEdgeInsets(top: 32, left: 0, bottom: 32, right: 0))
+            make.edges.equalTo(scrollView).inset(UIEdgeInsets(top: 32, left: 0, bottom: 16, right: 0))
             make.width.equalTo(scrollView)
         }
         scrollViewContent.supporter = self.supporter
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+        navigationController?.navigationBar.sizeToFit()
     }
 }

@@ -8,13 +8,15 @@
 import UIKit
 
 class SupporterDonationsView: UIView {
-    var donations: [Donation]
+    var navigationController: UINavigationController?
+    var supporter: Supporter
     
-    let headerView: TitleAndShowMoreButtonView = {
+    lazy var headerView: TitleAndShowMoreButtonView = {
         let view = TitleAndShowMoreButtonView()
         view.setTitle(withText: "Doações Recentes")
         view.setShowMoreAction {
-            print("TODO clicou no ver mais")
+            self.navigationController?.navigationBar.isHidden = false
+            self.navigationController?.pushViewController(DonationsViewController(donationsByMonth: self.supporter.getDonationsByMonth()), animated: true)
         }
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -32,8 +34,9 @@ class SupporterDonationsView: UIView {
         return tableView
     }()
     
-    init(frame: CGRect = .zero, donations: [Donation]) {
-        self.donations = donations
+    init(frame: CGRect = .zero, supporter: Supporter, navigationController: UINavigationController?) {
+        self.navigationController = navigationController
+        self.supporter = supporter
         super.init(frame: frame)
         
         setupHeaderView()
@@ -64,17 +67,22 @@ class SupporterDonationsView: UIView {
     }
 }
 
-extension SupporterDonationsView: UITableViewDelegate, UITableViewDataSource {
+extension SupporterDonationsView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        min(donations.count, 3)
+        min(supporter.donations.count, 3)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = donationsTableView.dequeueReusableCell(withIdentifier: "donation", for: indexPath) as! DonationCell
-        cell.data = donations[indexPath.row]
+        cell.donation = supporter.donations[indexPath.row]
         cell.backgroundColor = .clear
         return cell
     }
-    
-    
+}
+
+extension SupporterDonationsView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let donationVC = UINavigationController(rootViewController: ShowDonationViewController(donation: supporter.donations[indexPath.row]))
+        navigationController?.present(donationVC, animated: true, completion: nil)
+    }
 }

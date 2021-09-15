@@ -8,6 +8,8 @@
 import UIKit
 
 class ShowDonationReceiptView: UIView {
+    var donation: Donation
+    
     lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -24,10 +26,13 @@ class ShowDonationReceiptView: UIView {
         imageView.backgroundColor = .gray
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
+        imageView.image = donation.receiptImage
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, donation: Donation) {
+        self.donation = donation
         super.init(frame: frame)
         
         setupSubtitleLabel()

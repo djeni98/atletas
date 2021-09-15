@@ -8,9 +8,10 @@
 import UIKit
 
 class DonationsViewController: UIViewController {
+    var donationsByMonth: [String:[Donation]]
     
     lazy var content: DonationsContentView = {
-        let content = DonationsContentView()
+        let content = DonationsContentView(donationsByMonth: donationsByMonth)
         content.translatesAutoresizingMaskIntoConstraints = false
         return content
     }()
@@ -29,10 +30,12 @@ class DonationsViewController: UIViewController {
     func setupContent() {
         view.addSubview(content)
         content.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.leading.equalTo(view.safeAreaLayoutGuide)
+            make.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.equalToSuperview()
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +44,15 @@ class DonationsViewController: UIViewController {
         navigationItem.title = "Doações"
         navBar.sizeToFit()
         view.backgroundColor = UIColor(named: "background")
+    }
+    
+    init(donationsByMonth: [String:[Donation]]) {
+        self.donationsByMonth = donationsByMonth
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 

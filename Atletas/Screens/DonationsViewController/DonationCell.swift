@@ -8,13 +8,12 @@
 import UIKit
 
 class DonationCell: UITableViewCell {
-    var data: Donation? {
+    var donation: Donation? {
         didSet {
-//            self.supporter = data?.supporter
-            projectLabel.text = data?.project
-            valueLabel.text = "R$ \(Int(data?.supporterAmount ?? 0)),00"
+            projectLabel.text = donation?.project?.title
+            valueLabel.text = "R$ \(Int(donation?.supporterAmount ?? 0)),00"
             
-            switch data?.status {
+            switch donation?.status {
             case .confirmed:
                 statusImage.image = UIImage(systemName: "checkmark.circle.fill")
                 statusImage.tintColor = UIColor(named: "checkmark")

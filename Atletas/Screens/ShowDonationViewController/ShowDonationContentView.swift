@@ -8,31 +8,34 @@
 import UIKit
 
 class ShowDonationContentView: UIView {
+    var donation: Donation
+    
     lazy var athleteView: ShowDonationAthleteView = {
-        let view = ShowDonationAthleteView()
+        let view = ShowDonationAthleteView(donation: donation)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     lazy var receiptView: ShowDonationReceiptView = {
-        let view = ShowDonationReceiptView()
+        let view = ShowDonationReceiptView(donation: donation)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     lazy var dateView: ShowDonationDateView = {
-        let view = ShowDonationDateView()
+        let view = ShowDonationDateView(donation: donation)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     lazy var statusView: ShowDonationStatusView = {
-        let view = ShowDonationStatusView()
+        let view = ShowDonationStatusView(donation: donation)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, donation: Donation) {
+        self.donation = donation
         super.init(frame: frame)
         
         setupAthleteView()
@@ -74,6 +77,7 @@ class ShowDonationContentView: UIView {
             make.top.equalTo(dateView.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(32)
             make.trailing.equalToSuperview().offset(-32)
+            make.bottom.equalToSuperview()
         }
     }
     

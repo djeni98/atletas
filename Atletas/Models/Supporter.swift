@@ -17,4 +17,20 @@ class Supporter: User {
         self.name = name
         super.init(username: username, password: password, type: .supporter)
     }
+    
+    func getDonationsByMonth() -> [String:[Donation]] {
+        let donations = self.donations.sorted { $0.date > $1.date}
+        var dict: [String:[Donation]] = [:]
+        for donation in donations {
+            let yearAndMonth = "\(donation.date.get(.year))/\(donation.date.get(.month))"
+            
+            if dict[yearAndMonth] == nil {
+                dict[yearAndMonth] = [donation]
+            } else {
+                dict[yearAndMonth]?.append(donation)
+            }
+        }
+        
+        return dict
+    }
 }
