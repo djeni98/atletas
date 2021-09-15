@@ -19,8 +19,8 @@ class SportsDataModule {
     }
 
     func getSport(withEnum sportEnum: SportEnum) -> Sport {
-        let image = sportEnum.getImage() ?? UIImage(named: "???")!
-        let header = sportEnum.getHeaderImage() ?? UIImage(named: "???")!
+        let image = sportEnum.getImage()
+        let header = sportEnum.getHeaderImage()
         return Sport(sport: sportEnum, sportImage: image, headerImage: header)
     }
 }

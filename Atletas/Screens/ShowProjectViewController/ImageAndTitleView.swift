@@ -12,6 +12,7 @@ class ImageAndTitleView: UIView {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .brown
+        view.contentMode = .scaleAspectFill
 
         return view
     }()

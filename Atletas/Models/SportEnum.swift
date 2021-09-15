@@ -13,12 +13,21 @@ enum SportEnum: String, CaseIterable {
         }
     }
 
+    func getSimpleName() -> String {
+        switch self {
+        case .softball: return "softbol"
+        case .handeball: return "handebol"
+        case .voleiball: return "volei"
+        }
+    }
+
     func getImage() -> UIImage? {
-        return UIImage(named: self.rawValue)
+        let imageName = "\(self.getSimpleName())_card"
+        return UIImage(named: imageName)
     }
 
     func getHeaderImage() -> UIImage? {
-        let imageName = "\(self.rawValue)-header"
+        let imageName = "\(self.getSimpleName())_background"
         return UIImage(named: imageName)
     }
 }

@@ -17,6 +17,7 @@ class IconAndLabelView: UIView {
     var image: UIImage? {
         didSet {
             iconImageView.image = image
+            iconImageView.contentMode = .scaleAspectFit
         }
     }
 
@@ -54,9 +55,9 @@ class IconAndLabelView: UIView {
         self.addSubview(label)
 
         iconImageView.snp.makeConstraints { make in
-            make.size.equalTo(20)
+            make.size.equalTo(18)
             make.leading.equalToSuperview()
-            make.firstBaseline.equalTo(label)
+            make.top.equalTo(label).offset(2)
         }
 
         label.snp.makeConstraints { make in

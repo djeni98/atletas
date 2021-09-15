@@ -16,9 +16,14 @@ class SupporterDataModule {
 
     private init() {
         supporters += [
-            Supporter(name: "Leonardo Vieira", username: "leovieira", password: "********"),
-            Supporter(name: "Eliane Martins", username: "elianemartins", password: "********"),
-            Supporter(name: "Márcio Lima", username: "marciolima", password: "********")
+            getSupporter(name: "Leonardo Vieira", username: "leovieira", imageName: "apoiador_homem_1"),
+            getSupporter(name: "Eliane Martins", username: "elainemartins", imageName: "apoiador_mulher_1"),
+            getSupporter(name: "Márcio Lima", username: "marciolima", imageName: "apoiador_homem_2"),
         ]
+    }
+
+    private func getSupporter(name: String, username: String, imageName: String) -> Supporter {
+        let image = UIImage(named: imageName)
+        return Supporter(name: name, username: username, password: "********", image: image)
     }
 }
