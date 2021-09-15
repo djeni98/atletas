@@ -36,6 +36,7 @@ class AthleteInfoTabView: UIView {
     lazy var descriptionLabelView: IconAndLabelView = {
         let labelView = IconAndLabelView()
         labelView.translatesAutoresizingMaskIntoConstraints = false
+        labelView.image = UIImage(named: "atleta_icon")
 
         return labelView
     }()
@@ -43,6 +44,7 @@ class AthleteInfoTabView: UIView {
     lazy var cityLabelView: IconAndLabelView = {
         let labelView = IconAndLabelView()
         labelView.translatesAutoresizingMaskIntoConstraints = false
+        labelView.image = UIImage(systemName: "house.circle.fill")
 
         return labelView
     }()
@@ -58,6 +60,7 @@ class AthleteInfoTabView: UIView {
     lazy var instagramLabelView: IconAndLabelView = {
         let labelView = IconAndLabelView()
         labelView.translatesAutoresizingMaskIntoConstraints = false
+        labelView.image = UIImage(named: "insta_icon")
 
         return labelView
     }()
@@ -65,6 +68,7 @@ class AthleteInfoTabView: UIView {
     lazy var facebookLabelView: IconAndLabelView = {
         let labelView = IconAndLabelView()
         labelView.translatesAutoresizingMaskIntoConstraints = false
+        labelView.image = UIImage(named: "facebook_icon")
 
         return labelView
     }()
@@ -72,6 +76,7 @@ class AthleteInfoTabView: UIView {
     lazy var twitterLabelView: IconAndLabelView = {
         let labelView = IconAndLabelView()
         labelView.translatesAutoresizingMaskIntoConstraints = false
+        labelView.image = UIImage(named: "twitter_icon")
 
         return labelView
     }()
@@ -87,6 +92,7 @@ class AthleteInfoTabView: UIView {
     lazy var phoneLabelView: IconAndLabelView = {
         let labelView = IconAndLabelView()
         labelView.translatesAutoresizingMaskIntoConstraints = false
+        labelView.image = UIImage(named: "phone_icon")
 
         return labelView
     }()
@@ -94,6 +100,7 @@ class AthleteInfoTabView: UIView {
     lazy var emailLabelView: IconAndLabelView = {
         let labelView = IconAndLabelView()
         labelView.translatesAutoresizingMaskIntoConstraints = false
+        labelView.image = UIImage(named: "mail_icon")
 
         return labelView
     }()
