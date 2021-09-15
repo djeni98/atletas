@@ -40,7 +40,7 @@ class AthleteListTableViewAdapter: NSObject, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = filtered[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "athleteCell", for: indexPath) as! AthleteListItemCell
-        cell.configure(name: item.name, description: item.description ?? "")
+        cell.configure(name: item.name, description: item.description ?? "", image: item.image)
         return cell
     }
 
