@@ -108,7 +108,7 @@ class AthleteAccountViewController: UIViewController {
     }
 
     func navigateToDonations() {
-        navigationController?.pushViewController(DonationsViewController(), animated: true)
+        navigationController?.pushViewController(DonationsViewController(donationsByMonth: [:]), animated: true)
     }
 
     func navigateToProfile() {

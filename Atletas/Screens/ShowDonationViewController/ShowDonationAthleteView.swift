@@ -8,12 +8,16 @@
 import UIKit
 
 class ShowDonationAthleteView: UIView {
+    var donation: Donation
+    
     lazy var athleteImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 22
         imageView.backgroundColor = .gray
+        imageView.image = donation.project?.athlete?.image
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -22,7 +26,7 @@ class ShowDonationAthleteView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         label.textAlignment = .left
-        label.text = "R$ 50,00"
+        label.text = "R$ \(Int(donation.supporterAmount)),00"
         return label
     }()
     
@@ -31,12 +35,13 @@ class ShowDonationAthleteView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textAlignment = .left
-        label.text = "Nome do Atleta"
+        label.text = donation.project?.athlete?.name
         label.textColor = UIColor(named: "ShowDonationFont")
         return label
     }()
     
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, donation: Donation) {
+        self.donation = donation
         super.init(frame: frame)
         
         setupAthleteImageView()

@@ -72,7 +72,7 @@ class ShowMoreDonationsSectionView: UIView {
 
         donations.forEach { donation in
             let donationCell = DonationCell()
-            donationCell.data = donation
+            donationCell.donation = donation
 
             stackView.addArrangedSubview(donationCell.donationView)
         }

@@ -8,6 +8,8 @@
 import UIKit
 
 class ShowDonationStatusView: UIView {
+    var donation: Donation
+    
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -21,27 +23,47 @@ class ShowDonationStatusView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(systemName: "exclamationmark.triangle.fill")
         imageView.tintColor = UIColor(named: "exclamation")
         return imageView
     }()
     
     lazy var statusLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .right
         label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        label.textColor = UIColor(named: "exclamation")
         label.text = "Negada pelo atleta"
         return label
     }()
-
-    override init(frame: CGRect) {
+    
+    init(frame: CGRect = .zero, donation: Donation) {
+        self.donation = donation
         super.init(frame: frame)
         
         setupDescriptionLabel()
         setupIconImageView()
         setupStatusLabel()
+        
+        switch donation.status {
+        case .confirmed:
+            iconImageView.image = UIImage(systemName: "checkmark.circle.fill")
+            iconImageView.tintColor = UIColor(named: "checkmark")
+            
+            statusLabel.text = "Confirmada pelo atleta"
+            statusLabel.textColor = UIColor(named: "checkmark")
+        case .pending:
+            iconImageView.image = UIImage(systemName: "hourglass")
+            iconImageView.tintColor = UIColor(named: "hourglass")
+            
+            statusLabel.text = "A confirmar pelo atleta"
+            statusLabel.textColor = UIColor(named: "hourglass")
+        case .rejected:
+            iconImageView.image = UIImage(systemName: "exclamationmark.triangle.fill")
+            iconImageView.tintColor = UIColor(named: "exclamation")
+            
+            statusLabel.text = "Negada pelo atleta"
+            statusLabel.textColor = UIColor(named: "exclamation")
+        }
     }
     
     func setupDescriptionLabel() {
@@ -74,5 +96,5 @@ class ShowDonationStatusView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
 }

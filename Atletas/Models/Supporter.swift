@@ -19,4 +19,19 @@ class Supporter: User {
         self.image = image
         super.init(username: username, password: password, type: .supporter)
     }
+    
+    func getDonationsByMonth() -> [String:[Donation]] {
+        var dict: [String:[Donation]] = [:]
+        for donation in donations {
+            let yearAndMonth = "\(donation.date.get(.year))/\(donation.date.get(.month))"
+            
+            if dict[yearAndMonth] == nil {
+                dict[yearAndMonth] = [donation]
+            } else {
+                dict[yearAndMonth]?.append(donation)
+            }
+        }
+        
+        return dict
+    }
 }

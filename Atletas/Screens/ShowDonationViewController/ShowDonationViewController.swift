@@ -8,6 +8,8 @@
 import UIKit
 
 class ShowDonationViewController: UIViewController {
+    var donation: Donation
+    
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -15,11 +17,20 @@ class ShowDonationViewController: UIViewController {
     }()
     
     lazy var scrollContentView: ShowDonationContentView = {
-        let view = ShowDonationContentView()
+        let view = ShowDonationContentView(donation: donation)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
+    init(donation: Donation) {
+        self.donation = donation
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "background")
@@ -43,7 +54,7 @@ class ShowDonationViewController: UIViewController {
     
     func setupNav() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Donation Title"
+        navigationItem.title = donation.project?.title
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancelar", style: .plain, target: self, action: #selector(cancelClicked))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: nil, action: nil)
     }

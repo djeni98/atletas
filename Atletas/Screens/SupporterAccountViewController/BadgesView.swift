@@ -10,14 +10,14 @@ import UIKit
 class BadgesView: UIView {
     var badges: [Badge]
     
-    lazy var headerView: TitleAndShowMoreButtonView = {
-        let view = TitleAndShowMoreButtonView()
-        view.setTitle(withText: "Badges")
-        view.setShowMoreAction {
-            print("TODO clicou no ver mais")
-        }
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    lazy var headerLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Badges"
+        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        label.textAlignment = .left
+        
+        return label
     }()
     
     lazy var badgesBackgroundView: UIView = {
@@ -54,8 +54,8 @@ class BadgesView: UIView {
     }
     
     func setupHeaderView() {
-        addSubview(headerView)
-        headerView.snp.makeConstraints { make in
+        addSubview(headerLabel)
+        headerLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview().offset(22)
             make.trailing.equalToSuperview().offset(-22)
@@ -65,7 +65,7 @@ class BadgesView: UIView {
     func setupBadgesCollectionView() {
         addSubview(badgesBackgroundView)
         badgesBackgroundView.snp.makeConstraints { make in
-            make.top.equalTo(headerView.snp.bottom).offset(12)
+            make.top.equalTo(headerLabel.snp.bottom).offset(12)
             make.leading.equalToSuperview().offset(22)
             make.trailing.equalToSuperview().offset(-22)
             make.bottom.equalToSuperview()

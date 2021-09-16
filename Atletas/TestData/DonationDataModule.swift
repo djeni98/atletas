@@ -32,10 +32,15 @@ class DonationDataModule {
             let status = DonationStatusEnum.allCases.randomElement()!
             let athleteAmount = status == .confirmed ? supporterAmount : 0
 
-            let donation = Donation(receiptImage: image, supporter: supporter.name, supporterAmount: supporterAmount, athleteAmount: athleteAmount, status: status, project: project.title)
+            let donation = Donation(receiptImage: image, supporter: supporter, supporterAmount: supporterAmount, athleteAmount: athleteAmount, status: status, project: project)
+            
+            let donationDate = Date.randomBetween(start: Date.parse("2020-01-01"), end: Date.parse("2021-09-20"))
+            donation.date = donationDate
 
             supporter.donations.append(donation)
+            supporter.donations.sort(by: { $0.date > $1.date })
             project.donations.append(donation)
+            project.donations.sort(by: { $0.date > $1.date })
             donations.append(donation)
         }
     }

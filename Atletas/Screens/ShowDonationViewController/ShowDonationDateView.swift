@@ -8,6 +8,7 @@
 import UIKit
 
 class ShowDonationDateView: UIView {
+    var donation: Donation
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -21,12 +22,13 @@ class ShowDonationDateView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        label.text = "25/10/2021"
+        label.text = donation.dateString
         label.textColor = UIColor(named: "ShowDonationFont")
         return label
     }()
 
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, donation: Donation) {
+        self.donation = donation
         super.init(frame: frame)
         
         setupDescriptionLabel()

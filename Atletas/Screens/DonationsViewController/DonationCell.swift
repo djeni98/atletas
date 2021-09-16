@@ -8,13 +8,13 @@
 import UIKit
 
 class DonationCell: UITableViewCell {
-    var data: Donation? {
+    var donation: Donation? {
         didSet {
-//            self.supporter = data?.supporter
-            projectLabel.text = data?.project
-            valueLabel.text = "R$ \(Int(data?.supporterAmount ?? 0)),00"
+            projectLabel.text = donation?.project?.title
+            valueLabel.text = "R$ \(Int(donation?.supporterAmount ?? 0)),00"
+            donationImage.image = donation?.project?.athlete?.image
             
-            switch data?.status {
+            switch donation?.status {
             case .confirmed:
                 statusImage.image = UIImage(systemName: "checkmark.circle.fill")
                 statusImage.tintColor = UIColor(named: "checkmark")
@@ -40,13 +40,12 @@ class DonationCell: UITableViewCell {
         return contentView
     }()
     
-    lazy var supporterImage: UIImageView = {
+    lazy var donationImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 22
-        imageView.image = UIImage(named: "???")!
         return imageView
     }()
     
@@ -102,8 +101,8 @@ class DonationCell: UITableViewCell {
             make.height.equalTo(70)
         }
         
-        donationView.addSubview(supporterImage)
-        supporterImage.snp.makeConstraints { make in
+        donationView.addSubview(donationImage)
+        donationImage.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(13)
             make.leading.equalToSuperview().offset(16)
             make.width.equalTo(44)
@@ -113,12 +112,12 @@ class DonationCell: UITableViewCell {
         donationView.addSubview(projectLabel)
         projectLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(13)
-            make.leading.equalTo(supporterImage.snp.trailing).offset(10)
+            make.leading.equalTo(donationImage.snp.trailing).offset(10)
         }
         
         donationView.addSubview(valueLabel)
         valueLabel.snp.makeConstraints { make in
-            make.leading.equalTo(supporterImage.snp.trailing).offset(10)
+            make.leading.equalTo(donationImage.snp.trailing).offset(10)
             make.bottom.equalToSuperview().offset(-8)
         }
         
