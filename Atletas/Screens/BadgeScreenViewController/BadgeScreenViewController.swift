@@ -16,7 +16,7 @@ class BadgeScreenViewController: UIViewController {
     lazy var texto1: UILabel = {
         let texto1 = UILabel()
         texto1.translatesAutoresizingMaskIntoConstraints = false
-        texto1.text = "15 Doações"
+        texto1.text = badge.shortDescription
         texto1.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         texto1.numberOfLines = 2
         texto1.textAlignment = NSTextAlignment.center
@@ -26,7 +26,7 @@ class BadgeScreenViewController: UIViewController {
     lazy var texto2: UILabel = {
         let texto2 = UILabel()
         texto2.translatesAutoresizingMaskIntoConstraints = false
-        texto2.text = "Você recebeu esse badge por ter apoiado\nno esporte 15 vezes em 2021."
+        texto2.text = badge.detailedDescription
         texto2.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         texto2.textAlignment = .center
         texto2.numberOfLines = 2
@@ -49,7 +49,7 @@ class BadgeScreenViewController: UIViewController {
     }()
     
     lazy var badgeView: BadgeView = {
-        let badgeView = BadgeView(frame: .zero)
+        let badgeView = BadgeView(badge: badge)
         badgeView.translatesAutoresizingMaskIntoConstraints = false
         badgeView.backgroundColor = UIColor(named: "background")
         
@@ -60,10 +60,11 @@ class BadgeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "background")
-        guard let naviBar = navigationController?.navigationBar else { return }
-        naviBar.prefersLargeTitles = true
-        navigationItem.title = "Badge x"
-        naviBar.sizeToFit()
+        
+        setupNavigationBar()
+        
+        
+        
         view.addSubview(badgeView)
         badgeView.snp.makeConstraints { (make) in
             make.top.equalTo(view).offset(160)
@@ -81,6 +82,20 @@ class BadgeScreenViewController: UIViewController {
         
         
     }
+    
+    func setupNavigationBar() {
+        guard let naviBar = navigationController?.navigationBar else { return }
+        naviBar.prefersLargeTitles = true
+        navigationItem.title = badge.title
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "cancelar", style: .plain, target: self, action: #selector(clickedCancel))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: nil, action: nil)
+        naviBar.sizeToFit()
+    }
+    
+    @objc func clickedCancel() {
+        navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
     func setupText1(content: UIView) {
         view.addSubview(content)
        

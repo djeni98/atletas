@@ -89,7 +89,7 @@ class BadgesView: UIView {
 
 extension BadgesView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let badgeVC = UINavigationController(rootViewController: BadgeScreenViewController(badge: Badge(name: "badge name", image: UIImage(named: "???")!)))
+        let badgeVC = UINavigationController(rootViewController: BadgeScreenViewController(badge: badges[indexPath.row]))
         navigationController?.present(badgeVC, animated: true, completion: nil)
     }
 }
@@ -101,7 +101,7 @@ extension BadgesView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "badge", for: indexPath) as! BadgeCollectionViewCell
-        cell.badge = Badge(name: "maguu", image: UIImage())
+        cell.badge = badges[indexPath.row]
         return cell
     }
 }
