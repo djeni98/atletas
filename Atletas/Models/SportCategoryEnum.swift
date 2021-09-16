@@ -12,4 +12,13 @@ enum SportCategoryEnum {
     case olympic
     case base
     case brazilianTeam
+
+    func getName() -> String {
+        switch self {
+        case .amateur: return "Amador"
+        case .olympic: return "Olímpico"
+        case .base: return "Categoria de Base"
+        case .brazilianTeam: return "Seleção Brasileira"
+        }
+    }
 }

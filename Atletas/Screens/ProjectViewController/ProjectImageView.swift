@@ -8,13 +8,29 @@
 import UIKit
 
 class ProjectImageView: UIView {
+    var imageName: String? {
+        didSet {
+            imageView.image = UIImage(named: imageName ?? "placeholder")
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
+        }
+    }
+    
+    var projectName: String? {
+        didSet {
+            titleLabel.text = projectName
+        }
+    }
+    
+    var athleteName: String? {
+        didSet {
+            subtitleLabel.text = athleteName
+        }
+    }
+    
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
-        
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "???")
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -28,9 +44,8 @@ class ProjectImageView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.preferredFont(for: .title2, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         label.adjustsFontForContentSizeCategory = true
-        label.text = "Ljhsd khfaasdlkajsdjkalsks"
         label.numberOfLines = 0
         label.textColor = .white
         return label
@@ -39,9 +54,8 @@ class ProjectImageView: UIView {
     lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.preferredFont(for: .headline, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         label.adjustsFontForContentSizeCategory = true
-        label.text = "Ljhsd khfaasdlkajsdjkalsks"
         label.numberOfLines = 0
         label.textColor = UIColor(named: "projectSubtitle")
         return label

@@ -29,6 +29,7 @@ class AthleteProfileViewController: UIViewController, UITabBarDelegate {
         let view = TabBarAndSupportButtonView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.tabBar.delegate = self
+        view.setSupportButtonAction(self.supportButtonAction)
         selectedItem = view.tabBar.selectedItem
 
         return view
@@ -38,9 +39,7 @@ class AthleteProfileViewController: UIViewController, UITabBarDelegate {
         let view = AthleteSupportTabView()
         view.translatesAutoresizingMaskIntoConstraints = false
         
-        let projects: [Project] = Array(1...3).map { n in
-            return Project(title: "Proj \(n)", image: UIImage(named: "???")!, about: "", goal: 100, deadline: "12/12/2021", sport: .softball, category: .brazilianTeam)
-        }
+        let projects: [Project] = ProjectDataModule.shared.projects.map { $0.clone() }
         view.setProjects(projects)
 
         return view
@@ -73,14 +72,13 @@ class AthleteProfileViewController: UIViewController, UITabBarDelegate {
 
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(named: "background")
         setup()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // change navBar
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        supportTabView.navigationController = navigationController
     }
 
     func setup() {
@@ -144,6 +142,16 @@ class AthleteProfileViewController: UIViewController, UITabBarDelegate {
             self.supportTabView.isHidden = true
             self.infoTabView.isHidden = false
         }
+    }
+
+    func supportButtonAction() {
+        guard let project = athlete?.projects.first else { return }
+        let projectVC = ShowProjectViewController()
+        projectVC.project = project
+
+        let viewController = UINavigationController(rootViewController: projectVC)
+        viewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(viewController, animated: true, completion: nil)
     }
 }
 

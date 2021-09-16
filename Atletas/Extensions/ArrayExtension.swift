@@ -8,13 +8,8 @@
 import Foundation
 
 extension Array {
-    func slice(_ range: ClosedRange<Int>) -> Array {
-        let sliced = self[range]
-        return Array(sliced)
-    }
-
     func slice(_ range: Range<Int>) -> Array {
-        let sliced = self[range]
+        let sliced = self.count < range.endIndex ? self[0..<self.count] : self[range]
         return Array(sliced)
     }
 }

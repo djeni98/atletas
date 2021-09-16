@@ -6,41 +6,18 @@
 //
 import UIKit
 
-struct TestingItens {
-    var name: String
-    var desc: String?
-    var scope: SearchScopeButton
-
-    func match(_ searchText: String) -> Bool {
-        let text = searchText.lowercased()
-
-        let matchName = name.lowercased().contains(text)
-        let matchDesc = desc?.lowercased().contains(text) ?? false
-
-        return matchName || matchDesc
-    }
-}
-
-class AthleteListTableViewAdapter: NSObject, UITableViewDataSource {
-    var array = [TestingItens]()
-    var filtered = [TestingItens]()
+class AthleteListTableViewAdapter: NSObject, UITableViewDataSource, UITableViewDelegate {
+    var array = [SearchableContent]()
+    var filtered = [SearchableContent]()
     var scope = SearchScopeButton.all
 
-    override init() {
-        var itens = [TestingItens]()
-        itens += Array(1...5).map { n in
-            return TestingItens(name: "Name \(n)", desc: "Athlete ...", scope: .athlete)
-        }
+    var navigationController: UINavigationController?
 
-        itens += Array(5...10).map { n in
-            return TestingItens(name: "Project \(n)", desc: "...", scope: .project)
-        }
-
-        itens += Array(11...15).map { n in
-            return TestingItens(name: "Sport \(n)", scope: .sport)
-        }
+    init(itens: [SearchableContent], navigationController: UINavigationController?) {
         self.array = itens
         self.filtered = itens
+
+        self.navigationController = navigationController
     }
 
     func filterContent(by text: String?, withCategory: SearchScopeButton? = .all) {
@@ -63,7 +40,32 @@ class AthleteListTableViewAdapter: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = filtered[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "athleteCell", for: indexPath) as! AthleteListItemCell
-        cell.configure(name: item.name, description: item.desc ?? "")
+        cell.configure(name: item.name, description: item.description ?? "", image: item.image)
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = filtered[indexPath.row]
+
+        switch item.scope {
+        case .sport:
+            let viewController = SportScreenViewController()
+            viewController.sport = (item.reference as! Sport).sport
+            self.navigationController?.pushViewController(viewController, animated: true)
+        case .athlete:
+            let viewController = AthleteProfileViewController()
+            viewController.athlete = (item.reference as! Athlete)
+            self.navigationController?.pushViewController(viewController, animated: true)
+        case .project:
+            let projectVC = ShowProjectViewController()
+            projectVC.project = (item.reference as! Project)
+            
+            let viewController = UINavigationController(rootViewController: projectVC)
+            viewController.modalPresentationStyle = .fullScreen
+            self.navigationController?.present(viewController, animated: true, completion: nil)
+        default:
+            fatalError("This item can not be opened.")
+        }
+
     }
 }

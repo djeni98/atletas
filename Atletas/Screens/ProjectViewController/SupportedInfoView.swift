@@ -8,10 +8,30 @@
 import UIKit
 
 class SupportedInfoView: UIView {
+    var athleteName: String? {
+        didSet {
+            nameLabel.attributedText = makeAttributedString(regular: "Nome: ", bold: athleteName?.uppercased())
+        }
+    }
+    
+    var athleteCpf: String? {
+        didSet {
+            cpfLabel.attributedText = makeAttributedString(regular: "CPF: ", bold: athleteCpf)
+        }
+    }
+    
+    var athleteBank: String? {
+        didSet {
+            bankLabel.attributedText = makeAttributedString(regular: "Instituição: ", bold: athleteBank)
+        }
+    }
+
+    
     lazy var topLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Dados de quem receberá sua doação:"
-        label.font = UIFont.preferredFont(for: .subheadline, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.adjustsFontForContentSizeCategory = true
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -20,8 +40,8 @@ class SupportedInfoView: UIView {
     
     lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Nome:"
-        label.font = UIFont.preferredFont(for: .subheadline, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.adjustsFontForContentSizeCategory = true
         label.textAlignment = .left
         return label
@@ -29,8 +49,8 @@ class SupportedInfoView: UIView {
     
     lazy var cpfLabel: UILabel = {
         let label = UILabel()
-        label.text = "CPF:"
-        label.font = UIFont.preferredFont(for: .subheadline, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.adjustsFontForContentSizeCategory = true
         label.textAlignment = .left
         return label
@@ -38,12 +58,23 @@ class SupportedInfoView: UIView {
     
     lazy var bankLabel: UILabel = {
         let label = UILabel()
-        label.text = "Instituição:"
-        label.font = UIFont.preferredFont(for: .subheadline, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.adjustsFontForContentSizeCategory = true
         label.textAlignment = .left
         return label
     }()
+    
+    func makeAttributedString(regular: String, bold: String?) -> NSMutableAttributedString {
+        let regularString = NSMutableAttributedString(string: regular)
+        
+        guard let boldText = bold else { return regularString }
+        let attributes = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15, weight: .semibold)]
+        let attributedString = NSMutableAttributedString(string: boldText, attributes: attributes)
+        
+        regularString.append(attributedString)
+        return regularString
+    }
     
     required init?(coder: NSCoder) {
         fatalError("Couldn't init well")

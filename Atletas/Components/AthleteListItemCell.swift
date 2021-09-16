@@ -11,6 +11,8 @@ class AthleteListItemCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = UIColor(named: "background")
+        selectionStyle = .none
 
         // Set any attributes of your UI components here.
         athleteListItem.translatesAutoresizingMaskIntoConstraints = false
@@ -28,9 +30,10 @@ class AthleteListItemCell: UITableViewCell {
         ])
     }
 
-    func configure(name: String, description: String) {
+    func configure(name: String, description: String, image: UIImage?) {
         athleteListItem.nameLabel.text = name
         athleteListItem.descriptionLabel.text = description
+        athleteListItem.circleImageView.image = image
     }
 
     required init?(coder: NSCoder) {

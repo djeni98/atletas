@@ -32,6 +32,8 @@ class ProjectCardView: UIView {
 
         return view
     }()
+    
+    var tapGestureAction: ( () -> Void )?
 
     init(project: Project) {
         super.init(frame: .zero)
@@ -94,6 +96,19 @@ class ProjectCardView: UIView {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }
+    }
+
+    func setTapGestureToCallAction(_ action: @escaping () -> Void) {
+        if tapGestureAction == nil {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+            self.isUserInteractionEnabled = true
+            self.addGestureRecognizer(tap)
+        }
+        self.tapGestureAction = action
+    }
+
+    @objc func handleTap() {
+        tapGestureAction?()
     }
 }
 

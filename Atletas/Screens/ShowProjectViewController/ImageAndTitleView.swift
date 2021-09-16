@@ -12,6 +12,8 @@ class ImageAndTitleView: UIView {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .brown
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
 
         return view
     }()
@@ -106,6 +108,12 @@ class ImageAndTitleView: UIView {
             make.leading.equalTo(titleLabel)
             make.trailing.equalTo(titleLabel)
         }
+    }
+
+    func update(with project: Project) {
+        setTitle(withText: project.title)
+        setSubtitle(withText: project.getRemainingTimeInString())
+        setImage(withImage: project.image)
     }
 }
 

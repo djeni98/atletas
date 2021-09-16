@@ -8,6 +8,9 @@
 import UIKit
 
 class DonationsContentView: UIView {
+    var navigationController: UINavigationController?
+    var sortedKeys: [String]
+    var donationsByMonth: [String:[Donation]]
     
     lazy var donationsTableView: UITableView = {
         let tableView = UITableView()
@@ -23,42 +26,11 @@ class DonationsContentView: UIView {
     }()
     
     lazy var donationTableTitleView: DonationsTableTitleView = {
-        let tableView = DonationsTableTitleView()
+        let view = DonationsTableTitleView()
+        view.translatesAutoresizingMaskIntoConstraints = false
 
-        return tableView
+        return view
     }()
-    
-    
-    var months: [MonthDonations] = [
-        MonthDonations(month: "Julho", donations: [
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .confirmed, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .rejected, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta")
-        ]),
-        MonthDonations(month: "Junho", donations: [
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 40, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta")
-        ]),
-        MonthDonations(month: "Maio", donations: [
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 40, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta")
-        ]),
-        MonthDonations(month: "Abril", donations: [
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 40, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta"),
-            Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta")
-        ])
-    ]
     
     func updateHeaderViewHeight() {
         guard let header = donationsTableView.tableHeaderView else { return }
@@ -69,7 +41,10 @@ class DonationsContentView: UIView {
         fatalError("Couldn't init")
     }
     
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, donationsByMonth: [String: [Donation]], navigationController: UINavigationController?) {
+        self.navigationController = navigationController
+        self.donationsByMonth = donationsByMonth
+        sortedKeys = donationsByMonth.keys.sorted(by: >)
         super.init(frame: .zero)
         
         addSubview(donationsTableView)
@@ -85,28 +60,42 @@ class DonationsContentView: UIView {
 }
 
 extension DonationsContentView: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let key = sortedKeys[indexPath.section]
+        let donation = donationsByMonth[key]![indexPath.row]
+        let donationVC = UINavigationController(rootViewController: ShowDonationViewController(donation: donation))
+        
+        navigationController?.present(donationVC, animated: true, completion: nil)
+    }
 }
 
 extension DonationsContentView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        months.count
+        donationsByMonth.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return months[section].donations.count
+        let key = sortedKeys[section]
+        return donationsByMonth[key]!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = donationsTableView.dequeueReusableCell(withIdentifier: "donation", for: indexPath) as! DonationCell
-        cell.data = months[indexPath.section].donations[indexPath.row]
+        let key = sortedKeys[indexPath.section]
+        cell.donation = donationsByMonth[key]![indexPath.row]
         cell.backgroundColor = .clear
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = DonationsTableSubheaderView()
-        view.text = months[section].month
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy'/'MM"
+        let date = formatter.date(from: sortedKeys[section])
+        
+        view.text = date?.readableDate
+        
         view.backgroundColor = UIColor(named: "background")
         return view
     }

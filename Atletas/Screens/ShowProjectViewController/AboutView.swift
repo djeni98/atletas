@@ -72,6 +72,9 @@ class AboutView: UIView {
         }
     }
 
+    func update(withText text: String) {
+        aboutTextLabel.text = text
+    }
 }
 
 #if DEBUG

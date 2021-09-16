@@ -10,9 +10,11 @@ import Foundation
 class User {
     var username: String
     var password: String
+    var type: UserType
     
-    init(username: String, password: String) {
+    init(username: String, password: String, type: UserType) {
         self.username = username
         self.password = password
+        self.type = type
     }
 }

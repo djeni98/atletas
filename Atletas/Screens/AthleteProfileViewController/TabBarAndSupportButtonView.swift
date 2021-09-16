@@ -14,6 +14,7 @@ class TabBarAndSupportButtonView: UIView {
         tabBar.isTranslucent = false
         tabBar.clipsToBounds = true
         tabBar.tintColor = UIColor(named: "PrimaryFont")
+        tabBar.barTintColor = UIColor(named: "background")
 
         let fontAttributes = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15)]
         let support = UITabBarItem(
@@ -67,7 +68,7 @@ class TabBarAndSupportButtonView: UIView {
             make.top.equalToSuperview()
 
             make.leading.equalToSuperview().offset(32)
-            make.width.equalTo(128)
+            make.trailing.equalTo(supportButton.snp.leading).offset(-16)
         }
     }
 

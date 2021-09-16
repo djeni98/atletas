@@ -21,7 +21,6 @@ class ProjectViewController: UIViewController {
         container.axis = .vertical
         container.alignment = .center
         container.spacing = 32
-        container.nav = navigationController
         
         return container
     }()
@@ -29,7 +28,7 @@ class ProjectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(named: "background")
         setupContent()
         setupNav()
     }
@@ -48,13 +47,18 @@ class ProjectViewController: UIViewController {
     }
     
     func setupNav() {
+        scrollViewContainer.nav = navigationController
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.backButtonTitle = "Voltar"
         navigationItem.title = "Apoiar"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancelar", style: .plain, target: self, action: #selector(clickedCancel))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: nil, action: nil)
     }
     
     @objc func clickedCancel() {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+    }
+
+    func update(with project: Project) {
+        scrollViewContainer.update(with: project)
     }
 }

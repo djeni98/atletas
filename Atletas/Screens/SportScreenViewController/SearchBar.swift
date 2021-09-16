@@ -49,11 +49,14 @@ class SearchBar: UIView {
 
     func setupViewsLayout() {
         addSubview(searchBar)
+
+        let trailingConstraint = searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8)
+        trailingConstraint.priority = .defaultHigh
+
         NSLayoutConstraint.activate([
             searchBar.topAnchor.constraint(equalTo: self.topAnchor),
             searchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
-            searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8)
-           
+            trailingConstraint
         ])
     }
 

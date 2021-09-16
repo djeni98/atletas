@@ -32,9 +32,7 @@ class ShowMoreDonationsSectionView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let donations: [Donation] = Array(1...3).map { n in
-            return Donation(receiptImage: UIImage(named: "???")!, supporter: "Zé", supporterAmount: 50, athleteAmount: 50, status: .pending, project: "Renda Atleta")
-        }
+        let donations: [Donation] = DonationDataModule.shared.donations.slice(0..<3)
         setup(donations: donations, showMoreAction: {})
     }
 
@@ -49,6 +47,10 @@ class ShowMoreDonationsSectionView: UIView {
         self.snp.makeConstraints { make in
             make.bottom.equalTo(stackView)
         }
+    }
+
+    func setShowMoreAction(_ action: @escaping () -> Void) {
+        headerView.setShowMoreAction(with: action)
     }
 
     func setupHeader(withAction action: @escaping () -> Void) {
@@ -70,7 +72,7 @@ class ShowMoreDonationsSectionView: UIView {
 
         donations.forEach { donation in
             let donationCell = DonationCell()
-            donationCell.data = donation
+            donationCell.donation = donation
 
             stackView.addArrangedSubview(donationCell.donationView)
         }

@@ -18,6 +18,8 @@ class AthleteSupportTabView: UIView {
         }
     }
 
+    var navigationController: UINavigationController?
+
     lazy var aboutTextLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -112,6 +114,14 @@ class AthleteSupportTabView: UIView {
 
         projects.forEach { project in
             let card = ProjectCardView(project: project)
+            card.setTapGestureToCallAction {
+                let projectVC = ShowProjectViewController()
+                projectVC.project = project
+                
+                let viewController = UINavigationController(rootViewController: projectVC)
+                viewController.modalPresentationStyle = .fullScreen
+                self.navigationController?.present(viewController, animated: true, completion: nil)
+            }
             stackView.addArrangedSubview(card)
         }
     }
@@ -124,9 +134,7 @@ struct AthleteSupportTabView_Preview: PreviewProvider {
         Group {
             ContentView {
                 let view = AthleteSupportTabView()
-                let projects: [Project] = Array(1...3).map { n in
-                    return Project(title: "Proj \(n)", image: UIImage(named: "???")!, about: "", goal: 100, deadline: "12/12/2021", sport: .softball, category: .brazilianTeam)
-                }
+                let projects: [Project] = ProjectDataModule.shared.projects.map { $0.clone() }
                 view.setProjects(projects)
 
                 return view

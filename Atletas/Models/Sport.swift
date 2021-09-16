@@ -8,12 +8,20 @@
 import Foundation
 import UIKit
 
-class Sport {
-    let sport: SportEnum
-    let sportImage: UIImage
+class Sport: Supportable {
+    var image: UIImage?
+    var text: String
     
-    init(sport: SportEnum, sportImage: UIImage){
+    let sport: SportEnum
+    let sportImage: UIImage?
+    let headerImage: UIImage?
+    
+    init(sport: SportEnum, sportImage: UIImage?, headerImage: UIImage?){
         self.sport = sport
         self.sportImage = sportImage
+        self.headerImage = headerImage
+        
+        self.image = sportImage
+        self.text = sport.getName()
     }
 }

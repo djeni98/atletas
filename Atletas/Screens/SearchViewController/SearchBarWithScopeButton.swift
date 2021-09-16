@@ -66,11 +66,14 @@ class SearchBarWithScopeButton: UIView {
 
         searchBar.scopeButtonTitles = SearchScopeButton.allCases.map { $0.rawValue }
         searchBar.selectedScopeButtonIndex = segmentedControl.selectedSegmentIndex
+
+        let searchBarTrailingConstraint = searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8)
+        searchBarTrailingConstraint.priority = .defaultHigh
         
         NSLayoutConstraint.activate([
             searchBar.topAnchor.constraint(equalTo: self.topAnchor),
             searchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
-            searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
+            searchBarTrailingConstraint,
 
             segmentedControl.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
             segmentedControl.leadingAnchor.constraint(equalTo: searchBar.leadingAnchor, constant: 8),

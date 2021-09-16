@@ -8,77 +8,65 @@
 import UIKit
 
 class ExploreContentView: UIView {
-
-    lazy var exploreCollection: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.backgroundColor = .clear
-        collection.translatesAutoresizingMaskIntoConstraints = false
-        collection.register(SportsCell.self, forCellWithReuseIdentifier: SportsCell.identifier)
-        collection.register(AthletesCell.self, forCellWithReuseIdentifier: AthletesCell.identifier)
-        collection.register(ProjectsCell.self, forCellWithReuseIdentifier: ProjectsCell.identifier)
-        collection.delegate = self
-        collection.dataSource = self
-        return collection
+    var navigationController: UINavigationController?
+    
+    lazy var sportsView: SportsView = {
+        let view = SportsView(navigationController: navigationController)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
+    
+    lazy var athletesView: AthletesView = {
+        let view = AthletesView(navigationController: navigationController)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    lazy var projectsView: ProjectsView = {
+        let view = ProjectsView(navigationController: navigationController)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    init(frame: CGRect = .zero, navigationController: UINavigationController?) {
+        self.navigationController = navigationController
+        super.init(frame: .zero)
+        
+        setupSportsView()
+        setupAthletesView()
+        setupProjectsview()
+    }
     
     required init?(coder: NSCoder) {
         fatalError("Couldn't init")
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-        
-        addSubview(exploreCollection)
-        exploreCollection.snp.makeConstraints { make in
+    func setupSportsView() {
+        addSubview(sportsView)
+        sportsView.snp.makeConstraints { make in
             make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+    }
+    
+    func setupAthletesView() {
+        addSubview(athletesView)
+        athletesView.snp.makeConstraints { make in
+            make.top.equalTo(sportsView.snp.bottom)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+    }
+    
+    func setupProjectsview() {
+        addSubview(projectsView)
+        projectsView.snp.makeConstraints { make in
+            make.top.equalTo(athletesView.snp.bottom)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-    }
-}
-
-
-extension ExploreContentView: UICollectionViewDelegate {
-    
-}
-
-extension ExploreContentView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.row {
-        case 0:
-            let cell = exploreCollection.dequeueReusableCell(withReuseIdentifier: SportsCell.identifier, for: indexPath) as! SportsCell
-            return cell
-        case 1:
-            let cell = exploreCollection.dequeueReusableCell(withReuseIdentifier: AthletesCell.identifier, for: indexPath) as! AthletesCell
-            return cell
-        case 2:
-            let cell = exploreCollection.dequeueReusableCell(withReuseIdentifier: ProjectsCell.identifier, for: indexPath) as! ProjectsCell
-            return cell
-        default:
-            let cell = exploreCollection.dequeueReusableCell(withReuseIdentifier: SportsCell.identifier, for: indexPath) as! SportsCell
-            return cell
-        }
-    }
-}
-
-extension ExploreContentView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch indexPath.row {
-        case 0:
-            return CGSize(width: frame.size.width, height: 190)
-        case 1:
-            return CGSize(width: frame.size.width, height: 190)
-        case 2:
-            return CGSize(width: frame.size.width, height: 210)
-        default:
-            return CGSize(width: frame.size.width, height: 190)
-        }
+        
     }
 }

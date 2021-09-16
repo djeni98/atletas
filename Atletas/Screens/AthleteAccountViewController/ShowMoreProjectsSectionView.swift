@@ -8,6 +8,8 @@
 import UIKit
 
 class ShowMoreProjectsSectionView: UIView {
+    var navigationController: UINavigationController?
+    
     let headerView: TitleAndShowMoreButtonView = {
         let view = TitleAndShowMoreButtonView()
         view.setTitle(withText: "Meus Projetos")
@@ -32,9 +34,7 @@ class ShowMoreProjectsSectionView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let projects: [Project] = Array(1...3).map { n in
-            return Project(title: "Proj \(n)", image: UIImage(named: "???")!, about: "", goal: 100, deadline: "12/12/2021", sport: .softball, category: .brazilianTeam)
-        }
+        let projects: [Project] = ProjectDataModule.shared.projects.map { $0.clone() }.slice(0..<3)
         setup(projects: projects, showMoreAction: {})
     }
 
@@ -49,6 +49,10 @@ class ShowMoreProjectsSectionView: UIView {
         self.snp.makeConstraints { make in
             make.bottom.equalTo(stackView)
         }
+    }
+
+    func setShowMoreAction(_ action: @escaping () -> Void) {
+        headerView.setShowMoreAction(with: action)
     }
 
     func setupHeader(withAction action: @escaping () -> Void) {
@@ -70,6 +74,11 @@ class ShowMoreProjectsSectionView: UIView {
 
         projects.forEach { project in
             let card = ProjectCardView(project: project)
+            card.setTapGestureToCallAction {
+                let viewController = UINavigationController(rootViewController: ShowProjectViewController())
+                viewController.modalPresentationStyle = .fullScreen
+                self.navigationController?.present(viewController, animated: true, completion: nil)
+            }
             stackView.addArrangedSubview(card)
         }
     }

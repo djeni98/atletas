@@ -9,9 +9,12 @@ import UIKit
 
 class ProjectContentView: UIStackView {
     var nav: UINavigationController?
-    
+    var project: Project?
+
     lazy var imageView: ProjectImageView = {
         let view = ProjectImageView()
+        view.imageName = "???"
+        view.projectName = "Sul Americano 2022"
         view.translatesAutoresizingMaskIntoConstraints = false
         view.snp.makeConstraints { make in
             make.height.equalTo(175)
@@ -25,6 +28,9 @@ class ProjectContentView: UIStackView {
         view.layer.borderWidth = 1
         view.layer.cornerRadius = 3
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.athleteName = "Mayra Sayuri"
+        view.athleteCpf = "***.999.***-**"
+        view.athleteBank = "Banco Do Brasil"
         return view
     }()
     
@@ -33,13 +39,14 @@ class ProjectContentView: UIStackView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Copie o código abaixo e utilize o Pix Copia e Cola no aplicativo que você vai fazer o pagamento:"
         label.numberOfLines = 0
-        label.font = UIFont.preferredFont(for: .footnote, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textAlignment = .center
         return label
     }()
     
     lazy var pixCodeView: PixCodeView = {
         let view = PixCodeView()
+        view.pixCode = "999.999.999-00"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -49,7 +56,7 @@ class ProjectContentView: UIStackView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Informe abaixo o valor de sua doação:"
         label.numberOfLines = 0
-        label.font = UIFont.preferredFont(for: .footnote, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textAlignment = .center
         return label
     }()
@@ -64,15 +71,17 @@ class ProjectContentView: UIStackView {
     lazy var confirmButton: GreenRoundedButton = {
         let button = GreenRoundedButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Copiar chave pix", for: .normal)
-        button.setTitleColor(UIColor(named: "copyButton"), for: .normal)
+        button.setTitle("Prosseguir", for: .normal)
+        button.setTitleColor(UIColor(named: "greenButtonText"), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         button.addTarget(self, action: #selector(confirmButtonClicked), for: .touchUpInside)
         return button
     }()
     
     @objc func confirmButtonClicked() {
-        nav?.show(ConfirmDonationViewController(), sender: self)
+        let viewController = ConfirmDonationViewController()
+        viewController.donationValue = Double(valueInput.currentValue)
+        nav?.pushViewController(viewController, animated: true)
     }
     
     override init(frame: CGRect) {
@@ -93,7 +102,7 @@ class ProjectContentView: UIStackView {
         }
         
         infoView.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(16)
+            make.top.equalTo(imageView.snp.bottom).offset(16).priority(.high)
         }
         
         instructionLabel.snp.makeConstraints { make in
@@ -119,5 +128,23 @@ class ProjectContentView: UIStackView {
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func update(with project: Project) {
+        self.project = project
+        imageView.imageView.image = project.image
+        imageView.projectName = project.title
+
+        guard let athlete = project.athlete else { return }
+
+        if project.isMonthlyProject {
+            imageView.athleteName = athlete.name
+        }
+
+        infoView.athleteName = athlete.name
+        infoView.athleteCpf = athlete.pixInfo.getMaskedCpf()
+        infoView.athleteBank = athlete.pixInfo.bank
+
+        pixCodeView.pixCode = athlete.pixInfo.key
     }
 }

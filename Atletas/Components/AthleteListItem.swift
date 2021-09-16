@@ -28,7 +28,7 @@ class AthleteListItem: UIView {
     }
 
     func oldRect() {
-        backgroundColor = .systemBackground
+        backgroundColor = UIColor(named: "background")
         layer.cornerRadius = 32
         layer.borderColor = UIColor.systemBlue.cgColor
         layer.borderWidth = 14
@@ -44,6 +44,8 @@ class AthleteListItem: UIView {
         circleImageView.backgroundColor = UIColor.gray
         circleImageView.layer.cornerRadius = circleSize / 2
         circleImageView.translatesAutoresizingMaskIntoConstraints = false
+        circleImageView.clipsToBounds = true
+        circleImageView.contentMode = .scaleAspectFill
         self.addSubview(circleImageView)
 
         nameLabel = UILabel()
@@ -67,9 +69,11 @@ class AthleteListItem: UIView {
             circleImageView.centerYAnchor.constraint(equalTo: self.layoutMarginsGuide.centerYAnchor),
 
             nameLabel.leadingAnchor.constraint(equalTo: circleImageView.trailingAnchor, constant: 10),
+            nameLabel.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -5),
             nameLabel.bottomAnchor.constraint(equalTo: circleImageView.centerYAnchor),
 
             descriptionLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
+            descriptionLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
             descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 2),
         ])
     }

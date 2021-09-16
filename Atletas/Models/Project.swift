@@ -8,18 +8,28 @@
 import Foundation
 import UIKit
 
-class Project {
+class Project: Supportable {
+    var text: String
+    
     var title: String
-    var image: UIImage
-    var about: String
     var goal: Double
     var deadline: String
     var limitDate: Date = Date()
+
+    var image: UIImage?
+    var about: String
+
     let sport: SportEnum
     let category: SportCategoryEnum
     var donations: [Donation] = []
-   
-    init(title: String, image: UIImage, about: String, goal: Double, deadline: String, sport: SportEnum, category: SportCategoryEnum) {
+
+    weak var athlete: Athlete?
+
+    let isMonthlyProject: Bool
+
+    init(title: String, goal: Double, deadline: String, image: UIImage?, about: String = "", sport: SportEnum, category: SportCategoryEnum, isMonthlyProject: Bool = false) {
+        self.isMonthlyProject = isMonthlyProject
+
         self.title = title
         self.image = image
         self.about = about
@@ -33,10 +43,36 @@ class Project {
         } else {
             self.deadline = limitDate.toDayMonthYearString()
         }
+        
+        self.text = title
+    }
+
+    func clone() -> Project {
+        let p = clone(withDonations: [])
+        p.donations = donations.map { $0.clone() }
+
+        return p
+    }
+
+    func clone(withDonations donations: [Donation]) -> Project {
+        let p = Project(title: title, goal: goal, deadline: deadline, image: image, about: about, sport: sport, category: category)
+        p.athlete = athlete
+        p.donations = donations
+
+        return p
+    }
+
+    func getDescription() -> String {
+        let percentage = Int(getValueCollected() / goal * 100)
+        return "Finaliza no dia \(deadline) - \(percentage)% concluído"
     }
     
     func getValueCollected () -> Double {
         return donations.reduce(0, { $0 + ($1.status == .confirmed ? $1.athleteAmount : 0) })
+    }
+
+    func getProgress() -> Double {
+        return getValueCollected() / goal
     }
 
     func getRemainingTimeInString() -> String {
