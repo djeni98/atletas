@@ -63,8 +63,9 @@ extension DonationsContentView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let key = sortedKeys[indexPath.section]
         let donation = donationsByMonth[key]![indexPath.row]
+        let donationVC = UINavigationController(rootViewController: ShowDonationViewController(donation: donation))
         
-        navigationController?.present(ShowDonationViewController(donation: donation), animated: true, completion: nil)
+        navigationController?.present(donationVC, animated: true, completion: nil)
     }
 }
 
