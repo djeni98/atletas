@@ -27,7 +27,7 @@ class BadgeView: SCNView {
         scnView.allowsCameraControl = true
         scnView.autoenablesDefaultLighting = true
         
-        guard let url = Bundle.main.url(forResource: "badge-ouro", withExtension: "obj", subdirectory: "3dModels.scnassets")
+        guard let url = Bundle.main.url(forResource: "badge-ouro", withExtension: "obj", subdirectory: "3dModels.scnassets/badge-ouro")
              else { fatalError("Failed to find model file.") }
 
         let asset = MDLAsset(url:url)
