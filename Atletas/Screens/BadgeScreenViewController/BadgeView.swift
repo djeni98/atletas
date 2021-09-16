@@ -40,6 +40,7 @@ class BadgeView: SCNView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     func setupLighting(for scene: SCNScene!) {
         // Create and add a light to the scene:
         let lightNode = SCNNode()

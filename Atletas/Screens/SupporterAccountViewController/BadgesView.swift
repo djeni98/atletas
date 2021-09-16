@@ -8,6 +8,7 @@
 import UIKit
 
 class BadgesView: UIView {
+    var navigationController: UINavigationController?
     var badges: [Badge]
     
     lazy var headerLabel: UILabel = {
@@ -45,8 +46,9 @@ class BadgesView: UIView {
         return collectionView
     }()
     
-    init(frame: CGRect = .zero, badges: [Badge]) {
+    init(frame: CGRect = .zero, badges: [Badge], navigationController: UINavigationController?) {
         self.badges = badges
+        self.navigationController = navigationController
         super.init(frame: frame)
         
         setupHeaderView()
@@ -86,7 +88,10 @@ class BadgesView: UIView {
 }
 
 extension BadgesView: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let badgeVC = UINavigationController(rootViewController: BadgeScreenViewController(badge: Badge(name: "badge name", image: UIImage(named: "???")!)))
+        navigationController?.present(badgeVC, animated: true, completion: nil)
+    }
 }
 
 extension BadgesView: UICollectionViewDataSource {

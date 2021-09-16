@@ -24,7 +24,7 @@ class SupporterAccountContentView: UIView {
     }()
     
     lazy var badgesView: BadgesView = {
-        let view = BadgesView(badges: supporter.badges)
+        let view = BadgesView(badges: supporter.badges, navigationController: navigationController)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
