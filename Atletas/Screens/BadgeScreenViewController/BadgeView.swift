@@ -29,7 +29,6 @@ class BadgeView: SCNView {
         scnView.allowsCameraControl = true
         scnView.autoenablesDefaultLighting = true
         
-                                              //"3dModels.scnassets/badge-ouro/badge-ouro.scn"
         guard let badgeScene = SCNScene(named: badge.sceneName),
               let object = badgeScene.rootNode.childNode(withName: badge.objectName, recursively: true)
         else { return }
