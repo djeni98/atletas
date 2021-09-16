@@ -22,25 +22,17 @@ class BadgeView: SCNView {
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
         scene.rootNode.addChildNode(cameraNode)
-        cameraNode.position = SCNVector3(x:0, y:10, z:20)
+        cameraNode.position = SCNVector3(x:0, y:0, z:20)
         
         scnView.allowsCameraControl = true
         scnView.autoenablesDefaultLighting = true
         
-        guard let url = Bundle.main.url(forResource: "badge-ouro", withExtension: "obj", subdirectory: "3dModels.scnassets/badge-ouro")
-             else { fatalError("Failed to find model file.") }
-
-        let asset = MDLAsset(url:url)
-        guard let object = asset.object(at: 0) as? MDLMesh
-             else { fatalError("Failed to get mesh from asset.") }
-
-        let newNode  = SCNNode(mdlObject: object)
+        guard let badgeScene = SCNScene(named: "3dModels.scnassets/badge-ouro/badge-ouro.scn"),
+              let object = badgeScene.rootNode.childNode(withName: "badge-ouro", recursively: true)
+        else { return }
         
-
-        //setupLighting(for: scene)
-        
-        
-        scene.rootNode.addChildNode(newNode)
+        object.pivot = SCNMatrix4MakeTranslation(0, 10, 0)
+        scene.rootNode.addChildNode(object)
         
     
     }
