@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "placeholder.png",
+      "filename" : "badge_primeiradoacao.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "badge_primeiradoacao@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "badge_primeiradoacao@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

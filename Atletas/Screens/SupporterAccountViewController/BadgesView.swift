@@ -10,6 +10,7 @@ import UIKit
 class BadgesView: UIView {
     var navigationController: UINavigationController?
     var badges: [Badge]
+    var achievedBadges: [String:Bool]
     
     lazy var headerLabel: UILabel = {
         let label = UILabel()
@@ -46,8 +47,9 @@ class BadgesView: UIView {
         return collectionView
     }()
     
-    init(frame: CGRect = .zero, badges: [Badge], navigationController: UINavigationController?) {
+    init(frame: CGRect = .zero, badges: [Badge], achievedBadges: [String:Bool], navigationController: UINavigationController?) {
         self.badges = badges
+        self.achievedBadges = achievedBadges
         self.navigationController = navigationController
         super.init(frame: frame)
         
@@ -89,7 +91,9 @@ class BadgesView: UIView {
 
 extension BadgesView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let badgeVC = UINavigationController(rootViewController: BadgeScreenViewController(badge: badges[indexPath.row]))
+        let badgeVC = UINavigationController(rootViewController:
+                                                BadgeScreenViewController(badge: badges[indexPath.row],
+                                                                                           isAchieved: achievedBadges[badges[indexPath.row].objectName] ?? false))
         navigationController?.present(badgeVC, animated: true, completion: nil)
     }
 }
@@ -101,7 +105,11 @@ extension BadgesView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "badge", for: indexPath) as! BadgeCollectionViewCell
-        cell.badge = badges[indexPath.row]
+        let objectName = badges[indexPath.row].objectName
+        let isBadgeAchieved = achievedBadges[objectName] ?? false
+        
+        let badgeImageName = isBadgeAchieved ? objectName : "not-achieved"
+        cell.badgeImage = UIImage(named: badgeImageName)
         return cell
     }
 }

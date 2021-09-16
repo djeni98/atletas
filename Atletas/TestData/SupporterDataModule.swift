@@ -17,7 +17,7 @@ class SupporterDataModule {
     private init() {
         supporters += [
             getSupporter(name: "Leonardo Vieira", username: "leovieira", imageName: "apoiador_homem_1"),
-            getSupporter(name: "Eliane Martins", username: "elainemartins", imageName: "apoiador_mulher_1"),
+            getSupporter(name: "Eliane Martins", username: "elainemartins", imageName: "apoiadora_mulher_1"),
             getSupporter(name: "Márcio Lima", username: "marciolima", imageName: "apoiador_homem_2"),
         ]
     }

@@ -9,7 +9,7 @@ import UIKit
 
 class Supporter: User {
     var name: String
-    var badges: [Badge] = []
+    var achievedBadges: [String:Bool] = [:]
     var donations: [Donation] = []
     var level: LevelEnum = .noLevel
     var image: UIImage?
@@ -18,6 +18,10 @@ class Supporter: User {
         self.name = name
         self.image = image
         super.init(username: username, password: password, type: .supporter)
+        
+        for badge in BadgesDataModule.shared.badges {
+            achievedBadges[badge.objectName] = (0.5 > Double.random(in: 0...1))
+        }
     }
     
     func getDonationsByMonth() -> [String:[Donation]] {

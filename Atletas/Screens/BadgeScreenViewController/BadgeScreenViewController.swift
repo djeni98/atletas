@@ -12,24 +12,42 @@ import SnapKit
 
 class BadgeScreenViewController: UIViewController {
     var badge: Badge
+    var isAchieved: Bool
     
-    lazy var texto1: UILabel = {
-        let texto1 = UILabel()
-        texto1.translatesAutoresizingMaskIntoConstraints = false
-        texto1.text = badge.shortDescription
-        texto1.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
-        texto1.numberOfLines = 2
-        texto1.textAlignment = NSTextAlignment.center
-        return texto1
+    lazy var badgeView: BadgeView = {
+        let badgeView = BadgeView(badge: badge)
+        badgeView.translatesAutoresizingMaskIntoConstraints = false
+        badgeView.backgroundColor = UIColor(named: "background")
+        
+        return badgeView
     }()
     
-    lazy var texto2: UILabel = {
+    lazy var placeholderImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = .clear
+        imageView.image = UIImage(named: "not-achieved")
+        return imageView
+    }()
+    
+    lazy var shortDescription: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = badge.shortDescription
+        label.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
+        label.numberOfLines = 2
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var detailedDescription: UILabel = {
         let texto2 = UILabel()
         texto2.translatesAutoresizingMaskIntoConstraints = false
-        texto2.text = badge.detailedDescription
+        texto2.text = isAchieved ? badge.detailedDescription : badge.toAchieveDescription
         texto2.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         texto2.textAlignment = .center
-        texto2.numberOfLines = 2
+        texto2.numberOfLines = 0
         return texto2
     }()
     
@@ -48,39 +66,24 @@ class BadgeScreenViewController: UIViewController {
         return seeMoreButton
     }()
     
-    lazy var badgeView: BadgeView = {
-        let badgeView = BadgeView(badge: badge)
-        badgeView.translatesAutoresizingMaskIntoConstraints = false
-        badgeView.backgroundColor = UIColor(named: "background")
-        
-        return badgeView
-        
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "background")
         
         setupNavigationBar()
-        
-        
-        
-        view.addSubview(badgeView)
-        badgeView.snp.makeConstraints { (make) in
-            make.top.equalTo(view).offset(160)
-            make.height.equalTo(258)
-            make.centerX.equalTo(view.center.x)
-            make.width.equalTo(258)
+        if isAchieved {
+            setupBadgeView()
+            setupShortDescription(topView: badgeView)
+        } else {
+            setupPlaceholderImageView()
+            setupShortDescription(topView: placeholderImageView)
         }
         
-        
-        setupText1(content: texto1)
-        setupText2(content: texto2)
-        setupButton(content: buyButton)
-        setupSeeMoreButton(content: seeMoreButton)
-        
-        
-        
+        setupDetailedDescription()
+        if isAchieved {
+            setupBuyButton()
+        }
+//        setupSeeMoreButton(content: seeMoreButton)
     }
     
     func setupNavigationBar() {
@@ -96,31 +99,50 @@ class BadgeScreenViewController: UIViewController {
         navigationController?.dismiss(animated: true, completion: nil)
     }
     
-    func setupText1(content: UIView) {
-        view.addSubview(content)
-       
-        content.snp.makeConstraints { make in
-            make.top.equalTo(badgeView.snp.bottom).offset(20)
-            make.centerX.equalToSuperview()
-            
-            
+    func setupBadgeView() {
+        view.addSubview(badgeView)
+        badgeView.snp.makeConstraints { (make) in
+            make.top.equalTo(view).offset(160)
+            make.height.equalTo(258)
+            make.centerX.equalTo(view.center.x)
+            make.width.equalTo(258)
         }
     }
-    func setupText2(content: UIView) {
-        view.addSubview(content)
-        content.snp.makeConstraints { make in
-            make.top.equalTo(texto1.snp.bottom).offset(20)
-            make.centerX.equalToSuperview()
+    
+    func setupPlaceholderImageView() {
+        view.addSubview(placeholderImageView)
+        placeholderImageView.snp.makeConstraints { make in
+            make.top.equalTo(view).offset(160)
+            make.height.equalTo(258)
+            make.centerX.equalTo(view.center.x)
+            make.width.equalTo(258)
+        }
+    }
+    
+    func setupShortDescription(topView: UIView) {
+        view.addSubview(shortDescription)
+        shortDescription.snp.makeConstraints { make in
+            make.top.equalTo(topView.snp.bottom).offset(20)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
+        }
+    }
+    
+    func setupDetailedDescription() {
+        view.addSubview(detailedDescription)
+        detailedDescription.snp.makeConstraints { make in
+            make.top.equalTo(shortDescription.snp.bottom).offset(20)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
             
         }
     }
     
-    func setupButton(content: UIView) {
-        view.addSubview(content)
-        content.snp.makeConstraints { make in
-            make.top.equalTo(texto2.snp.bottom).offset(38)
+    func setupBuyButton() {
+        view.addSubview(buyButton)
+        buyButton.snp.makeConstraints { make in
+            make.top.equalTo(detailedDescription.snp.bottom).offset(38)
             make.centerX.equalToSuperview()
-            
         }
     }
     
@@ -129,13 +151,13 @@ class BadgeScreenViewController: UIViewController {
         content.snp.makeConstraints { make in
             make.top.equalTo(buyButton.snp.bottom).offset(28)
             make.centerX.equalToSuperview()
-            
         }
     }
     
     
-    init(badge: Badge) {
+    init(badge: Badge, isAchieved: Bool) {
         self.badge = badge
+        self.isAchieved = isAchieved
         super.init(nibName: nil, bundle: nil)
     }
     

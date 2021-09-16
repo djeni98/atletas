@@ -8,9 +8,9 @@
 import UIKit
 
 class BadgeCollectionViewCell: UICollectionViewCell {
-    var badge: Badge? {
+    var badgeImage: UIImage? {
         didSet {
-            badgeImageView.image = badge?.image
+            badgeImageView.image = badgeImage
         }
     }
     

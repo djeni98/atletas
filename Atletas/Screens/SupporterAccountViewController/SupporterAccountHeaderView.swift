@@ -16,6 +16,8 @@ class SupporterAccountHeaderView: UIView {
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 28
         imageView.backgroundColor = .gray
+        imageView.image = supporter.image
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -25,6 +27,7 @@ class SupporterAccountHeaderView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 23, weight: .semibold)
         label.textColor = UIColor(named: "PrimaryFont")
+        label.text = supporter.name
         
         return label
     }()
@@ -35,19 +38,9 @@ class SupporterAccountHeaderView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = UIColor(named: "SecondaryFont")
+        label.text = "Apoiador nível diamante"
         
         return label
-    }()
-    
-    lazy var chevronImage: UIImageView = {
-        let config = UIImage.SymbolConfiguration(pointSize: 16)
-        let image = UIImage(systemName: "chevron.right", withConfiguration: config)
-        let imageView = UIImageView(image: image)
-        imageView.tintColor = UIColor(r: 169, g: 169, b: 169)
-        
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        return imageView
     }()
     
     init(frame: CGRect = .zero, supporter: Supporter) {
@@ -55,7 +48,6 @@ class SupporterAccountHeaderView: UIView {
         super.init(frame: frame)
         
         setupImageView()
-        setupChevron()
         setupTitle()
         setupSubtitle()
         
@@ -74,37 +66,6 @@ class SupporterAccountHeaderView: UIView {
             make.height.equalTo(56)
             make.bottom.equalToSuperview()
         }
-        
-        switch supporter.level {
-        case .noLevel:
-            imageView.image = nil
-            subtitleLabel.text = "Apoiador sem nível"
-        case .bronze:
-            imageView.image = UIImage(named: "bronze")
-            subtitleLabel.text = "Apoiador nível bronze"
-        case .silver:
-            imageView.image = UIImage(named: "silver")
-            subtitleLabel.text = "Apoiador nível prata"
-        case .gold:
-            imageView.image = UIImage(named: "gold")
-            subtitleLabel.text = "Apoiador nível ouro"
-        case .platinum:
-            imageView.image = UIImage(named: "platinum")
-            subtitleLabel.text = "Apoiador nível platina"
-        case .diamond:
-            imageView.image = UIImage(named: "diamond")
-            subtitleLabel.text = "Apoiador nível diamante"
-        }
-
-        imageView.image = supporter.image ?? UIImage(named: "???")
-    }
-    
-    func setupChevron() {
-        self.addSubview(chevronImage)
-        chevronImage.snp.makeConstraints { make in
-            make.centerY.equalTo(imageView)
-            make.trailing.equalToSuperview().offset(-4)
-        }
     }
     
     func setupTitle() {
@@ -114,10 +75,7 @@ class SupporterAccountHeaderView: UIView {
             make.bottom.equalTo(imageView.snp.centerY)
             
             make.leading.equalTo(imageView.snp.trailing).offset(12)
-            make.trailing.equalTo(chevronImage.snp.leading).offset(-12)
         }
-        
-        titleLabel.text = supporter.name
     }
     
     func setupSubtitle() {
