@@ -39,7 +39,7 @@ class SupportableCell: UICollectionViewCell {
         label.numberOfLines = 0
         label.sizeToFit()
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         label.textColor = .white
         return label
     }()

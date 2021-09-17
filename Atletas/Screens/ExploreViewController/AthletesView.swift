@@ -27,7 +27,7 @@ class AthletesView: UICollectionViewCell {
     }()
     
     lazy var athletesRow: SupportableRowView = {
-        let supportables = AthleteDataModule.shared.athletes.slice(0..<10)
+        let supportables = AthleteDataModule.shared.athletes.slice(0..<10).shuffled()
     
         let row = SupportableRowView(supportables: supportables, navigationController: navigationController)
         row.translatesAutoresizingMaskIntoConstraints = false
