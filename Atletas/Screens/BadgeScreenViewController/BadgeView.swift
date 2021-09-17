@@ -16,25 +16,25 @@ class BadgeView: SCNView {
     init(frame: CGRect = .zero, options: [String : Any]? = nil, badge: Badge) {
         self.badge = badge
         super.init(frame: frame, options: options)
-        let scene = SCNScene()
-       
-        let scnView = self
-        scnView.scene = scene
-        
-        let cameraNode = SCNNode()
-        cameraNode.camera = SCNCamera()
-        scene.rootNode.addChildNode(cameraNode)
-        cameraNode.position = SCNVector3(x:0, y:0, z:20)
-        
-        scnView.allowsCameraControl = true
-        scnView.autoenablesDefaultLighting = true
         
         guard let badgeScene = SCNScene(named: badge.sceneName),
               let object = badgeScene.rootNode.childNode(withName: badge.objectName, recursively: true)
         else { return }
+       
+        let scnView = self
+        scnView.scene = badgeScene
         
-        object.pivot = SCNMatrix4MakeTranslation(0, 10, 0)
-        scene.rootNode.addChildNode(object)
+        let cameraNode = SCNNode()
+        cameraNode.camera = SCNCamera()
+        badgeScene.rootNode.addChildNode(cameraNode)
+        cameraNode.position = SCNVector3(x:0, y:10, z:30)
+        object.scale = SCNVector3(0.85, 0.85, 0.85)
+        object.position = SCNVector3(0, 2, 0)
+        scnView.allowsCameraControl = true
+        scnView.autoenablesDefaultLighting = true
+    
+
+        
         
     
     }
