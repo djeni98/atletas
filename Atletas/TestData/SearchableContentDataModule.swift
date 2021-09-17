@@ -59,9 +59,11 @@ class SearchableContentDataModule {
         }
 
         list += sports.map { sport in
+            let numberOfAthletes = athletes.filter { $0.sport == sport.sport }.count
+            let description = "\(numberOfAthletes) atleta(s)"
             return SearchableContent(
                 name: sport.sport.getName(), scope: .sport,
-                description: nil, image: sport.sportImage, reference: sport)
+                description: description, image: sport.sportImage, reference: sport)
         }
 
         return list
