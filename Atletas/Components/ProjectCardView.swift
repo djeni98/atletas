@@ -79,7 +79,7 @@ class ProjectCardView: UIView {
 
     func setupProgressView() {
         let blackLayer = UIView()
-        blackLayer.backgroundColor = .black.withAlphaComponent(0.6)
+//        blackLayer.backgroundColor = .black.withAlphaComponent(0.6)
 
         self.addSubview(blackLayer)
         self.addSubview(progressView)
