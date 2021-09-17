@@ -11,8 +11,10 @@ import SceneKit.ModelIO
 import QuartzCore
 
 class BadgeView: SCNView {
+    let badge: Badge
 
-    override init(frame: CGRect, options: [String : Any]? = nil) {
+    init(frame: CGRect = .zero, options: [String : Any]? = nil, badge: Badge) {
+        self.badge = badge
         super.init(frame: frame, options: options)
         let scene = SCNScene()
        
@@ -27,8 +29,8 @@ class BadgeView: SCNView {
         scnView.allowsCameraControl = true
         scnView.autoenablesDefaultLighting = true
         
-        guard let badgeScene = SCNScene(named: "3dModels.scnassets/badge-ouro/badge-ouro.scn"),
-              let object = badgeScene.rootNode.childNode(withName: "badge-ouro", recursively: true)
+        guard let badgeScene = SCNScene(named: badge.sceneName),
+              let object = badgeScene.rootNode.childNode(withName: badge.objectName, recursively: true)
         else { return }
         
         object.pivot = SCNMatrix4MakeTranslation(0, 10, 0)
@@ -40,6 +42,7 @@ class BadgeView: SCNView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     func setupLighting(for scene: SCNScene!) {
         // Create and add a light to the scene:
         let lightNode = SCNNode()

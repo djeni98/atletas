@@ -21,8 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
         
-        let nav = UINavigationController(rootViewController: BadgeScreenViewController())
-        window?.rootViewController = nav
+//        let nav = UINavigationController(rootViewController: BadgeScreenViewController())
+//        window?.rootViewController = nav
+        
+        window?.rootViewController = AppTabBarController()
         
     }
 

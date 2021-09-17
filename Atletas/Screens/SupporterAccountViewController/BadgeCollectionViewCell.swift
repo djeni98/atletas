@@ -8,26 +8,26 @@
 import UIKit
 
 class BadgeCollectionViewCell: UICollectionViewCell {
-    var badge: Badge? {
+    var badgeImage: UIImage? {
         didSet {
-            
+            badgeImageView.image = badgeImage
         }
     }
     
-    lazy var darkeningLayer: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = 8
-        view.backgroundColor = UIColor(named: "badge")
+    lazy var badgeImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
         
-        return view
+        return imageView
     }()
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         
-        addSubview(darkeningLayer)
-        darkeningLayer.snp.makeConstraints { make in
+        addSubview(badgeImageView)
+        badgeImageView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
