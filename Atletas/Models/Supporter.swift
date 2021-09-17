@@ -20,7 +20,7 @@ class Supporter: User {
         super.init(username: username, password: password, type: .supporter)
         
         for badge in BadgesDataModule.shared.badges {
-            achievedBadges[badge.objectName] = (0.5 > Double.random(in: 0...1))
+            achievedBadges[badge.objectName] = (2 > Double.random(in: 0...1))
         }
     }
     
