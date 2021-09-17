@@ -134,7 +134,9 @@ class ProjectMetricsView: UIView {
         collectedValueLabel.text = getCurrency(withValue: project.getValueCollected())
         progressView.setProgress(Float(project.getProgress()))
         goalSquareView.setValue(withText: getCurrency(withValue: project.goal))
-        deadlineSquareView.setValue(withText: project.deadline)
+
+        let deadlineText = project.isMonthlyProject ? "Mensal" : project.deadline
+        deadlineSquareView.setValue(withText: deadlineText)
     }
 }
 

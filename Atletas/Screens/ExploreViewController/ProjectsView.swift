@@ -19,7 +19,7 @@ class ProjectsView: UIView {
     }()
     
     lazy var projectsRow: SupportableRowView = {
-        let supportables = ProjectDataModule.shared.projects.slice(0..<10)
+        let supportables = SearchableContentDataModule.shared.projects.slice(0..<10).shuffled()
         let row = SupportableRowView(supportables: supportables, navigationController: navigationController)
         row.translatesAutoresizingMaskIntoConstraints = false
         return row

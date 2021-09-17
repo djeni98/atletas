@@ -112,8 +112,10 @@ class ImageAndTitleView: UIView {
 
     func update(with project: Project) {
         setTitle(withText: project.title)
-        setSubtitle(withText: project.getRemainingTimeInString())
         setImage(withImage: project.image)
+
+        guard let athlete = project.athlete else { return }
+        setSubtitle(withText: athlete.name)
     }
 }
 

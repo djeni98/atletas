@@ -16,6 +16,8 @@ class SupporterAccountHeaderView: UIView {
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 28
         imageView.backgroundColor = .gray
+        imageView.contentMode = .scaleAspectFill
+        
         return imageView
     }()
     
