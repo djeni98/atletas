@@ -110,7 +110,6 @@
 		B7D5E82526D7BABB0090966F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E82426D7BABB0090966F /* ViewController.swift */; };
 		B7D5E82A26D7BABD0090966F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7D5E82926D7BABD0090966F /* Assets.xcassets */; };
 		B7D5E82D26D7BABD0090966F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7D5E82B26D7BABD0090966F /* LaunchScreen.storyboard */; };
-		B7D5E83726D7BAD40090966F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7D5E83626D7BAD40090966F /* CloudKit.framework */; };
 		B7E52DCF26E430EA0025A7A1 /* ImageAndTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E52DCE26E430EA0025A7A1 /* ImageAndTitleView.swift */; };
 		B7E52DD126E435270025A7A1 /* ProjectMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E52DD026E435270025A7A1 /* ProjectMetricsView.swift */; };
 		B7E52DD326E43C540025A7A1 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E52DD226E43C540025A7A1 /* AboutView.swift */; };
@@ -213,15 +212,13 @@
 		B7BAC1AA26E6EF64000CA0F0 /* ProjectCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCardView.swift; sourceTree = "<group>"; };
 		B7BAC1AC26E6F5A7000CA0F0 /* ShowMoreProjectsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreProjectsSectionView.swift; sourceTree = "<group>"; };
 		B7BAC1AE26E70209000CA0F0 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
-		B7D5E81D26D7BABB0090966F /* Atletas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atletas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7D5E81D26D7BABB0090966F /* Atletas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Atletas.app; path = "/Users/anakessler/Documents/Estudos/Academy/01 - Projetos/Projeto 07 - Pódio/Xcode/atletas/build/Debug-iphoneos/Atletas.app"; sourceTree = "<absolute>"; };
 		B7D5E82026D7BABB0090966F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7D5E82226D7BABB0090966F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B7D5E82426D7BABB0090966F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B7D5E82926D7BABD0090966F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7D5E82C26D7BABD0090966F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7D5E82E26D7BABD0090966F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B7D5E83426D7BACC0090966F /* Atletas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Atletas.entitlements; sourceTree = "<group>"; };
-		B7D5E83626D7BAD40090966F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		B7E52DCE26E430EA0025A7A1 /* ImageAndTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndTitleView.swift; sourceTree = "<group>"; };
 		B7E52DD026E435270025A7A1 /* ProjectMetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMetricsView.swift; sourceTree = "<group>"; };
 		B7E52DD226E43C540025A7A1 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -232,7 +229,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7D5E83726D7BAD40090966F /* CloudKit.framework in Frameworks */,
 				610C7D8126DFAC5600F2FDB6 /* SnapKit in Frameworks */,
 				61AD13AE26EAA592005FF1F6 /* IQKeyboardManagerSwift in Frameworks */,
 			);
@@ -488,23 +484,12 @@
 			children = (
 				B293B28F26F228CC00EF875D /* 3dModels.scnassets */,
 				B7D5E81F26D7BABB0090966F /* Atletas */,
-				B7D5E81E26D7BABB0090966F /* Products */,
-				B7D5E83526D7BAD40090966F /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		B7D5E81E26D7BABB0090966F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B7D5E81D26D7BABB0090966F /* Atletas.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		B7D5E81F26D7BABB0090966F /* Atletas */ = {
 			isa = PBXGroup;
 			children = (
-				B7D5E83426D7BACC0090966F /* Atletas.entitlements */,
 				B7D5E82026D7BABB0090966F /* AppDelegate.swift */,
 				B7D5E82226D7BABB0090966F /* SceneDelegate.swift */,
 				B7D5E82426D7BABB0090966F /* ViewController.swift */,
@@ -521,14 +506,6 @@
 				610C7D6E26D7D99900F2FDB6 /* Models */,
 			);
 			path = Atletas;
-			sourceTree = "<group>";
-		};
-		B7D5E83526D7BAD40090966F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B7D5E83626D7BAD40090966F /* CloudKit.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -582,7 +559,7 @@
 				610C7D7F26DFAC5600F2FDB6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				61AD13AC26EAA592005FF1F6 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
-			productRefGroup = B7D5E81E26D7BABB0090966F /* Products */;
+			productRefGroup = B7D5E81426D7BABB0090966F;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
