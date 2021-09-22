@@ -38,6 +38,7 @@ class OnboardingContentView: UIView {
         let pageControl = UIPageControl()
         pageControl.pageIndicatorTintColor = .gray
         pageControl.currentPageIndicatorTintColor = .red
+        pageControl.numberOfPages = onboardingCards.count
         return pageControl
     }()
     
@@ -62,8 +63,10 @@ class OnboardingContentView: UIView {
     func setupPager() {
         addSubview(pager)
         pager.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-16)
-            make.leading.equalToSuperview().offset(40)
+//            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-16)
+            make.leading.equalToSuperview()
+            make.centerY.equalTo(skipButton)
+            
         }
     }
     
