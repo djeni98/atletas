@@ -57,6 +57,9 @@
 		61AD13E926F0DE97005FF1F6 /* ShowDonationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13E826F0DE97005FF1F6 /* ShowDonationStatusView.swift */; };
 		61AD13EB26F2693C005FF1F6 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13EA26F2693C005FF1F6 /* DictionaryExtension.swift */; };
 		61AD13ED26F3A8DA005FF1F6 /* BadgesDataModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD13EC26F3A8DA005FF1F6 /* BadgesDataModule.swift */; };
+		B13AFD3626FB57C00023979C /* OnboardingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AFD3526FB57C00023979C /* OnboardingCard.swift */; };
+		B13AFD3826FB59F40023979C /* OnboardingDataModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AFD3726FB59F40023979C /* OnboardingDataModule.swift */; };
+		B13AFD3A26FB6BAB0023979C /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AFD3926FB6BAB0023979C /* UICollectionView+.swift */; };
 		B1B23E5F26FA08CC00D68032 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B23E5E26FA08CC00D68032 /* OnboardingViewController.swift */; };
 		B1B23E6126FA0A1E00D68032 /* OnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B23E6026FA0A1E00D68032 /* OnboardingContentView.swift */; };
 		B1B23E6326FA163600D68032 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B23E6226FA163600D68032 /* OnboardingCollectionViewCell.swift */; };
@@ -167,6 +170,9 @@
 		61AD13E826F0DE97005FF1F6 /* ShowDonationStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDonationStatusView.swift; sourceTree = "<group>"; };
 		61AD13EA26F2693C005FF1F6 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		61AD13EC26F3A8DA005FF1F6 /* BadgesDataModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesDataModule.swift; sourceTree = "<group>"; };
+		B13AFD3526FB57C00023979C /* OnboardingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCard.swift; sourceTree = "<group>"; };
+		B13AFD3726FB59F40023979C /* OnboardingDataModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDataModule.swift; sourceTree = "<group>"; };
+		B13AFD3926FB6BAB0023979C /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
 		B1B23E5C26FA042200D68032 /* Atletas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atletas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1B23E5E26FA08CC00D68032 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		B1B23E6026FA0A1E00D68032 /* OnboardingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentView.swift; sourceTree = "<group>"; };
@@ -270,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				610C7D8426DFB8E300F2FDB6 /* Supportable.swift */,
+				B13AFD3526FB57C00023979C /* OnboardingCard.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -466,6 +473,7 @@
 				B77E60F026E4F62A00B29E45 /* DateExtension.swift */,
 				B7BAC1AE26E70209000CA0F0 /* ArrayExtension.swift */,
 				61AD13EA26F2693C005FF1F6 /* DictionaryExtension.swift */,
+				B13AFD3926FB6BAB0023979C /* UICollectionView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -492,6 +500,7 @@
 				B788033F26F0CAC8001288BE /* DonationDataModule.swift */,
 				B75B9BE526F009D0008EC073 /* SearchableContentDataModule.swift */,
 				B76B50BF26F0EC73005AB115 /* DataModule.swift */,
+				B13AFD3726FB59F40023979C /* OnboardingDataModule.swift */,
 			);
 			path = TestData;
 			sourceTree = "<group>";
@@ -626,6 +635,7 @@
 				610C7D7026D7DA6F00F2FDB6 /* User.swift in Sources */,
 				61AD13E726F0DE84005FF1F6 /* ShowDonationDateView.swift in Sources */,
 				613C3AFA26E2A04000968D43 /* DonationsContentView.swift in Sources */,
+				B13AFD3826FB59F40023979C /* OnboardingDataModule.swift in Sources */,
 				B73A96DC26E831410080555E /* ProfileHeaderView.swift in Sources */,
 				B293B28526EEA28000EF875D /* BadgeScreenViewController.swift in Sources */,
 				B254BFEB26D8307700A68D55 /* SportEnum.swift in Sources */,
@@ -657,6 +667,7 @@
 				B75B9BE226EFCC70008EC073 /* SupporterDataModule.swift in Sources */,
 				B7BAC1AF26E70209000CA0F0 /* ArrayExtension.swift in Sources */,
 				614282F526E110B000F04601 /* ProjectsView.swift in Sources */,
+				B13AFD3A26FB6BAB0023979C /* UICollectionView+.swift in Sources */,
 				B73A96DA26E82FAC0080555E /* AthleteProfileViewController.swift in Sources */,
 				B7D5E82526D7BABB0090966F /* ViewController.swift in Sources */,
 				B7653C9826DEDDBD0070BBF9 /* AthleteListItemCell.swift in Sources */,
@@ -695,6 +706,7 @@
 				613C3AFC26E2A32000968D43 /* DonationsTableTitleView.swift in Sources */,
 				B77731AD26E948C300F88C90 /* AthleteSupportTabView.swift in Sources */,
 				B2C90E0B26DFA4AB00DFBB6D /* SportScreenViewController.swift in Sources */,
+				B13AFD3626FB57C00023979C /* OnboardingCard.swift in Sources */,
 				B1B23E6326FA163600D68032 /* OnboardingCollectionViewCell.swift in Sources */,
 				B254BFE326D82FF900A68D55 /* Project.swift in Sources */,
 				B254BFED26D8308F00A68D55 /* Sport.swift in Sources */,

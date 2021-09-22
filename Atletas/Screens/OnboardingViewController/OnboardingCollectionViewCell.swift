@@ -22,6 +22,7 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         label.textColor = .white
         label.font = .systemFont(ofSize: 16, weight: .light)
         label.textAlignment = .left
+        label.numberOfLines = 0
         return label
     }()
     
@@ -30,9 +31,10 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         label.textColor = .white
         label.font = .systemFont(ofSize: 30, weight: .semibold)
         label.textAlignment = .left
+        label.numberOfLines = 0
         return label
     }()
-   
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -41,14 +43,14 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         setupTitleLabel()
     }
     
-    func setupBackgroundImageView() {
+    private func setupBackgroundImageView() {
         addSubview(backgroundImageView)
         backgroundImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
     
-    func setupSubtitleLabel() {
+    private func setupSubtitleLabel() {
         addSubview(subtitleLabel)
         subtitleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(24)
@@ -57,18 +59,24 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func setupTitleLabel() {
+    private func setupTitleLabel() {
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(24)
-            make.trailing.equalToSuperview().offset(-24)
+            make.trailing.equalToSuperview().offset(-40)
             make.bottom.equalTo(subtitleLabel.snp.top).offset(-40)
         }
     }
     
-   
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupContent(content: OnboardingCard) {
+        backgroundImageView.image = content.image
+        titleLabel.text = content.titleText
+        subtitleLabel.text = content.subtitleText
     }
 }
