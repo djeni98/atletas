@@ -9,7 +9,7 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
     lazy var onboardingContentView: OnboardingContentView = {
-        let view = OnboardingContentView()
+        let view = OnboardingContentView(navigationController: navigationController)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -19,6 +19,8 @@ class OnboardingViewController: UIViewController {
         
         view.backgroundColor = UIColor(named: "background")
         setupContentView()
+        navigationController?.navigationBar.isHidden = true
+        
     }
     
     func setupContentView() {

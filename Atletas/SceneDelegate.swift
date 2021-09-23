@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let nav = UINavigationController(rootViewController: BadgeScreenViewController())
 //        window?.rootViewController = nav
         
-        window?.rootViewController = OnboardingViewController()
+        window?.rootViewController = UINavigationController(rootViewController: OnboardingViewController())
         
     }
 

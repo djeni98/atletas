@@ -8,6 +8,8 @@
 import UIKit
 
 class OnboardingContentView: UIView {
+    let navigationController: UINavigationController?
+        
     let onboardingCards = OnboardingDataModule.shared.cards
     
     lazy var collectionView: UICollectionView = {
@@ -30,19 +32,29 @@ class OnboardingContentView: UIView {
         button.setTitle("Pular", for: .normal)
         button.setTitleColor(UIColor(named: "ButtonGreen"), for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 22, weight: .light)
+        button.addTarget(self, action: #selector(clickedSkipButton), for: .touchUpInside)
         return button
     }()
     
-    // TO DO: ENTENDER COMO FUNCIONA E APLICAR
+    @objc func clickedSkipButton() {
+        navigationController?.pushViewController(AppTabBarController(), animated: true)
+        print("botao")
+    }
+
     lazy var pager: UIPageControl = {
         let pageControl = UIPageControl()
-        pageControl.pageIndicatorTintColor = .gray
-        pageControl.currentPageIndicatorTintColor = .red
+        pageControl.pageIndicatorTintColor = UIColor(named: "ButtonGreen")
+        pageControl.currentPageIndicatorTintColor = UIColor(named: "ButtonGreen")
         pageControl.numberOfPages = onboardingCards.count
+        pageControl.backgroundStyle = .minimal
+        pageControl.isUserInteractionEnabled = false
+        pageControl.preferredIndicatorImage = UIImage(named: "circle_border")
+        pageControl.setIndicatorImage(UIImage(named: "circle_fill"), forPage: 0)
         return pageControl
     }()
     
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, navigationController: UINavigationController?) {
+        self.navigationController = navigationController
         super.init(frame: frame)
         
         setupSkipButton()
@@ -63,8 +75,7 @@ class OnboardingContentView: UIView {
     func setupPager() {
         addSubview(pager)
         pager.snp.makeConstraints { make in
-//            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-16)
-            make.leading.equalToSuperview()
+            make.leading.equalToSuperview().offset(20)
             make.centerY.equalTo(skipButton)
             
         }
@@ -89,6 +100,20 @@ class OnboardingContentView: UIView {
 extension OnboardingContentView: UICollectionViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.collectionView.scrollToNearestVisibleCollectionViewCell()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let width = scrollView.frame.width - scrollView.contentInset.left * 2
+        let index = scrollView.contentOffset.x / width
+        let roundedIndex = round(index)
+        pager.currentPage = Int(roundedIndex)
+        
+        (0..<pager.numberOfPages).forEach { index in
+            let activeImage = UIImage(named: "circle_fill")
+            let otherImage = UIImage(named: "circle_border")
+            let pageIcon = index == pager.currentPage ? activeImage : otherImage
+            pager.setIndicatorImage(pageIcon, forPage: index)
+        }
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -117,3 +142,5 @@ extension OnboardingContentView: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: height)
     }
 }
+
+
